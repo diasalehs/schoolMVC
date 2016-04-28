@@ -16,4 +16,7 @@ class Teacher extends Model
     public function klass(){
         return $this->belongsToMany('App\Classes','classes_teacher','teacher_id','class_id');
     }
+    public function courses(){
+        return $this->belongsToMany('App\Course');
+    }
 }

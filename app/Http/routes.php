@@ -15,6 +15,7 @@ use App\Name;
 use App\Employee;
 use App\Classes;
 use App\Teacher;
+use App\Course;
 Route::get('/', function () {
 //    echo Name::where('person_id','3')->first()['first'];
 //    $persons=(Person::all());
@@ -43,6 +44,23 @@ Route::get('/', function () {
 //    $c=Classes::where('id',1)->first();
 //    foreach ($c->teachers as $class){
 //        echo $class->id;
+//    }
+//    $courses=Course::where('id',1)->first();
+//    foreach ($courses->klasses as $class){
+//        echo $class->id;
+//    }
+//    $class=Classes::where('id',1)->first();
+//    foreach ($class->courses as $course){
+//        echo $course->coursename;
+//    }
+
+//    $course=Course::where('id',1)->first();
+//    foreach ($course->teachers as $teacher){
+//        echo $teacher->employee->person->name->first;
+//    }
+//    $teacher=Teacher::where('id',0)->first();
+//    foreach ($teacher->courses as $course){
+//        echo $course->coursename;
 //    }
 
 });
