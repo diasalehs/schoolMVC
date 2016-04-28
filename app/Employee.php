@@ -19,5 +19,9 @@ class Employee extends Model
     public function experiences(){
         return $this->hasMany('App\Experience');
     }
+
+    public function trained_courses(){
+        return $this->hasMany('app\Trained_course');
+    }
 }
 
