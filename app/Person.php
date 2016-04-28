@@ -16,4 +16,8 @@ class Person extends Model
     public function englishname(){
         return $this->hasOne('App\Englishname');
     }
+
+    public function user(){
+        return $this->hasOne('App\Usere');
+    }
 }
