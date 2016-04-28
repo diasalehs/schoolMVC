@@ -11,5 +11,12 @@ class Student extends Model
     //
     public function klass(){
         return $this->hasOne('App\Classes');
+        
+    }
+    public function address(){
+        return $this->hasOne('App\Studentaddress');
+    }
+    public function person(){
+        return $this->belongsTo('App\person');
     }
 }

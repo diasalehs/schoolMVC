@@ -58,9 +58,9 @@ Route::get('/', function () {
 //    foreach ($course->teachers as $teacher){
 //        echo $teacher->employee->person->name->first;
 //    }
-//    $teacher=Teacher::where('id',0)->first();
-//    foreach ($teacher->courses as $course){
-//        echo $course->coursename;
-//    }
+    $teacher=Teacher::where('id',0)->first();
+    foreach ($teacher->courses as $course){
+        echo $course->coursename;
+    }
 
 });

@@ -13,7 +13,7 @@ class Teacher extends Model
         return $this->belongsTo('App\Employee');
 
     }
-    public function klass(){
+    public function klasses(){
         return $this->belongsToMany('App\Classes','classes_teacher','teacher_id','class_id');
     }
     public function courses(){
