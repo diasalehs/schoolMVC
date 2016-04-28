@@ -13,29 +13,36 @@
 use App\Person;
 use App\Name;
 use App\Employee;
+use App\Classes;
+use App\Teacher;
 Route::get('/', function () {
 //    echo Name::where('person_id','3')->first()['first'];
-    $persons=(Person::all());
-    foreach ($persons as $person){
-        echo $person->nationality;
-//        echo $person->pid;
-//        echo $person->religon;
-        echo $person->name->first;
-        echo "\n";
-        echo $person->name->person_id;
-        $name=$person->name->first="dia";
-        $name->first="dia";
-        $person->push();
-        echo $person->name->second;
-        echo "\n";
-        echo $person->name->second;
-        echo "\n";
-        echo $person->name->last;
-    }
-    echo "\n";
-    $employees=Employee::all();
-    foreach ($employees as $employee){
-       dd( $employee->person->name->first);
-    }
+//    $persons=(Person::all());
+//    foreach ($persons as $person){
+//        echo $person->nationality;
+////        echo $person->pid;
+////        echo $person->religon;
+//        echo $person->name->first;
+//        echo "\n";
+//        echo $person->name->person_id;
+//        $name=$person->name->first="dia";
+//        $name->first="dia";
+//        $person->push();
+//        echo $person->name->second;
+//        echo "\n";
+//        echo $person->name->second;
+//        echo "\n";
+//        echo $person->name->last;
+//    }
+//    echo "\n";
+//    $employees=Employee::all();
+//    foreach ($employees as $employee){
+//       dd( $employee->person->name->first);
+//    }
 //    return view('welcome');
+//    $c=Classes::where('id',1)->first();
+//    foreach ($c->teachers as $class){
+//        echo $class->id;
+//    }
+
 });

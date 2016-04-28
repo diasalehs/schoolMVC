@@ -1,0 +1,19 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Teacher extends Model
+{
+    protected $table='teacheres';
+    protected $fillable=['id','employee_id'];
+    //
+    public function employee(){
+        return $this->belongsTo('App\Employee');
+
+    }
+    public function klass(){
+        return $this->belongsToMany('App\Classes','classes_teacher','teacher_id','class_id');
+    }
+}
