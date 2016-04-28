@@ -12,7 +12,12 @@ class Employee extends Model
     ,'experince_abroad','experince_local'];
     //
     public function person(){
+        
        return $this->belongsTo('App\Person');
+        
+    }
+    public function experiences(){
+        return $this->hasMany('App\Experience');
     }
 }
 
