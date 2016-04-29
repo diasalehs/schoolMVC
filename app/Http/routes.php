@@ -16,6 +16,31 @@ use App\Employee;
 use App\Classes;
 use App\Teacher;
 use App\Course;
+Route::get('/admin',function(){
+
+    return view('admin');
+//    return view ('teacherAdmin');
+});
+Route::get('/admin/first',function(){
+
+    return view('adminFirst');
+});
+Route::get('/admin/teacher',function(){
+
+    return view('teacherAdmin');
+});
+Route::get('/admin/student',function(){
+
+    return view('studentAdmin');
+});
+Route::get('/admin/subject',function(){
+
+    return view('subjectAdmin');
+});
+Route::get('/admin/class',function(){
+
+    return view('classAdmin');
+});
 Route::get('/', function () {
 //    echo Name::where('person_id','3')->first()['first'];
     $persons=(Person::all());
@@ -64,9 +89,9 @@ Route::get('/', function () {
 //    foreach ($course->teachers as $teacher){
 //        echo $teacher->employee->person->name->first;
 //    }
-    $teacher=Teacher::where('id',0)->first();
-    foreach ($teacher->courses as $course){
-        echo $course->coursename;
-    }
+//    $teacher=Teacher::where('id',0)->first();
+//    foreach ($teacher->courses as $course){
+//        echo $course->coursename;
+//    }
 
 });

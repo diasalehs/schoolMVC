@@ -12,7 +12,7 @@ class Message extends Model
     public function sender(){
         return $this->belongsTo('App\Usere');
     }
-    public function reciver(){
+    public function receiver(){
         return $this->belongsTo('App\Usere');
     }
 }
