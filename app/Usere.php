@@ -12,7 +12,10 @@ class Usere extends Model
     public function user(){
         return $this->belongsTo('App\Person');
     }
-    public function messages(){
-        return $this->hasMany('App\Message','id','id');
+    public function sentMessages(){
+        return $this->hasMany('App\Message','send_from','id');
+    }
+    public function receivedMessages(){
+        return $this->hasMany('App\Message','send_to','id');
     }
 }
