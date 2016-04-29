@@ -8,61 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-    <script>
-        //  alert("Hello");
-
-        function ajax_request( id ) {
-
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    var result = document.getElementById('main');
-                    result.innerHTML = xmlhttp.responseText;
-                }
-            }
-            if(id==0) {
-                xmlhttp.open('GET', 'admin/first', true);
-                $('#admin').addClass('active');
-                $('#st').removeClass('active');
-                $('#te').removeClass('active');
-                $('#cl').removeClass('active');
-                $('#su').removeClass('active');
-
-            } else if(id==1) {
-                xmlhttp.open('GET', 'admin/teacher', true);
-                $('#te').addClass('active');
-                $('#st').removeClass('active');
-                $('#cl').removeClass('active');
-                $('#admin').removeClass('active');
-                $('#su').removeClass('active');
-
-            } else if (id ==2){
-                xmlhttp.open('GET', 'admin/student', true);
-                $('#st').addClass('active');
-                $('#te').removeClass('active');
-                $('#cl').removeClass('active');
-                $('#su').removeClass('active');
-                $('#admin').removeClass('active');
-            } else if (id ==3){
-                xmlhttp.open('GET', 'admin/class', true);
-                $('#cl').addClass('active');
-                $('#te').removeClass('active');
-                $('#st').removeClass('active');
-                $('#admin').removeClass('active');
-                 $('#su').removeClass('active');
-            }else if (id ==4){
-                xmlhttp.open('GET', 'admin/subject', true);
-                $('#su').addClass('active');
-                $('#te').removeClass('active');
-                $('#st').removeClass('active');
-                $('#admin').removeClass('active');
-                $('#cl').removeClass('active');
-            }
-            xmlhttp.send();
 
 
-        }
-    </script>
     <title>معلمين</title>
 
     <!-- Bootstrap core CSS -->
@@ -70,7 +17,7 @@
     <link href="{{URL::asset('css/tcss.css')}}" rel="stylesheet">
 </head>
 
-<body onload="ajax_request(0)">
+<body >
 <div class="page-container">
 
     <!-- top navbar -->
@@ -84,7 +31,7 @@
                 </button>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li class="" id="admin"><a f="javascript:void(0);" onclick="ajax_request(0)">مدير الموقع</a></li>
+                <li class="" id="admin"><a >مدير الموقع</a></li>
             </ul>
         </div>
     </div>
@@ -95,17 +42,19 @@
             <!-- sidebar -->
             <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav ">
-                    <li class="" id="te"><a href="javascript:void(0);" onclick="ajax_request(1)">المعلمين</a></li>
-                    <li id="st"><a href="javascript:void(0);" onclick="ajax_request(2)">الطلاب</a></li>
-                    <li id="cl"><a href="javascript:void(0);" onclick="ajax_request(3)">الشعب
+                    <li class="" id="te"><a href="{{URL('admin/teacher')}}" >المعلمين</a></li>
+                    <li id="st"><a href="{{URL('admin/student')}}" >الطلاب</a></li>
+                    <li id="cl"><a href="{{URL('admin/class')}}" onclick="">الشعب
                     </a></li>
-                    <li id="su"><a href="javascript:void(0);" onclick="ajax_request(4)">المواضيع</a></li>
+                    <li id="su"><a href="{{url('admin/subject')}}" onclick="">المواضيع</a></li>
+
                 </ul>
 
             </div>
 
             <!-- main area -->
             <div class="col-xs-12 col-sm-10" id="main">
+                @yield('content')
 
             </div><!-- /.col-xs-12 main -->
         </div><!--/.row-->
@@ -116,10 +65,9 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/script.js"></script>
-<script src="js/jquery-1.12.2.min.js"></script>
+<script src="{{URL::asset('js/jquery-1.12.2.min.js')}}"></script>
+<script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
+<script src="{{URL::asset('js/script.js')}}"></script>
 
 </body>
 </html>

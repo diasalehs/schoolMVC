@@ -19,7 +19,6 @@ use App\Course;
 Route::get('/admin',function(){
 
     return view('admin');
-//    return view ('teacherAdmin');
 });
 Route::get('/admin/first',function(){
 
@@ -27,8 +26,18 @@ Route::get('/admin/first',function(){
 });
 Route::get('/admin/teacher',function(){
 
-    return view('teacherAdmin');
+    $teacheres=Teacher::all();
+    $classes=Classes::all();
+    return view('teacherAdmin')->with('teacheres',$teacheres)->with('classes',$classes);
 });
+
+Route::get('/admin/teacher/create',function(){
+
+
+    $teacheres=Teacher::create(array('name' => 'John'));
+    return view('teacherAdmin')->with('teacheres',$teacheres);
+});
+
 Route::get('/admin/student',function(){
 
     return view('studentAdmin');
