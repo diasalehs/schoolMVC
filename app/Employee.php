@@ -23,5 +23,8 @@ class Employee extends Model
     public function trained_courses(){
         return $this->hasMany('app\Trained_course');
     }
+    public function degrees(){
+        return $this->hasMany('App\Degree');
+    }
 }
 

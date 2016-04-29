@@ -22,4 +22,7 @@ class Student extends Model
     public function grades(){
         return $this->hasMany('App\Grade');
     }
+    public function attendances(){
+        return $this->hasMany('App\Attendance');
+    }
 }
