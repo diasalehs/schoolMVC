@@ -25,4 +25,7 @@ class Student extends Model
     public function attendances(){
         return $this->hasMany('App\Attendance');
     }
+    public function courses(){
+        return $this->belongsToMany('App\Course','grades','studnet_id','course_id');
+    }
 }
