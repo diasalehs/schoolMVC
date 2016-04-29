@@ -67,7 +67,35 @@ th ,td{
 #sidebar li a:hover {
 background: #a6c6a6;
 }
+#main{
+    margin-right: 15%;
+}
+.formm{
+    width: 85%;
+}
+.form-group{
+     margin: 15px 15px;
+ }
+.form-group label{
+    display: inline-block;
+    width: 120px;
+    margin-left: 15px;
+    text-align: center;
+}
+.colla.btns
+{
+    margin-right: auto;
+    position: relative;
+}
+.bm{
+    margin: 20px 0;
+}
+.btns{
+    display: inline-block;
+    width: 200px;
+    margin: 20px auto;
 
+}
 /* collapsed sidebar styles */
 @media screen and (max-width: 767px) {
   .row-offcanvas {
@@ -113,6 +141,9 @@ background: #a6c6a6;
         width: 200px;
         margin-left: 2px;
         padding-left: 2px;
+    }
+    #main{
+        margin: 0;
     }
 }
 

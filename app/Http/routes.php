@@ -61,6 +61,7 @@ Route::get('/', function () {
         echo "\n";
 //        $person->nationality="palestinane";
 
+
         $person->name->first="dia";
         $name=$person->name;
         $person->name()->save($name,'person_id');
