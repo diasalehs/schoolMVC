@@ -19,4 +19,7 @@ class Student extends Model
     public function person(){
         return $this->belongsTo('App\person');
     }
+    public function grades(){
+        return $this->hasMany('App\Grade');
+    }
 }

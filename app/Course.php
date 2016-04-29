@@ -15,4 +15,7 @@ class Course extends Model
     public function teachers(){
         return $this->belongsToMany('App\Teacher');
     }
+    public function grades(){
+        return $this->hasMany('App\Grade');
+    }
 }
