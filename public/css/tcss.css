@@ -27,6 +27,10 @@ font-family: 'Noto Kufi Arabic', serif;
     margin-left: 40px;
     margin-right: 40px;
 }
+.pan{
+    display: inline-block;
+    width: 400px;
+}
 #sidebar {
   
     padding-top:80px;

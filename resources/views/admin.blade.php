@@ -16,7 +16,7 @@
     <!-- Bootstrap core CSS -->
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/tcss.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
+    {{--<link rel="stylesheet" href="{{url::asset('rtl/dist/css/bootstrap-rtl.css')}}">--}}
 </head>
 
 <body dir="rtl" >
@@ -44,7 +44,7 @@
             <!-- sidebar -->
             <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav ">
-                    <li class="" id="te"><a href="{{URL('admin/teacher')}}" >المعلمين</a></li>
+                    <li class="" id="te"><a href="{{url('admin/teacher')}}" >المعلمين</a></li>
                     <li id="st"><a href="{{URL('admin/student')}}" >الطلاب</a></li>
                     <li id="cl"><a href="{{URL('admin/class')}}" onclick="">الشعب
                     </a></li>

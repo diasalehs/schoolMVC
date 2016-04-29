@@ -121,12 +121,11 @@
 
          <div class="row glyphicon-align-right">
          @foreach($teacheres as $t=>$teacher)
-          <div class="col-sm-4 col-md-3 ">
+          <div class="col-sm-4 col-md-3 pan">
             <div class="thumbnail">
               <img src="{{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}" alt="...">
               <div class="caption">
-                <h3>{{$teacher->employee->person->name->first="dia"}}</h3>
-                  $tehacer.delete();
+                <h3>{{$teacher->employee->person->name->first}}</h3>
                 <p>{{$teacher->id}}</p>
                 <p><a href="#" class="btn btn-primary" role="button">عرض</a> <a href="#" class="btn btn-default" role="button">تعديل</a></p>
               </div>
