@@ -12,4 +12,7 @@ class Usere extends Model
     public function user(){
         return $this->belongsTo('App\Person');
     }
+    public function messages(){
+        return $this->hasMany('App\Message','id','id');
+    }
 }
