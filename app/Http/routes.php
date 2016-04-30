@@ -32,6 +32,13 @@ Route::get('/admin/teacher',function(){
     return view('teacherAdmin')->with('teacheres',$teacheres);
 });
 
+Route::get('/admin/messages',function(){
+
+    $teacheres=Teacher::all();
+    $classes=Classes::all();
+    return view('messagesAdmin')->with('teacheres',$teacheres);
+});
+
 Route::post('/admin/teacher/create',function(Request $request){
 
     if(isset($request['firstName']) and !empty($request['firstName'])) {

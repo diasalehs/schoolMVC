@@ -11,8 +11,9 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
 
-    <title>معلمين</title>
-
+    <title>مدير الموقع</title>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
     <!-- Bootstrap core CSS -->
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/tcss.css')}}" rel="stylesheet">
@@ -33,7 +34,7 @@
                 </button>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li class="" id="admin"><a >مدير الموقع</a></li>
+                <li class="" style="" id="admin"><a >مدير الموقع</a></li>
             </ul>
         </div>
     </div>
@@ -49,7 +50,7 @@
                     <li id="cl"><a href="{{URL('admin/class')}}" onclick="">الشعب
                     </a></li>
                     <li id="su"><a href="{{url('admin/subject')}}" onclick="">المواضيع</a></li>
-
+                    <li id="su"><a href="{{url('admin/messages')}}" onclick="">الرسائل</a></li>
                 </ul>
 
             </div>

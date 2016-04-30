@@ -145,7 +145,7 @@
 
                       <div class="">
                           <div class="col-md-8 col-md-offset-2 bm" >
-                              <button class="btn btn-success btn-block" type="submit" >تسجيل</button></div>
+                              <button class="btn btn-success btn-block" type="submit" >بحث</button></div>
                       </div>
                   </form>
 
@@ -164,7 +164,7 @@
               <img class="timg" style="width: 90%" src="{{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}" alt="...">
               <div class="caption">
                 <h3>{{$teacher->employee->person->name->first}}</h3>
-                <p>{{$teacher->id}}</p>
+                <p>{{$teacher->employee->person->religon}}</p>
                 <p><a href="#" class="btn btn-primary" role="button">عرض</a> <a href="#" class="btn btn-default" role="button">تعديل</a></p>
               </div>
             </div>

@@ -110,7 +110,7 @@
                             <li><a href="javascript:void(0);" onclick="">تعديل</a></li>
                             <li><a href="javascript:void(0);" onclick="">حذف</a></li>
                         </ul>
-                            </div>§
+                            </div>
                         </td>
                     </tr>
                      <tr>
