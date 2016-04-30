@@ -29,27 +29,27 @@ Route::get('/admin/teacher',function(){
 
     $teacheres=Teacher::all();
     $classes=Classes::all();
-    return view('teacherAdmin')->with('teacheres',$teacheres)->with('classes',$classes);
+    return view('teacherAdmin')->with('teacheres',$teacheres);
 });
 
 Route::post('/admin/teacher/create',function(Request $request){
 
     if(isset($request['firstName']) and !empty($request['firstName'])) {
 
-        $t=Teacher::findOrFail(8);
-        echo $t->name;
+//        $t=Teacher::findOrFail(8);
+//        echo $t->name;
 //        $t->delete();
 //        echo 'hi';
-//        $name= $request['firstName'];
+        $name= $request['firstName'];
 //
-//        $person =  Person::create(["religon"=>"hello"]);
-//        $person->name()->create(['first'=>$name]);
-//        $person->employee()->create([]);
-//        $person->employee->teacher()->create([]);
-//        $teacheres=Teacher::all();
-//        $classes=Classes::all();
+        $person =  Person::create(["religon"=>"hello"]);
+        $person->name()->create(['first'=>$name]);
+        $person->employee()->create([]);
+        $person->employee->teacher()->create([]);
+        $teacheres=Teacher::all();
+        $classes=Classes::all();
 ////        return view('studentAdmin');
-//        return view('teacherAdmin')->with('teacheres',$teacheres)->with('classes',$classes);
+        return view('teacherAdmin')->with('teacheres',$teacheres);
     }
 //    return view('teacherAdmin')->with('teacheres',$teacheres);
 });
@@ -59,13 +59,36 @@ Route::post('/admin/teacher/create',function(Request $request){
 //    $teacheres=Teacher::create(array('name' => 'John'));
 //    return view('teacherAdmin')->with('teacheres',$teacheres);
 //});
+Event::listen('illuminate.query', function($query)
+{
+    echo($query);
+});
 Route::post('/admin/teacher/search',function(Request $request){
+    DB::enableQueryLog();
     if(isset($request['name']) and !empty($request['name'])) {
-        echo $request['name'];
-        $t=Teacher::with(['employee'=>function($query){
-            $query::where('person_id',8);
-        }])->get();
-        print_r($t);
+//        echo $request['name'];
+//        $t=Name::with(['person.employee.teacher' ])->get()->where('first','mazen');
+        $name=Name::where('first',$request['name'])->first();
+//        print_r($name->first);
+//        print_r($name->person->employee->teacher->id);
+        $t=($name->person->employee->teacher);
+//        dd(DB::getQueryLog());
+//        $t->delete();
+
+//        $teachers=new \Illuminate\Database\Eloquent\Collection();
+        $teachers=[$t];
+        foreach($teachers as $ob){
+            echo $ob->id;
+        }
+
+        return view('teacherAdmin')->with('teacheres',$teachers);
+
+//        $teachers= $t->find(1);
+//        foreach ($teachers as $h){
+//            echo $t->employee->person->name->first;
+//        }
+//        print_r($teachers->employee->person->name);
+
 //        $t->id;
     }
 

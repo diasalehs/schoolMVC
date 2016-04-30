@@ -157,6 +157,7 @@
 
 
          <div class="row glyphicon-align-right">
+{{--             @if(isset($teacheres))--}}
          @foreach($teacheres as $t=>$teacher)
           <div class="col-sm-4 col-md-4">
             <div class="panel panel-default " style="padding: 5px; text-align: center">
@@ -169,6 +170,7 @@
             </div>
             </div>
             @endforeach
+                 {{--@endif--}}
           </div>
 @endsection
 
