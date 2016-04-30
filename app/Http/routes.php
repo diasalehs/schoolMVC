@@ -25,6 +25,7 @@ Route::get('/admin/first',function(){
 
     return view('adminFirst');
 });
+
 Route::get('/admin/teacher',function(){
 
     $teacheres=Teacher::all();
@@ -33,7 +34,7 @@ Route::get('/admin/teacher',function(){
 });
 
 Route::get('/admin/messages',function(){
-
+  
     $teacheres=Teacher::all();
     $classes=Classes::all();
     return view('messagesAdmin')->with('teacheres',$teacheres);
@@ -115,19 +116,21 @@ Route::get('/admin/class',function(){
     return view('classAdmin');
 });
 Route::get('/', function () {
-//    echo Name::where('person_id','3')->first()['first'];
-    $persons=(Person::all());
-    foreach ($persons as $person){
-        echo $person->nationality;
-//        echo $person->pid;
-//        echo $person->religon;
-        echo $person->name->first;
-        echo "\n";
-//        $person->nationality="palestinane";
+    return view('login');
 
-        $person->name->first="dia";
-        $name=$person->name;
-        $person->name()->save($name,'person_id');
+////    echo Name::where('person_id','3')->first()['first'];
+//    $persons=(Person::all());
+//    foreach ($persons as $person){
+//        echo $person->nationality;
+////        echo $person->pid;
+////        echo $person->religon;
+//        echo $person->name->first;
+//        echo "\n";
+////        $person->nationality="palestinane";
+//
+//        $person->name->first="dia";
+//        $name=$person->name;
+//        $person->name()->save($name,'person_id');
 //        $person->save();
 //        echo $person->name->person_id;
 //        $name=$person->name->first="dia";
@@ -138,7 +141,7 @@ Route::get('/', function () {
 //        echo $person->name->second;
 //        echo "\n";
 //        echo $person->name->last;
-    }
+    
 //    echo "\n";
 //    $employees=Employee::all();
 //    foreach ($employees as $employee){

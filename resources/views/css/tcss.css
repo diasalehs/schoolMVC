@@ -43,6 +43,10 @@ direction: rtl;
   width: 100%;
 
 }
+
+.form-group{
+    margin: 1000px;
+}
 th ,td{
     text-align: center;
 }

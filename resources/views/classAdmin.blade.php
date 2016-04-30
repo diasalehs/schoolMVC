@@ -77,11 +77,11 @@
   </div>
        
        
-        <table class="table table-striped">
+        <table class="table table-striped" style="text-align: center">
                 <thead>
                     <tr class="success">
                         <th  width="10%">رقم الشعبة</th>
-                        <th width="20%">الصف</th>
+                        <th width="10% " align="center">الصف</th>
                         <th width="10%">عدد الطلاب</th>
                         <th width="20%">العمليات</th>
                     </tr>
