@@ -11,6 +11,7 @@ class Employee extends Model
         ,'job_type','hiring_date','job_con'
     ,'experince_abroad','experince_local'];
     //
+    public $timestamps=false;
     public function person(){
         
        return $this->belongsTo('App\Person');
@@ -25,6 +26,9 @@ class Employee extends Model
     }
     public function degrees(){
         return $this->hasMany('App\Degree');
+    }
+    public function teacher(){
+        return $this->hasOne('App\Teacher');
     }
 }
 

@@ -16,7 +16,7 @@
     <!-- Bootstrap core CSS -->
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/tcss.css')}}" rel="stylesheet">
-    {{--<link rel="stylesheet" href="{{url::asset('rtl/dist/css/bootstrap-rtl.css')}}">--}}
+    <link rel="stylesheet" href="{{url::asset('rtl/dist/css/bootstrap-rtl.css')}}">
 </head>
 
 <body dir="rtl" >

@@ -1,9 +1,9 @@
-@import url(http://fonts.googleapis.com/earlyaccess/notokufiarabic.css);
+
 body {
   padding-top: 51px;
 
     text-align: right;
-font-family: 'Noto Kufi Arabic', serif;
+/*font-family: 'Noto Kufi Arabic', serif;*/
 direction: rtl;
 }
 #admin{
@@ -69,6 +69,12 @@ background: #a6c6a6;
 }
 #main{
     margin-right: 100px;
+}
+img {
+    width: 100%;
+}
+.pan {
+
 }
 /* collapsed sidebar styles */
 @media screen and (max-width: 767px) {

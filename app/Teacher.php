@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Teacher extends Model
 {
+    public $timestamps=false;
     protected $table='teacheres';
     protected $fillable=['id','employee_id'];
     //
@@ -22,4 +23,7 @@ class Teacher extends Model
     public function teacherarrival(){
         return $this->belongsToMany('App\Teacherarrival');
     }
+//    public function name(){
+//        return $this->hasManyThrough('App\Name','App\Employee');
+//    }
 }

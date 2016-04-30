@@ -16,6 +16,7 @@ use App\Employee;
 use App\Classes;
 use App\Teacher;
 use App\Course;
+use Illuminate\Http\Request ;
 Route::get('/admin',function(){
 
     return view('admin');
@@ -31,11 +32,44 @@ Route::get('/admin/teacher',function(){
     return view('teacherAdmin')->with('teacheres',$teacheres)->with('classes',$classes);
 });
 
-Route::get('/admin/teacher/create',function(){
+Route::post('/admin/teacher/create',function(Request $request){
+
+    if(isset($request['firstName']) and !empty($request['firstName'])) {
+
+        $t=Teacher::findOrFail(8);
+        echo $t->name;
+//        $t->delete();
+//        echo 'hi';
+//        $name= $request['firstName'];
+//
+//        $person =  Person::create(["religon"=>"hello"]);
+//        $person->name()->create(['first'=>$name]);
+//        $person->employee()->create([]);
+//        $person->employee->teacher()->create([]);
+//        $teacheres=Teacher::all();
+//        $classes=Classes::all();
+////        return view('studentAdmin');
+//        return view('teacherAdmin')->with('teacheres',$teacheres)->with('classes',$classes);
+    }
+//    return view('teacherAdmin')->with('teacheres',$teacheres);
+});
+//Route::get('/admin/teacher/create',function(){
+//
+//
+//    $teacheres=Teacher::create(array('name' => 'John'));
+//    return view('teacherAdmin')->with('teacheres',$teacheres);
+//});
+Route::post('/admin/teacher/search',function(Request $request){
+    if(isset($request['name']) and !empty($request['name'])) {
+        echo $request['name'];
+        $t=Teacher::with(['employee'=>function($query){
+            $query::where('person_id',8);
+        }])->get();
+        print_r($t);
+//        $t->id;
+    }
 
 
-    $teacheres=Teacher::create(array('name' => 'John'));
-    return view('teacherAdmin')->with('teacheres',$teacheres);
 });
 
 Route::get('/admin/student',function(){
