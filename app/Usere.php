@@ -11,7 +11,7 @@ class Usere extends Model implements \Illuminate\Contracts\Auth\Authenticatable
     protected $table = 'useres';
     public $timestamps=false;
 
-    protected $fillable = ['id','person_id','password','type','remember_token'];
+    protected $fillable = ['id','person_id','password','type','remember_token','name'];
     
     public function user(){
         return $this->belongsTo('App\Person');

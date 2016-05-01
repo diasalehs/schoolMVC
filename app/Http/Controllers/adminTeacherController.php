@@ -17,7 +17,7 @@ class adminTeacherController extends Controller{
 
     public function getTeacher(){
         if(!Auth::check()){
-            return redirect()->back();
+            return redirect()->route('loginPage');
         }
             $teacheres = Teacher::all();
             $classes = Classes::all();
@@ -26,30 +26,32 @@ class adminTeacherController extends Controller{
 
 
     public function postCreate(Request $request){
-        echo 'hi';
-        $this->validate($request,[
-            'phone' => 'integer',
-            'secondName' => 'required|alpha',
-            'lastName' => 'required|alpha|alpha',
+     if(!Auth::check()){
+            return redirect()->route('loginPage');
+        }
+       $this->validate($request,[
+//            'phone' => 'integer',
+           //'secondName' => 'required|alpha',
+     //      'lastName' => 'required|alpha',
             'firstName' => 'required|alpha',
-            'thirdName' => 'required|alpha',
-            'mobile' => 'integer',
-            'nationality' => 'alpha',
-            'placeOfBirth' => 'alpha',
-            'religon' => 'alpha',
+//            'thirdName' => 'required|alpha',
+//           'mobile' => 'integer',
+//            'nationality' => 'alpha',
+//            'placeOfBirth' => 'alpha',
+//            'religon' => 'alpha',
             'ni' => 'required',
-            'idType' => 'required|alpha',
-            'distanceFromSchool' => 'Numeric',
-            'dateOfBirth' => 'Date',
-            'married' => 'alpha',
-            'numberOfChildren' => 'integer',
-            'DoesPartnerWork' => 'Boolean',
-            'childrenInSchool' => 'integer',
-            'childrenOtherSchools' => 'integer',
-            'job_con' => 'required|alpha',
-            'job_type' => 'required|alpha',
-            'experince_local' => 'integer',
-            'experince_abroad' => 'integer'
+//            'idType' => 'required|alpha',
+//            'distanceFromSchool' => 'Numeric',
+//            'dateOfBirth' => 'Date',
+//            'married' => 'alpha',
+//            'numberOfChildren' => 'integer',
+//            'DoesPartnerWork' => 'Boolean',
+//            'childrenInSchool' => 'integer',
+//            'childrenOtherSchools' => 'integer',
+//            'job_con' => 'required',
+//            'job_type' => 'required',
+//            'experince_local' => 'integer',
+//            'experince_abroad' => 'integer'
         ]);
 
         //DB Name
@@ -79,9 +81,18 @@ class adminTeacherController extends Controller{
         $mobile= $request['mobile'];
 
         //DB Person
-        $person = Person::create(["religon" => "Hello",'phone'=>$phone,'nationality'=>$nationality,'placeOfBirth'=>$placeOfBirth,'ni'=>$ni,'idType'=>$idType,'distanceFromSchool'=>$distanceFromSchool,'dateOfBirth'=>$dateOfBirth]);
+        $person = Person::create(["religon" => "Hello",
+            'phone'=>$phone,'nationality'=>$nationality,
+            'placeOfBirth'=>$placeOfBirth,
+            'ni'=>$ni,
+            'idType'=>$idType,
+            'distanceFromSchool'=>$distanceFromSchool,
+            'dateOfBirth'=>$dateOfBirth]);
         //DB Name
-        $person->name()->create(['first' => $first,'second'=>$second,'third'=>$third,'last'=>$last]);
+        $person->name()->create(['first' => $first,
+            'second'=>$second,
+            'third'=>$third,
+            'last'=>$last]);
         //DB employee
         $person->employee()->create(["mobile" => $mobile, "married" => $married,
             "numberOfChildren" => $numberOfChildren,
@@ -94,7 +105,7 @@ class adminTeacherController extends Controller{
             "experince_abroad" => $experince_abroad]);
 
         $person->employee->teacher()->create([]);
-        $person->user()->create(['password' => bcrypt($person->id)]);
+        $person->user()->create(['password' => bcrypt($ni),'id'=>$ni, 'type'=>$job_type]);
         $teacheres = Teacher::all();
         $classes = Classes::all();
         return view('teacherAdmin')->with('teacheres', $teacheres);
@@ -102,6 +113,9 @@ class adminTeacherController extends Controller{
     }
 
     public function postSearch(Request $request){
+        if(!Auth::check()){
+            return redirect()->route('loginPage');
+        }
         DB::enableQueryLog();
         if (isset($request['name']) and !empty($request['name'])) {
             $name = Name::where('first', $request['name'])->first();

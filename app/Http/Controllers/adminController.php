@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Auth;
 
 class adminController extends Controller{
     public function getAdmin(){
-        if(!Auth::check()){
-            return redirect()->route('admin');
-        }
+            if(!Auth::check()){
+                return redirect()->route('loginPage');
+            }
         return view('adminFirst');
     }
 }

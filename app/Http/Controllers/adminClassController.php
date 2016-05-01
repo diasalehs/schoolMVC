@@ -14,13 +14,16 @@ use Illuminate\Support\Facades\Auth;
 class adminClassController extends Controller{
     public function getClass(){
         if(!Auth::check()){
-            return redirect()->back();
+            return redirect()->route('loginPage');
         }
         $levels = Level::all();
         return view('classAdmin', ['levels' => $levels]);
     }
 
     public function  postCreate(Request $request){
+        if(!Auth::check()){
+            return redirect()->route('loginPage');
+        }
         $name = $request->input('classname');
         $section = $request->input('section');
         $capacity = $request->input('capacity');
@@ -29,6 +32,9 @@ class adminClassController extends Controller{
     }
 
     public function  postLevels(Request $request){
+        if(!Auth::check()){
+            return redirect()->route('loginPage');
+        }
         $id = $request['id'];
         $level = Level::find($id);
         $class = $level->classes;
