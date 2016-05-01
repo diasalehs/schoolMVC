@@ -31,7 +31,7 @@ class teacherController extends Controller{
         return view('teacherMarks');
     }
 
-    public function getTeacherMasseges(){
+    public function getTeacherMessages(){
         if (!Auth::check() or Auth::user()->type != 'teacher') {
             return redirect()->route('loginPage');
         }

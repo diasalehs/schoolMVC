@@ -14,7 +14,7 @@ class adminMessageController extends Controller{
         if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
         }
-        return view('messagesAdmin');
+        return view('messagesAdmin',['received'=>['']]);
     }
 
     public function getShow(){
@@ -24,7 +24,6 @@ class adminMessageController extends Controller{
         $user=Usere::find(1);
         $sent=$user->sentMessages;
         $receive=$user->receivedMessages;
-
         return view('showMA');
     }
     public function createMessage(Request $request){

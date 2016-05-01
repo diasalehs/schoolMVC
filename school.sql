@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2016 at 09:06 PM
+-- Generation Time: May 02, 2016 at 12:23 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.34
 
@@ -180,7 +180,9 @@ INSERT INTO `employees` (`id`, `person_id`, `mobile`, `married`, `DoesPartnerWor
 (46, 57, 0, '', 0, 0, 0, 0, 'contract', '0000-00-00', 'teacher', 0, 0),
 (47, 58, 0, '', 0, 0, 0, 0, 'contract', '0000-00-00', 'teacher', 0, 0),
 (48, 59, 0, '', 0, 0, 0, 0, 'contract', '0000-00-00', 'teacher', 0, 0),
-(49, 60, 0, '', 0, 0, 0, 0, '', '0000-00-00', 'teacher', 0, 0);
+(49, 60, 0, '', 0, 0, 0, 0, '', '0000-00-00', 'teacher', 0, 0),
+(50, 61, 0, '', 0, 0, 0, 0, 'supervisor', '0000-00-00', '', 0, 0),
+(51, 62, 0, '', 0, 0, 0, 0, 'teacher', '0000-00-00', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -305,7 +307,9 @@ INSERT INTO `names` (`person_id`, `first`, `second`, `third`, `last`) VALUES
 (57, 'mazen', 'mazen', 'mazen', 'mazen'),
 (58, 'admin', 'admin', 'admin', 'adnim'),
 (59, 'admin', 'admin', 'adnim', 'aa'),
-(60, 'teacher', '', '', '');
+(60, 'teacher', '', '', ''),
+(61, 'supervisor', '', '', ''),
+(62, 'student', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -335,7 +339,9 @@ INSERT INTO `persones` (`id`, `nationality`, `religon`, `placeOfBirth`, `ni`, `i
 (57, '', 'Hello', '', 11, 'pal', 0, 0, '0000-00-00'),
 (58, '', 'Hello', '', 11, 'pa', 0, 0, '0000-00-00'),
 (59, '', 'Hello', '', 11, 'pal', 0, 0, '0000-00-00'),
-(60, '', 'Hello', '', 22, '', 0, 0, '0000-00-00');
+(60, '', 'Hello', '', 22, '', 0, 0, '0000-00-00'),
+(61, '', '', '', 33, '', 0, 0, '0000-00-00'),
+(62, '', '', '', 44, '', 0, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -415,7 +421,9 @@ INSERT INTO `teacheres` (`id`, `employee_id`) VALUES
 (35, 46),
 (36, 47),
 (37, 48),
-(38, 49);
+(38, 49),
+(39, 50),
+(40, 51);
 
 -- --------------------------------------------------------
 
@@ -441,9 +449,9 @@ CREATE TABLE `useres` (
   `id` int(11) NOT NULL,
   `person_id` int(11) NOT NULL,
   `password` varchar(60) NOT NULL,
-  `type` set('admin','students','teacher','supervisor') NOT NULL,
+  `type` set('admin','student','teacher','supervisor') NOT NULL,
   `remember_token` int(11) NOT NULL,
-  `name` varchar(50) DEFAULT NULL
+  `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -451,8 +459,10 @@ CREATE TABLE `useres` (
 --
 
 INSERT INTO `useres` (`id`, `person_id`, `password`, `type`, `remember_token`, `name`) VALUES
-(11, 59, '$2y$10$6hLJGpnDJR/Is0SDZ.1yp.fesTNo7TVwGvIipYvQfBGa6jyAGN6tq', 'admin', 0, NULL),
-(22, 60, '$2y$10$V4j0opIgVob.4.VqL9akwunHBzAJNyMIQvDY8tA67FQ9nEOd8ne6O', 'teacher', 0, NULL);
+(11, 59, '$2y$10$6hLJGpnDJR/Is0SDZ.1yp.fesTNo7TVwGvIipYvQfBGa6jyAGN6tq', 'admin', 0, ''),
+(22, 60, '$2y$10$V4j0opIgVob.4.VqL9akwunHBzAJNyMIQvDY8tA67FQ9nEOd8ne6O', 'teacher', 0, ''),
+(33, 61, '$2y$10$CGlGFDEJouQRuj4qudHJcOZIsgXO7OFisGxABJZ4g4/h0bjmJDVa.', 'supervisor', 0, ''),
+(44, 62, '$2y$10$mprB4LXmdDiYpiNuBSYZD.P4D2jiXlDpD4boUGuIzsI3OiF3HrC/6', '', 0, '');
 
 --
 -- Indexes for dumped tables
@@ -662,7 +672,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 --
 -- AUTO_INCREMENT for table `levels`
 --
@@ -682,7 +692,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `persones`
 --
 ALTER TABLE `persones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 --
 -- AUTO_INCREMENT for table `students`
 --
@@ -697,7 +707,7 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT for table `teacheres`
 --
 ALTER TABLE `teacheres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- Constraints for dumped tables
 --
