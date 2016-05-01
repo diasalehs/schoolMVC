@@ -539,8 +539,8 @@
                              </div>
                              <!-- dialog buttons -->
                              <div class="modal-footer">
-                                 <button type="button" class="btn btn-primary" data-dismiss="modal">لا</button>
-                                 <button type="button" class="btn btn-danger" data-dismiss="modal">نعم</button>
+                                 <button type="button" id="deleteCancel" class="btn btn-primary" data-dismiss="modal">لا</button>
+                                 <button type="button" id="deleteConfirm" class="btn btn-danger" data-dismiss="modal">نعم</button>
                              </div>
                          </div>
                      </div>
@@ -552,15 +552,21 @@
           </div>
     <script>
         $(document).ready(function(){
-
-       $('.post').click(function () {
-           var action = $(this).attr('id');
-           var form = $(this).closest('form')
+            deleteConfirm=false;
+            $('#deleteConfirm').click(function () {
+               deleteConfirm=true;
+            });
+            $('.post').click(function () {
+                if(deleteConfrim) {
+                    var action = $(this).attr('id');
+                    var form = $(this).closest('form')
 //           console.log(action);
-           form.attr('action', action);
-           form.submit();
+                    form.attr('action', action);
+                    form.submit();
+                }
+            });
        });
-       });
+
     </script>
 @endsection
 
