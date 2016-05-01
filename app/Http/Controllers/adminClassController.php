@@ -9,9 +9,13 @@
 namespace App\Http\Controllers;
 use App\Level;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class adminClassController extends Controller{
     public function getClass(){
+        if(!Auth::check()){
+            return redirect()->back();
+        }
         $levels = Level::all();
         return view('classAdmin', ['levels' => $levels]);
     }

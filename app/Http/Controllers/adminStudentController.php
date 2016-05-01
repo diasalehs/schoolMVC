@@ -7,9 +7,13 @@
  */
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 class adminStudentController extends Controller{
     public function getStudent(){
+        if(!Auth::check()){
+            return redirect()->back();
+        }
         return view('studentAdmin');
     }
 }
