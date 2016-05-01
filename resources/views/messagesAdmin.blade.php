@@ -31,7 +31,7 @@
         <div class="form-group mi">
             <label for="InputEmail"> </label>
 
-            <div class="input-group" style="width: 40%">
+            <div class="input-group " >
                 <button class="btn btn-success btn-block" type="submit" >ارسال</button></div>
         </div>
     </form>

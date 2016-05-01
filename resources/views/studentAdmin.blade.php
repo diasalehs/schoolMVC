@@ -12,70 +12,218 @@
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse colla">
-          <div class="container">
-              <div class="row formm">
-                  <form role="form" class="form-inline">
+          <div class="container-fluid">
+              @if (count($errors)>0)
+                  @foreach($errors -> all() as $error)
+
+                      <div class="alert alert-danger" role="alert">
+                          <a href="#" class="alert-link"> {{ $error }}}</a>
+                      </div>
+
+                  @endforeach
+              @endif
+              <div class="row ">
+                  <form action="{{url('admin/teacher/create')}}"role="form" class="form-inline" method="post">
+                      <div class="fp">
+                          <h3 class="ft"> بيانات الطالب الشخصية</h3>
                           <div class="form-group">
-                              <label for="InputName">الاسم الاول</label>
+                              <label for="InputName" class="ic">الاسم الاول</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" name="InputName" id="InputName"  required>
+                                  <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
+                                  <input type="text" class="form-control ci" name="firstName" id="InputName"  >
                               </div>
                           </div>
                           <div class="form-group">
-                              <label for="InputEmail">اسم الاب</label>
+                              <label for="InputEmail" class="ic">اسم الاب</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailFirst" name="InputEmail"  required>
+                                  <input type="text" class="form-control" id="InputEmailFirst" name="InputEmail"  >
                               </div>
                           </div>
                           <div class="form-group">
-                              <label for="InputEmail">اسم الجد</label>
+                              <label for="InputEmail" class="ic">اسم الجد</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  required>
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
                               </div>
                           </div>
                           <div class="form-group">
-                              <label for="InputEmail">اسم العائلة</label>
+                              <label for="InputEmail" class="ic">اسم العائلة</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  required>
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
                               </div>
                           </div>
                           <div class="form-group">
-                              <label for="InputEmail">عدد الاخوة</label>
+                              <label for="InputEmail" class="ic">جوال</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  required>
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
                               </div>
                           </div>
                           <div class="form-group">
-                              <label for="InputEmail"> اجزاء القرآن المحفوظة</label>
+                              <label for="InputEmail" class="ic">الهاتف</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  required>
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
                               </div>
                           </div>
 
-                      <div class="form-group">
-                          <label for="InputEmail">امراض</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  required>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic"> الجنسية</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic"> مكان الولادة</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic">الديانة</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic"> رقم الهوية</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic"> نوع الهوية</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic"> البعد عن مكان الاقامة</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic"> تاريخ الولادة</label>
+                              <div class="input-group" >
+                                  <input type="date" class="form-control" id="InputEmailSecond" name="InputEmail" >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                                  <label for="InputEmail" class="ic"> المواصلات صباحا</label>
+                                      <select id="sts" class="form-control " >
+                                          <option value="full">مواصلات كاملة</option>
+                                          <option value="family">مع الاهل</option>
+                                          <option value="walk">مشاه</option>
+                                      </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic"> المواصلات ظهرا</label>
+                              <select id="sts" class="form-control" >
+                                  <option value="full">مواصلات كاملة</option>
+                                  <option value="family">مع الاهل</option>
+                                  <option value="walk">مشاه</option>
+
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic"> البعد عن مكان الاقامة</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control col-md-5" id="InputEmailSecond" name="InputEmail" style="display: inline-block" >
+                              </div>
+                          </div>
+
+
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic">الهاتف</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic">عدد الاخوة</label>
+                              <div class="input-group">
+                                  <input type="number" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic">عدد الاخوات</label>
+                              <div class="input-group">
+                                  <input type="number" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic"> كم جزء تحفظ من كتاب الله</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+
+                          <h3 class="ft ta">بيانات ولي الامر</h3>
+                          <div class="form-group">
+                              <label for="InputEmail">الاسم الرباعي</label>
+                              <div class="input-group" >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail">صلة القرابة</label>
+                              <div class="input-group" >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail">حالة الاب</label>
+                              <div class="input-group" >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail">المؤهل العلمي</label>
+                              <div class="input-group" >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail">الوظيفة</label>
+                              <div class="input-group" >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail">مكان العمل</label>
+                              <div class="input-group" >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail">الهاتف</label>
+                              <div class="input-group" >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail">الجوال</label>
+                              <div class="input-group" >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+
+                          <div class="">
+                              <div class="col-md-8 col-md-offset-2 bm" >
+                                  <button class="btn btn-success btn-block" type="submit" >تسجيل</button></div>
                           </div>
                       </div>
-                      <div class="form-group">
-                          <label for="InputEmail"> عمليات جراحية</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  required>
-                          </div>
-                      </div>
-                      <div class="">
-                         <div class="col-md-8 col-md-offset-2 bm" >
-                             <button class="btn btn-success btn-block" >تسجيل</button></div>
-                      </div>
+
                   </form>
 
               </div>
           </div>
+
+
       </div>
     </div>
   </div>
-       
+
+
        <div class="panel-group">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -84,62 +232,120 @@
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
-                  <div action="" class="form-horizontal" id="form_data">
-                <div class="form-group">
-                    <div class="col-md-8"><input id="stn" type="text"  class="form-control"></div>
-                    <label for="stn" class="control-label col-md-2">اسم الطالب</label>
+          <div class="container-fluid">
+              @if (count($errors)>0)
+                  @foreach($errors -> all() as $error)
 
-                </div>  
-               <div class="form-group">
-                    <div class="col-md-3">
-                        <select id="sts" class="form-control">
-                            <option value="">اختر الصف..</option>
-                            <option value="computer">اول</option>
-                            <option value="biology">ثاني</option>
-                            <option value="handwriting">ثالث</option>
-                            <option value="art">رابع</option>
-                            <option value="handwork">خامس</option>
-                            <option value="study">سادس</option>                    
-                        </select>
-                    </div> 
-                                        <label for="sts" class="control-label col-md-2">الصف</label>
+                      <div class="alert alert-danger" role="alert">
+                          <a href="#" class="alert-link"> {{ $error }}}</a>
+                      </div>
 
-                    <div class="col-md-3"><input id="stf" type="number" class="form-control"></div>
-                                         <label for="stf" class="control-label col-md-2">اسم الشعبة</label>
+                  @endforeach
+              @endif
+              <div class="row ">
+                  <form action="{{url('admin/teacher/create')}}"role="form" class="form-inline" method="post">
+                      <div class="fp">
+                          <h3 class="ft"> بيانات الطالب الشخصية</h3>
+                          <div class="form-group">
+                              <label for="InputName" class="ic">الاسم الاول</label>
+                              <div class="input-group">
+                                  <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
+                                  <input type="text" class="form-control ci" name="firstName" id="InputName"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic">اسم الاب</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailFirst" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic">اسم الجد</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic">اسم العائلة</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic">الديانة</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic">الشعبة</label>
+                              <div class="input-group">
+                                  <select id="sts" class="form-control " >
+                                      <option value="full">الاول أ </option>
+                                      <option value="family">الاول ب</option>
+                                      <option value="walk">الثاني ج</option>
+                                  </select>
+                              </div>
+                          </div>
 
-                </div>
-                <div class="form-group"><div class="col-md-8 col-md-offset-2"><button class="btn btn-success btn-block" onclick="ajax_request('add_new_record');">بحث</button></div></div>
-            </div>
+
+
+
+                          <div class="">
+                              <div class="col-md-8 col-md-offset-2 bm" >
+                                  <button class="btn btn-success btn-block" type="submit" >تسجيل</button></div>
+                          </div>
+                      </div>
+
+                  </form>
+
+              </div>
+          </div>
+
       </div>
     </div>
   </div>
        
        
-        <table class="table table-striped">
+        <table class="table table-bordered text-center">
                 <thead>
                     <tr class="success">
-                        <th  width="10%">رقم الطالب</th>
-                        <th width="40%">اسم الطالب</th>
-                        <th width="20%">الصف</th>
-                        <th width="10%">الشعبة</th>
-                        <th width="20%">العمليات</th>
+                        <th  >رقم الطالب</th>
+                        <th >اسم الطالب</th>
+                        <th >الصف</th>
+                        <th >الشعبة</th>
+                        <th>العمليات</th>
                     </tr>
                 </thead>
                 <tbody id="test">
                      <tr>
-                        <td width="10%">١</td>
-                        <td width="40%">ضياء صالح سعودي</td>
-                        <td width="20%">اول</td>
-                        <td width="10%">أ</td>
-                        <td width="20%"><div class="dropdown">
+                        <td>١</td>
+                        <td>ضياء صالح سعودي</td>
+                        <td >اول</td>
+                        <td >أ</td>
+                        <td ><div class="dropdown">
                         <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
                         <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0);" onclick=" ?>)">تعديل</a></li>
-                            <li><a href="javascript:void(0);"  ?>)">حذف</a></li>
+                            <li><a href="javascript:void(0);">تعديل</a></li>
+                            <li><a href="javascript:void(0);">حذف</a></li>
                         </ul>
                             </div>
                         </td>
                     </tr>
+                     <tr>
+                         <td>١</td>
+                         <td>ضياء صالح سعودي</td>
+                         <td >اول</td>
+                         <td >أ</td>
+                         <td ><div class="dropdown">
+                                 <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
+                                 <ul class="dropdown-menu">
+                                     <li><a href="javascript:void(0);">تعديل</a></li>
+                                     <li><a href="javascript:void(0);">حذف</a></li>
+                                 </ul>
+                             </div>
+                         </td>
+                     </tr>
                     
                 </tbody>
             </table>

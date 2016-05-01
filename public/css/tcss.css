@@ -84,9 +84,10 @@ background: #a6c6a6;
  .ft{
     color: #73af73;
      border-bottom: solid #73af73 1px;
-     width: 90%;
+     width: 100%;
      padding-bottom: 20px;
 }
+
 .fp{
 
 }
@@ -99,6 +100,7 @@ background: #a6c6a6;
     margin-left: 15px;
     text-align: center;
     color: #777;
+    width: 100px;
 }
 
 .colla.btns
@@ -114,6 +116,9 @@ background: #a6c6a6;
     width: 110px;
     margin: 20px auto;
 
+}
+.mc{
+    margin-left: 100px;
 }
 /* collapsed sidebar styles */
 @media screen and (max-width: 767px) {
@@ -161,8 +166,18 @@ background: #a6c6a6;
         margin-left: 2px;
         padding-left: 2px;
     }
-    #main{
+    #main {
         margin: 0;
+    }
+    .form-group label{
+
+        margin-left: 15px;
+        text-align: center;
+        color: #777;
+        width: 100%;
+    }
+    .input-group{
+        width: 100%;
     }
 }
 
