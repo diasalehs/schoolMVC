@@ -301,16 +301,13 @@
                 <h3>{{$employee->person->name->first}}</h3>
                 <p>{{$employee->person->religon}}</p>
                 <p>
-                    <a id="/teacher/edit" class="btn btn-primary post" role="button">عرض</a>
-
-                    <a id="/teacher/show" type="button" class="btn btn-danger " data-toggle="modal" data-target="#deleteC" role="button">حذف</a>
-
-
-                    <a id="/teacher/show" type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal" role="button"> تعديل</a>
-
-
+                 <form  method="post" action="">
+                    <a id="/teacher/show" class="btn btn-success post" role="button">عرض</a>
+                    <a id="/teacher/edit" class="btn btn-primary post" role="button">تعديل</a>
+                    <a id ="teacher/delete"class="btn btn-danger post" role="button">حذف</a>
                   <input type="hidden" name="id" value="{{$employee->id}}" id="employeeid">
                   <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
+                  </form></p>
                   </p>
               </div>
             </div>
