@@ -10,15 +10,15 @@ use Illuminate\Support\Facades\Auth;
 
 class adminMessageController extends Controller{
     public function getMessage(){
-        if(!Auth::check()){
-            return redirect()->back();
+        if (!Auth::check() or Auth::user()->type != 'admin') {
+            return redirect()->route('loginPage');
         }
         return view('messagesAdmin');
     }
 
     public function getShow(){
-        if(!Auth::check()){
-            return redirect()->back();
+        if (!Auth::check() or Auth::user()->type != 'admin') {
+            return redirect()->route('loginPage');
         }
         return view('showMA');
     }

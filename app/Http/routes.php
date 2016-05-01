@@ -100,13 +100,13 @@ Route::group(['prefix' => '/admin'] ,function() {
 
         Route::get('/', [
             'uses'=>'adminTeacherController@getTeacher',
-            'as'=>'teacher'
+            'as'=>'adminTeacher'
         ]);
 
 
         Route::post('/create', [
             'uses'=>'adminTeacherController@postCreate',
-            'as'=>'create'
+            'as'=>'teacherCreate'
         ]);
 
         Event::listen('illuminate.query', function ($query) {
@@ -115,7 +115,7 @@ Route::group(['prefix' => '/admin'] ,function() {
 
         Route::post('/search', [
             'uses'=>'adminTeacherController@postSearch',
-            'as'=>'search'
+            'as'=>'teacherSearch'
         ]);
     });
 
@@ -123,18 +123,25 @@ Route::group(['prefix' => '/admin'] ,function() {
 
 //-------------------------------------------------------------------------TeacherPAGE
     Route::group(['prefix' => '/teacher'] ,function() {
-        Route::get('/', function () {
-            return view('teacherFirst');
-        });
-        Route::get('/student', function () {
-            return view('teacherStudent');
-        });
-        Route::get('/marks', function () {
-            return view('teacherMarks');
-        });
-        Route::get('/messages', function () {
-            return view('teacherMessages');
-        });
+        Route::get('/', [
+            'uses'=>'teacherController@getTeacherFirst',
+            'as'=>'teacherFirst'
+        ]);
+
+        Route::get('/student', [
+            'uses'=>'teacherController@getTeacherStudent',
+            'as'=>'teacherStudent'
+        ]);
+
+        Route::get('/marks', [
+            'uses'=>'teacherController@getTeacherMarks',
+            'as'=>'teacherMarks'
+        ]);
+
+        Route::get('/messages', [
+            'uses'=>'teacherController@getTeacherMessages',
+            'as'=>'teacherMessages'
+        ]);
     });
 
 //-------------------------------------------------------------------------studentPAGE

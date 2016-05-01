@@ -153,7 +153,7 @@
                           <div class="form-group">
                               <label for="InputEmail">المسمى الوظيفي</label>
                               <div class="input-group">
-                                  <select id="sts" class="form-control" name="job_con">
+                                  <select id="sts" class="form-control" name="job_type">
                                       <option value="teacher">معلم</option>
                                       <option value="supervisor">مشرف</option>
 
@@ -163,7 +163,7 @@
                           <div class="form-group">
                               <label for="InputEmail">التصنيف الوظيفي</label>
                               <div class="input-group">
-                                  <select id="sts" class="form-control" name="job_type">
+                                  <select id="sts" class="form-control" name="job_con">
                                       <option value="">اختر العقد..</option>
                                       <option value="contract">عقد</option>
                                       <option value="biology">كادر</option>

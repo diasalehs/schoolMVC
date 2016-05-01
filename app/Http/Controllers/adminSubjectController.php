@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Auth;
 
 class adminSubjectController extends Controller{
     public function getSubject(){
-        if(!Auth::check()){
-            return redirect()->back();
+        if (!Auth::check() or Auth::user()->type != 'admin') {
+            return redirect()->route('loginPage');
         }
         return view('SubjectAdmin');
     }
