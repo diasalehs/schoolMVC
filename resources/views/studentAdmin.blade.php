@@ -245,7 +245,6 @@
               <div class="row ">
                   <form action="{{url('admin/teacher/create')}}"role="form" class="form-inline" method="post">
                       <div class="fp">
-                          <h3 class="ft"> بيانات الطالب الشخصية</h3>
                           <div class="form-group">
                               <label for="InputName" class="ic">الاسم الاول</label>
                               <div class="input-group">
