@@ -16,6 +16,8 @@ use App\Employee;
 use App\Classes;
 use App\Teacher;
 use App\Course;
+use App\Level;
+
 use Illuminate\Http\Request ;
 Route::get('/admin',function(){
 
@@ -119,16 +121,34 @@ Route::get('/admin/student',function(){
 
     return view('studentAdmin');
 });
-Route::get('/admin/subject',function(){
+Route::post('/admin/subject',function(){
 
     return view('subjectAdmin');
 });
+Route::post('/admin/class/levels',function(Request $request){
+    $id=$request['id'];
+    $level=Level::find($id);
+    $class=$level->classes;
+    return  response()->json($class->toJson());
+});
 Route::get('/admin/class',function(){
 
-    return view('classAdmin');
+    $levels=Level::all();
+    return view('classAdmin',['levels'=>$levels]);
 });
-Route::get('/', function () {
-    return view('login');
+Route::post('/admin/class/create',function(Request $request){
+
+   $name=$request->input('classname') ;
+    $section=$request->input('section') ;
+    $capacity=$request->input('capacity') ;
+    Classes::create(['level_id'=>$name,'section'=>$section,'capacity'=>$capacity]);
+    return redirect('/admin/class');
+});
+Route::get('/', [
+        'uses' => 'loginController@getLogin',
+        'as' => 'loginPage'
+]
+
 
 ////    echo Name::where('person_id','3')->first()['first'];
 //    $persons=(Person::all());
@@ -182,4 +202,9 @@ Route::get('/', function () {
 //        echo $course->coursename;
 //    }
 
-});
+);
+
+Route::post('/',[
+    'uses' => 'loginController@postLogin',
+    'as' => 'loginFunc'
+]);
