@@ -4,6 +4,7 @@ body {
   
     text-align: right;
 font-family: 'Noto Kufi Arabic', serif;
+    font-weight: lighter;
 
 }
 #admin{
@@ -119,6 +120,9 @@ background: #a6c6a6;
 }
 .mc{
     margin-left: 100px;
+}
+.mi {
+    width: 90%;
 }
 /* collapsed sidebar styles */
 @media screen and (max-width: 767px) {

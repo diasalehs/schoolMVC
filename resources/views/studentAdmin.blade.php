@@ -293,7 +293,7 @@
 
                           <div class="">
                               <div class="col-md-8 col-md-offset-2 bm" >
-                                  <button class="btn btn-success btn-block" type="submit" >تسجيل</button></div>
+                                  <button class="btn btn-success btn-block" type="submit" >بحث</button></div>
                           </div>
                       </div>
 

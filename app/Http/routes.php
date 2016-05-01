@@ -21,6 +21,14 @@ Route::get('/admin',function(){
 
     return view('admin');
 });
+Route::get('/teacher',function(){
+
+    return view('teacher');
+});
+Route::get('/teacher/student',function(){
+
+    return view('teacherStudent');
+});
 Route::get('/admin/first',function(){
 
     return view('adminFirst');
@@ -35,9 +43,13 @@ Route::get('/admin/teacher',function(){
 
 Route::get('/admin/messages',function(){
   
-    $teacheres=Teacher::all();
-    $classes=Classes::all();
-    return view('messagesAdmin')->with('teacheres',$teacheres);
+
+    return view('messagesAdmin');
+});
+Route::get('/admin/messages/show',function(){
+
+
+    return view('showMA');
 });
 
 Route::post('/admin/teacher/create',function(Request $request){
@@ -141,7 +153,7 @@ Route::get('/', function () {
 //        echo $person->name->second;
 //        echo "\n";
 //        echo $person->name->last;
-    
+
 //    echo "\n";
 //    $employees=Employee::all();
 //    foreach ($employees as $employee){
