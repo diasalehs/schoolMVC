@@ -141,7 +141,7 @@ Route::group(['prefix' => '/student'] ,function() {
 
     Route::get('/', function () {
 
-        return view('student');
+        return view('studentFirst');
     });
 });
 
