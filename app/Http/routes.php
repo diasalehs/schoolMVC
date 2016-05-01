@@ -190,7 +190,7 @@ Route::group(['prefix' => '/student'] ,function() {
 Route::group(['prefix' => '/parent'] ,function() {
 
     Route::get('/', [
-        'uses'=>'supervisorController@getParentMarks',
+        'uses'=>'parentController@getParentMarks',
         'as'=>'parentMarks'
     ]);
     Route::get('/marks', [
