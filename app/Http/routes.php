@@ -10,205 +10,133 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-use App\Person;
-use App\Name;
-use App\Employee;
-use App\Classes;
-use App\Teacher;
-use App\Course;
-use App\Level;
+use App\Http\Controllers;
+use App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request ;
-Route::get('/admin',function(){
 
-    return view('adminFirst');
-});
-Route::get('/teacher',function(){
-
-    return view('teacher');
-});
-Route::get('/teacher/student',function(){
-
-    return view('teacherStudent');
-});
-Route::get('/admin/first',function(){
-
-    return view('adminFirst');
-});
 Route::get('/admin/level',function(){
 
     return view('levelAdmin');
 });
-Route::get('/admin/teacher',function(){
 
-    $teacheres=Teacher::all();
-    $classes=Classes::all();
-    return view('teacherAdmin')->with('teacheres',$teacheres);
-});
+Route::group(['middleware' => ['web']],function(){
 
-Route::get('/admin/messages',function(){
-  
-
-    return view('messagesAdmin');
-});
-Route::get('/admin/messages/show',function(){
-
-
-    return view('showMA');
-});
-
-Route::post('/admin/teacher/create',function(Request $request){
-
-    if(isset($request['firstName']) and !empty($request['firstName'])) {
-
-//        $t=Teacher::findOrFail(8);
-//        echo $t->name;
-//        $t->delete();
-//        echo 'hi';
-        $name= $request['firstName'];
-
-        $person =  Person::create(["religon"=>"hello"]);
-        $person->name()->create(['first'=>$name]);
-        $person->employee()->create([]);
-        $person->employee->teacher()->create([]);
-        $person->user()->create(['password'=>bcrypt($person->id)]);
-        $teacheres=Teacher::all();
-        $classes=Classes::all();
-////        return view('studentAdmin');
-        return view('teacherAdmin')->with('teacheres',$teacheres);
-    }
-//    return view('teacherAdmin')->with('teacheres',$teacheres);
-});
-//Route::get('/admin/teacher/create',function(){
-//
-//
-//    $teacheres=Teacher::create(array('name' => 'John'));
-//    return view('teacherAdmin')->with('teacheres',$teacheres);
-//});
-Event::listen('illuminate.query', function($query)
-{
-    echo($query);
-});
-Route::post('/admin/teacher/search',function(Request $request){
-    DB::enableQueryLog();
-    if(isset($request['name']) and !empty($request['name'])) {
-//        echo $request['name'];
-//        $t=Name::with(['person.employee.teacher' ])->get()->where('first','mazen');
-        $name=Name::where('first',$request['name'])->first();
-//        print_r($name->first);
-//        print_r($name->person->employee->teacher->id);
-        $t=($name->person->employee->teacher);
-//        dd(DB::getQueryLog());
-//        $t->delete();
-
-//        $teachers=new \Illuminate\Database\Eloquent\Collection();
-        $teachers=[$t];
-        foreach($teachers as $ob){
-            echo $ob->id;
-        }
-
-        return view('teacherAdmin')->with('teacheres',$teachers);
-
-//        $teachers= $t->find(1);
-//        foreach ($teachers as $h){
-//            echo $t->employee->person->name->first;
-//        }
-//        print_r($teachers->employee->person->name);
-
-//        $t->id;
-    }
-
-
-});
-
-Route::get('/admin/student',function(){
-
-    return view('studentAdmin');
-});
-Route::get('/admin/subject',function(){
-
-    return view('subjectAdmin');
-});
-Route::post('/admin/class/levels',function(Request $request){
-    $id=$request['id'];
-    $level=Level::find($id);
-    $class=$level->classes;
-    return  response()->json($class->toJson());
-});
-Route::get('/admin/class',function(){
-
-    $levels=Level::all();
-    return view('classAdmin',['levels'=>$levels]);
-});
-Route::post('/admin/class/create',function(Request $request){
-
-   $name=$request->input('classname') ;
-    $section=$request->input('section') ;
-    $capacity=$request->input('capacity') ;
-    Classes::create(['level_id'=>$name,'section'=>$section,'capacity'=>$capacity]);
-    return redirect('/admin/class');
-});
+//-------------------------------------------------------------------------loginPAGE
 Route::get('/', [
-        'uses' => 'loginController@getLogin',
-        'as' => 'loginPage'
-]
+    'uses' => 'loginController@getLogin',
+    'as' => 'loginPage'
+]);
 
-
-////    echo Name::where('person_id','3')->first()['first'];
-//    $persons=(Person::all());
-//    foreach ($persons as $person){
-//        echo $person->nationality;
-////        echo $person->pid;
-////        echo $person->religon;
-//        echo $person->name->first;
-//        echo "\n";
-////        $person->nationality="palestinane";
-//
-//        $person->name->first="dia";
-//        $name=$person->name;
-//        $person->name()->save($name,'person_id');
-//        $person->save();
-//        echo $person->name->person_id;
-//        $name=$person->name->first="dia";
-//        $name->first="dia";
-//        $person->push();
-//        echo $person->name->second;
-//        echo "\n";
-//        echo $person->name->second;
-//        echo "\n";
-//        echo $person->name->last;
-
-//    echo "\n";
-//    $employees=Employee::all();
-//    foreach ($employees as $employee){
-//       dd( $employee->person->name->first);
-//    }
-//    return view('welcome');
-//    $c=Classes::where('id',1)->first();
-//    foreach ($c->teachers as $class){
-//        echo $class->id;
-//    }
-//    $courses=Course::where('id',1)->first();
-//    foreach ($courses->klasses as $class){
-//        echo $class->id;
-//    }
-//    $class=Classes::where('id',1)->first();
-//    foreach ($class->courses as $course){
-//        echo $course->coursename;
-//    }
-
-//    $course=Course::where('id',1)->first();
-//    foreach ($course->teachers as $teacher){
-//        echo $teacher->employee->person->name->first;
-//    }
-//    $teacher=Teacher::where('id',0)->first();
-//    foreach ($teacher->courses as $course){
-//        echo $course->coursename;
-//    }
-
-);
-
-Route::post('/',[
+Route::post('/', [
     'uses' => 'loginController@postLogin',
     'as' => 'loginFunc'
 ]);
+
+//-------------------------------------------------------------------------adminPAGE
+Route::group(['prefix' => '/admin'] ,function() {
+
+    Route::get('/', [
+        'uses'=>'adminController@getAdmin',
+        'as'=>'admin'
+    ]);
+
+    Route::get('/first', [
+        'uses'=>'adminController@getAdminFirst',
+        'as'=>'adminFirst'
+    ]);
+
+    //----------------------------------------------------------------student
+    Route::group(['prefix' => '/student'] ,function() {
+        Route::get('/', [
+            'uses'=>'adminStudentController@getStudent',
+            'as'=>'adminStudent'
+        ]);
+    });
+
+    //----------------------------------------------------------------subject
+    Route::group(['prefix' => '/subject'] ,function() {
+        Route::get('/', [
+            'uses'=>'adminSubjectController@getSubject',
+            'as'=>'adminSubject'
+        ]);
+    });
+
+    //----------------------------------------------------------------class
+    Route::group(['prefix' => '/class'] ,function() {
+
+        Route::get('/', [
+            'uses'=>'adminClassController@getClass',
+            'as'=>'adminClass'
+        ]);
+
+        Route::post('/levels', [
+            'uses'=>'adminClassController@postLevels',
+            'as'=>'levels'
+        ]);
+
+        Route::post('/create', [
+            'uses'=>'adminClassController@postCreate',
+            'as'=>'create'
+        ]);
+
+    });
+
+    //----------------------------------------------------------------messages
+    Route::group(['prefix' => '/messages'] ,function() {
+        Route::get('/', [
+            'uses'=>'adminMessageController@getMessage',
+            'as'=>'adminMessage'
+        ]);
+        Route::get('/show', [
+            'uses'=>'adminMessageController@getShow',
+            'as'=>'Show'
+        ]);
+    });
+
+
+    //----------------------------------------------------------------Teacher
+    Route::group(['prefix' => '/teacher'] ,function() {
+
+        Route::get('/', [
+            'uses'=>'adminTeacherController@getTeacher',
+            'as'=>'teacher'
+        ]);
+
+
+        Route::post('/create', [
+            'uses'=>'adminTeacherController@postCreate',
+            'as'=>'create'
+        ]);
+
+        Event::listen('illuminate.query', function ($query) {
+            echo($query);
+        });
+
+        Route::post('/search', [
+            'uses'=>'adminTeacherController@postSearch',
+            'as'=>'search'
+        ]);
+    });
+
+});
+
+//-------------------------------------------------------------------------TeacherPAGE
+    Route::group(['prefix' => '/teacher'] ,function() {
+        Route::get('/', function () {
+            return view('teacher');
+        });
+        Route::get('/student', function () {
+            return view('teacherStudent');
+        });
+    });
+
+//-------------------------------------------------------------------------studentPAGE
+Route::group(['prefix' => '/student'] ,function() {
+
+    Route::get('/', function () {
+
+        return view('student');
+    });
+});
+
+});

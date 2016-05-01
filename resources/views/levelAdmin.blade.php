@@ -53,7 +53,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" href="#collapse11" class="">تعديل / حذف الصف  <span class="glyphicon glyphicon-edit"></span></a>
+                    <a data-toggle="collapse" href="#collapse11" class="">  <span class="glyphicon glyphicon-edit"></span >  تعديل / حذف الصف    </a>
                 </h4>
             </div>
             <div id="collapse11" class="panel-collapse collapse colla">
