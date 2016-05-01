@@ -115,8 +115,11 @@ Route::get('/admin/class',function(){
 
     return view('classAdmin');
 });
-Route::get('/', function () {
-    return view('login');
+Route::get('/', [
+        'uses' => 'loginController@getLogin',
+        'as' => 'loginPage'
+]
+
 
 ////    echo Name::where('person_id','3')->first()['first'];
 //    $persons=(Person::all());
@@ -170,4 +173,9 @@ Route::get('/', function () {
 //        echo $course->coursename;
 //    }
 
-});
+);
+
+Route::post('/',[
+    'uses' => 'loginController@postLogin',
+    'as' => 'loginFunc'
+]);

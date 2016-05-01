@@ -20,7 +20,6 @@
                       <div class="alert alert-danger" role="alert">
                           <a href="#" class="alert-link"> {{ $error }}}</a>
                       </div>
-
                   @endforeach
               @endif
               <div class="row formm">
