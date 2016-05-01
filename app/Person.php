@@ -8,7 +8,7 @@ class Person extends Model
 {
     //
     protected $table='persones';
-    protected $fillable=['id','nationality','ni','religon','placeOfBirth','idType','distanceFromSchool','phone'];
+    protected $fillable=['id','nationality','ni','religon','placeOfBirth','idType','distanceFromSchool','phone','dateOfBirth'];
     public $timestamps=false;
     public function name(){
         return $this->hasOne('App\Name');

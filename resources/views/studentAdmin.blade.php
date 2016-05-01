@@ -8,7 +8,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" href="#collapse1" class="">اضافة طالب  <span class="glyphicon glyphicon-plus"></span></a>
+          <a data-toggle="collapse" href="#collapse1" class="">  <span class="glyphicon glyphicon-plus"></span> اضافة طالب </a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse colla">
@@ -124,20 +124,8 @@
 
                               </select>
                           </div>
-                          <div class="form-group">
-                              <label for="InputEmail" class="ic"> البعد عن مكان الاقامة</label>
-                              <div class="input-group">
-                                  <input type="text" class="form-control col-md-5" id="InputEmailSecond" name="InputEmail" style="display: inline-block" >
-                              </div>
-                          </div>
 
 
-                          <div class="form-group">
-                              <label for="InputEmail" class="ic">الهاتف</label>
-                              <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
-                              </div>
-                          </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">عدد الاخوة</label>
                               <div class="input-group">
@@ -228,7 +216,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" href="#collapse2" class=""> بحث    <span class="glyphicon glyphicon-search"></span></a>
+          <a data-toggle="collapse" href="#collapse2" class="">   <span class="glyphicon glyphicon-search">  </span>  بحث </a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
