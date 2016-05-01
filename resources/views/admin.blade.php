@@ -69,7 +69,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">مدير الموقع</a>
+                <a class="navbar-brand" href="{{url('admin')}}">مدير الموقع</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -83,7 +83,7 @@
                             <li><a href="{{url('admin/teacher')}}">الموظفين</a></li>
                             <li><a href="{{URL('admin/student')}}">الطلاب</a></li>
                             <li><a href="{{URL('admin/class')}}">الشعب</a></li>
-                            <li><a href="{{url('admin/subject')}}">المواضيع</a></li>
+                            <li><a href="{{url('admin/subject')}}">المواد</a></li>
                             <li><a href="{{url('admin/messages')}}">الرسائل</a></li>
                         </ul>
                     </li>
@@ -101,7 +101,7 @@
                     <li id="st"><a href="{{URL('admin/student')}}" >الطلاب</a></li>
                     <li id="cl"><a href="{{URL('admin/class')}}" onclick="">الشعب
                     </a></li>
-                    <li id="su"><a href="{{url('admin/subject')}}" onclick="">المواضيع</a></li>
+                    <li id="su"><a href="{{url('admin/subject')}}" onclick="">المواد</a></li>
                     <li id="su"><a href="{{url('admin/messages')}}" onclick="">الرسائل</a></li>
                 </ul>
 

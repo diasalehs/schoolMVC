@@ -124,6 +124,9 @@ background: #a6c6a6;
 .mi {
     width: 90%;
 }
+.page-header{
+    color: #777;
+}
 /* collapsed sidebar styles */
 @media screen and (max-width: 767px) {
   .row-offcanvas {

@@ -80,7 +80,7 @@
 
           </div>
       </div>
-
+</div>
   <div class="panel-group">
       <div class="panel panel-default">
           <div class="panel-heading">
@@ -111,7 +111,7 @@
                               </select>
                           </div>
                           <div class="form-group">
-                              <label for="InputEmail" class="ic"> المواصلات ظهرا</label>
+                              <label for="InputEmail" class="ic">الشعبة</label>
                               <select id="sts" class="form-control" >
                                   <option value="full">مواصلات كاملة</option>
                                   <option value="family">مع الاهل</option>
@@ -119,66 +119,51 @@
 
                               </select>
                           </div>
-                          <div class="form-group">
-                              <label for="InputEmail" class="ic"> البعد عن مكان الاقامة</label>
-                              <div class="input-group">
-                                  <input type="text" class="form-control col-md-5" id="InputEmailSecond" name="InputEmail" style="display: inline-block" >
-                              </div>
-                          </div>
 
-
-
-
-
-                          <div class="">
-                              <div class="col-md-8 col-md-offset-2 bm" >
-                                  <button class="btn btn-success btn-block" type="submit" >تسجيل</button></div>
-                          </div>
 
                       </form>
                       <table class="table table-bordered text-center">
                           <thead>
                           <tr class="success">
-                              <th  >رقم الطالب</th>
-                              <th >اسم الطالب</th>
-                              <th >الصف</th>
-                              <th >الشعبة</th>
-                              <th>العمليات</th>
+                              <th  >المادة</th>
+                              <th >اسم المعلم</th>
+                              <th >الوقت</th>
                           </tr>
                           </thead>
                           <tbody id="test">
                           <tr>
                               <td>١</td>
-                              <td>ضياء صالح سعودي</td>
-                              <td >اول</td>
-                              <td >أ</td>
-                              <td ><div class="dropdown">
-                                      <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
-                                      <ul class="dropdown-menu">
-                                          <li><a href="javascript:void(0);">تعديل</a></li>
-                                          <li><a href="javascript:void(0);">حذف</a></li>
-                                      </ul>
+                              <td>
+
+                                  <div class="form-group" style="padding: 0; margin: 0; width: 300px;">
+                                      <select id="sts" class="form-control " >
+                                          <option value="full">مواصلات كاملة</option>
+                                          <option value="family">مع الاهل</option>
+                                          <option value="walk">مشاه</option>
+                                      </select>
                                   </div>
+
                               </td>
-                          </tr>
-                          <tr>
-                              <td>١</td>
-                              <td>ضياء صالح سعودي</td>
-                              <td >اول</td>
-                              <td >أ</td>
-                              <td ><div class="dropdown">
-                                      <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
-                                      <ul class="dropdown-menu">
-                                          <li><a href="javascript:void(0);">تعديل</a></li>
-                                          <li><a href="javascript:void(0);">حذف</a></li>
-                                      </ul>
+                              <td >
+
+                                  <div class="form-group" style="padding: 0; margin: 0;">
+                                      <div class="input-group">
+                                          <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail" >
+                                      </div>
                                   </div>
+
                               </td>
+
                           </tr>
 
                           </tbody>
                       </table>
-                    </div>
+                      <div class="">
+                          <div class="col-md-8 col-md-offset-2 bm" >
+                              <button class="btn btn-success btn-block" type="submit" >تسجيل</button></div>
+                      </div>
+
+                  </div>
           </div>
 
 
@@ -204,5 +189,9 @@
                  }
          });
       </script>
-    @endsection
+
+
+
+
+@endsection
     

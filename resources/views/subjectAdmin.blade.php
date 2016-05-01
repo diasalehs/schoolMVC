@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="page-header">
-              <h1>المواضيع <small></small></h1>
+              <h1>المواد <small></small></h1>
         </div>
 @endsection
