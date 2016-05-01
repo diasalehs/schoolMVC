@@ -9,7 +9,7 @@ class Classes extends Model
 
     protected $table='classes';
     protected $fillable=['level_id','section'];
-    public $timestamps=flase;
+    public $timestamps=false;
     //
     public function teachers(){
         return $this->belongsToMany('App\Teacher','classes_teacher','class_id','teacher_id');
