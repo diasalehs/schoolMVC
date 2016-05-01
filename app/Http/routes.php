@@ -35,7 +35,10 @@ Route::get('/admin/first',function(){
 
     return view('adminFirst');
 });
+Route::get('/admin/level',function(){
 
+    return view('levelAdmin');
+});
 Route::get('/admin/teacher',function(){
 
     $teacheres=Teacher::all();

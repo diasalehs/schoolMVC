@@ -53,7 +53,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapse11" class="">تعديل اسم المادة  <span class="glyphicon glyphicon-edit"></span></a>
+                <a data-toggle="collapse" href="#collapse11" class="">تعديل / حذف المادة  <span class="glyphicon glyphicon-edit"></span></a>
             </h4>
         </div>
         <div id="collapse11" class="panel-collapse collapse colla">
@@ -85,11 +85,11 @@
                             </div>
                         </div>
 
+                        <p class="butn">
+                            <a href="#" class="btn btn-primary" role="button">تعديل</a>
+                            <a href="#" class="btn btn-danger" role="button">حذف</a>
+                        </p>
 
-                        <div class="">
-                            <div class="col-md-8 col-md-offset-2 bm" >
-                                <button class="btn btn-success btn-block" type="submit" >اضافة</button></div>
-                        </div>
 
                     </form>
 
