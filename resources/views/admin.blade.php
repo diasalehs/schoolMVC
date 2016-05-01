@@ -97,7 +97,7 @@
             <!-- sidebar -->
             <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav ">
-                    <li class="" id="te"><a href="{{url('admin/teacher')}}" >الموظفين</a></li>
+                    <li  id="te"   ><a href="{{url('admin/teacher')}}">الموظفين</a></li>
                     <li id="st"><a href="{{URL('admin/student')}}" >الطلاب</a></li>
                     <li id="cl"><a href="{{URL('admin/class')}}" onclick="">الشعب
                     </a></li>
