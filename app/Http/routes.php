@@ -49,6 +49,14 @@ Route::group(['prefix' => '/admin'] ,function() {
         ]);
     });
 
+    //----------------------------------------------------------------message
+    Route::group(['prefix' => '/messages'] ,function() {
+        Route::get('/', [
+            'uses'=>'adminMessageController@getMessage',
+            'as'=>'adminMessage'
+        ]);
+    });
+
     //----------------------------------------------------------------subject
     Route::group(['prefix' => '/subject'] ,function() {
         Route::get('/', [
@@ -58,7 +66,7 @@ Route::group(['prefix' => '/admin'] ,function() {
     });
 
     //----------------------------------------------------------------levels
-    Route::get('/admin/level',[
+    Route::get('/level',[
         'uses'=>'adminLevelController@getLevel',
         'as'=>'adminLevel'
     ]);
