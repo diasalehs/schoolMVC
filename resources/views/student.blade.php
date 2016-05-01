@@ -11,10 +11,11 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
 
-    <title>المشرف</title>
+    <title>الطالب</title>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script>
+
         if ( $(window).width() > 739) {
             //Add your javascript for large screens here
             tinymce.init({
@@ -44,8 +45,6 @@
             });
         }
 
-
-
     </script>
     <script>tinymce.init({ selector:'textarea' });</script>
     <!-- Bootstrap core CSS -->
@@ -69,7 +68,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{url('supervisor')}}"> المشرف</a>
+                <a class="navbar-brand" href="{{url('teacher/')}}"> الطالب</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -78,10 +77,11 @@
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="{{route('logout')}}">تسجيل الخروج</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  style="margin-left: 100px;">اقسام الموقع <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  style="margin-left: 100px;">اقسام الموقع
+                            <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{URL('supervisor/marks')}}">الحضور والغياب</a></li>
-                            <li><a href="{{url('supervisor/messages')}}">الرسائل</a></li>
+                            <li><a href="{{URL('student/marks')}}">العلامات</a></li>
+                            <li><a href="{{url('student/messages')}}">الرسائل</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -95,11 +95,11 @@
             <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav " >
                     <li><img class="teacherimg" src={{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}></li>
-                    <li style="text-align: center;margin: 10px 0">اسم المشرف</li>
+                    <li style="text-align: center; margin: 10px 0">اسم الطالب</li>
                     <li><span><hr></span></li>
-                    <li class="" id="te"><a href="{{url('supervisor/attendance')}}" >الحضور والغياب</a></li>
+                    <li class="" id="te"><a href="{{url('student/marks')}}" >العلامات</a></li>
 
-                    <li id="su"><a href="{{url('supervisor/messages')}}" onclick="">الرسائل</a></li>
+                    <li id="su"><a href="{{url('student/messages')}}" onclick="">الرسائل</a></li>
                 </ul>
 
             </div>
