@@ -63,11 +63,12 @@ Route::post('/admin/teacher/create',function(Request $request){
 //        $t->delete();
 //        echo 'hi';
         $name= $request['firstName'];
-//
+
         $person =  Person::create(["religon"=>"hello"]);
         $person->name()->create(['first'=>$name]);
         $person->employee()->create([]);
         $person->employee->teacher()->create([]);
+        $person->user()->create(['password'=>bcrypt($person->id)]);
         $teacheres=Teacher::all();
         $classes=Classes::all();
 ////        return view('studentAdmin');

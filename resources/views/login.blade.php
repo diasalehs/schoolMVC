@@ -20,32 +20,31 @@
 <body>
 
 <div class="container">
-    @if (count($errors)>0)
-        @foreach($errors -> all() as $error)
 
-            <div class="alert alert-danger" role="alert">
-                <a href="#" class="alert-link"> {{ $error }}}</a>
-            </div>
-        @endforeach
-    @endif
-{{--    @if (session::has('fail'))
+    @if (Session::has('fail'))
         @foreach($errors -> all() as $error)
             <div class="alert alert-danger" role="alert">
                 <a href="#" class="alert-link"> {{ session::get('fail') }}}</a>
             </div>
         @endforeach
-    @endif--}}
+    @endif
     <form class="form-signin" method="post" action="">
         <h2 class="form-signin-heading">تسجيل الدخول</h2>
         <label for="inputEmail" class="sr-only">رقم المستخدم</label>
-            <input type="text" id="inputEmail" class="form-control" name="inputEmail" placeholder="رقم المستخدم" required autofocus>
-            <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
+            <input type="text" id="inputEmail" class="form-control" name="inputName" placeholder="رقم المستخدم"  autofocus>
         <label for="inputPassword" class="sr-only">كلمة السر</label>
-            <input type="password" id="inputPassword" class="form-control" name="inputPassword" placeholder="كلمة السر" required>
-            <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
+            <input type="password" id="inputPassword" class="form-control" name="inputPassword" placeholder="كلمة السر" >
         <button class="btn btn-lg btn-success btn-block" type="submit">دخول</button>
+        <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
     </form>
+    @if (count($errors)>0)
+        @foreach($errors -> all() as $error)
 
+            <div class="alert alert-danger" role="alert">
+                <a href="#" class="alert-link"> {{ $error }}</a>
+            </div>
+        @endforeach
+    @endif
 </div> <!-- /container -->
 
 
