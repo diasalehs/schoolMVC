@@ -143,18 +143,18 @@ Route::group(['prefix' => '/admin'] ,function() {
 //-------------------------------------------------------------------------studentPAGE
 Route::group(['prefix' => '/student'] ,function() {
 
-    Route::get('/', function () {
-
-        return view('studentFirst');
-    });
-    Route::get('/messages', function () {
-
-        return view('studentMessages');
-    });
-    Route::get('/marks', function () {
-
-        return view('studentMarks');
-    });
+    Route::get('/', [
+        'uses'=>'studentController@getStudent',
+        'as'=>'studentFirst'
+    ]);
+    Route::get('/messages', [
+        'uses'=>'studentController@getMessages',
+        'as'=>'studentMessages'
+    ]);
+    Route::get('/marks', [
+        'uses'=>'studentController@getMarks',
+        'as'=>'studentMarks'
+    ]);
 });
 
 
