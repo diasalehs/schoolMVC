@@ -185,3 +185,21 @@ Route::group(['prefix' => '/student'] ,function() {
     });
 
 });
+
+//-------------------------------------------------------------------------parentPAGE
+Route::group(['prefix' => '/parent'] ,function() {
+
+    Route::get('/', [
+        'uses'=>'supervisorController@getParentMarks',
+        'as'=>'parentMarks'
+    ]);
+    Route::get('/marks', [
+        'uses'=>'supervisorController@getParentMarks',
+        'as'=>'parentMarks'
+    ]);
+    Route::get('/messages', [
+        'uses'=>'supervisorController@getParentMessages',
+        'as'=>'parentMessages'
+    ]);
+});
+
