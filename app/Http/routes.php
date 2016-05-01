@@ -14,12 +14,14 @@ use App\Http\Controllers;
 use App\Http\Controllers\Admin;
 
 
-Route::get('/admin/level',function(){
-
-    return view('levelAdmin');
-});
 
 Route::group(['middleware' => ['web']],function(){
+
+    Route::get('/',function(){
+        if (!Auth::check()) {
+            return redirect()->route('loginPage');
+        }
+    });
 
 //-------------------------------------------------------------------------loginPAGE
 Route::get('/', [
@@ -61,6 +63,13 @@ Route::group(['prefix' => '/admin'] ,function() {
             'as'=>'adminSubject'
         ]);
     });
+
+    //----------------------------------------------------------------levels
+    Route::get('/admin/level',[
+        'uses'=>'adminLevelController@getLevel',
+        'as'=>'adminLevel'
+    ]);
+
 
     //----------------------------------------------------------------class
     Route::group(['prefix' => '/class'] ,function() {
@@ -152,5 +161,6 @@ Route::group(['prefix' => '/student'] ,function() {
         return view('studentFirst');
     });
 });
+
 
 });
