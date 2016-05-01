@@ -75,7 +75,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a href="#">تسجيل الخروج</a></li>
+                    <li><a href="{{route('logout')}}">تسجيل الخروج</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  style="margin-left: 100px;">اقسام الموقع <span class="caret"></span></a>
                         <ul class="dropdown-menu">

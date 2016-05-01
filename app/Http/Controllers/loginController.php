@@ -23,8 +23,8 @@ class loginController extends Controller implements  \Illuminate\Contracts\Auth\
             }
             if($user->type=='teacher'){
                 return redirect()->route('teacherFirst');
-            }
-            if($user->type=='student'){
+
+            if($user->type=='student')
                 return redirect()->route('studentFirst');
             }
         }

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class adminStudentController extends Controller{
     public function getStudent(){
-        if(!Auth::check()){
+        if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
         }
         return view('studentAdmin');

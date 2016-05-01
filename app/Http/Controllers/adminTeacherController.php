@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 class adminTeacherController extends Controller{
 
     public function getTeacher(){
-        if(!Auth::check()){
+        if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
         }
             $teacheres = Teacher::all();
@@ -26,7 +26,7 @@ class adminTeacherController extends Controller{
 
 
     public function postCreate(Request $request){
-     if(!Auth::check()){
+        if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
         }
        $this->validate($request,[
@@ -35,7 +35,7 @@ class adminTeacherController extends Controller{
      //      'lastName' => 'required|alpha',
             'firstName' => 'required|alpha',
 //            'thirdName' => 'required|alpha',
-//           'mobile' => 'integer',
+//           'mobile' => 'integer'
 //            'nationality' => 'alpha',
 //            'placeOfBirth' => 'alpha',
 //            'religon' => 'alpha',
@@ -81,8 +81,9 @@ class adminTeacherController extends Controller{
         $mobile= $request['mobile'];
 
         //DB Person
-        $person = Person::create(["religon" => "Hello",
-            'phone'=>$phone,'nationality'=>$nationality,
+        $person = Person::create(["religon" => $religon,
+            'phone'=>$phone,
+            'nationality'=>$nationality,
             'placeOfBirth'=>$placeOfBirth,
             'ni'=>$ni,
             'idType'=>$idType,
@@ -113,7 +114,7 @@ class adminTeacherController extends Controller{
     }
 
     public function postSearch(Request $request){
-        if(!Auth::check()){
+        if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
         }
         DB::enableQueryLog();
