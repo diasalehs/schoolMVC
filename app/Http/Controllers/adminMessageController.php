@@ -5,6 +5,7 @@
  * Date: 5/1/2016
  * Time: 2:10 PM
  */
+namespace App\Http\Controllers;
 
 class adminMessageController extends Controller{
     public function getMessage(){

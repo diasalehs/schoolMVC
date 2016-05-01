@@ -10,15 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-use App\Person;
-use App\Name;
-use App\Employee;
-use App\Classes;
-use App\Teacher;
-use App\Course;
-use App\Level;
-
-use Illuminate\Http\Request ;
+use App\Http\Controllers;
+use App\Http\Controllers\Admin;
 
 
 Route::group(['middleware' => ['web']],function(){
@@ -38,19 +31,19 @@ Route::post('/', [
 Route::group(['prefix' => '/admin'] ,function() {
 
     Route::get('/', [
-        'uses'=>'admin.adminController@getAdmin',
+        'uses'=>'adminController@getAdmin',
         'as'=>'admin'
     ]);
 
     Route::get('/first', [
-        'uses'=>'admin.adminController@getAdminFirst',
+        'uses'=>'adminController@getAdminFirst',
         'as'=>'adminFirst'
     ]);
 
     //----------------------------------------------------------------student
     Route::group(['prefix' => '/student'] ,function() {
         Route::get('/', [
-            'uses'=>'admin.adminStudentController@getStudent',
+            'uses'=>'adminStudentController@getStudent',
             'as'=>'adminStudent'
         ]);
     });
@@ -58,7 +51,7 @@ Route::group(['prefix' => '/admin'] ,function() {
     //----------------------------------------------------------------subject
     Route::group(['prefix' => '/subject'] ,function() {
         Route::get('/', [
-            'uses'=>'admin.adminSubjectController@getSubject',
+            'uses'=>'adminSubjectController@getSubject',
             'as'=>'adminSubject'
         ]);
     });
@@ -67,17 +60,17 @@ Route::group(['prefix' => '/admin'] ,function() {
     Route::group(['prefix' => '/class'] ,function() {
 
         Route::get('/', [
-            'uses'=>'admin.adminClassController@getClass',
+            'uses'=>'adminClassController@getClass',
             'as'=>'adminClass'
         ]);
 
         Route::post('/levels', [
-            'uses'=>'admin.adminClassController@postLevels',
+            'uses'=>'adminClassController@postLevels',
             'as'=>'levels'
         ]);
 
         Route::post('/create', [
-            'uses'=>'admin.adminClassController@postCreate',
+            'uses'=>'adminClassController@postCreate',
             'as'=>'create'
         ]);
 

@@ -5,19 +5,19 @@
  * Date: 5/1/2016
  * Time: 12:59 PM
  */
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use App\Teacher;
+use App\Person;
+use App\Name;
+use App\Classes;
 
 class adminTeacherController extends Controller{
 
-    public function getTeacherAction($action = null){
-        if($action === null) {
+    public function getTeacher(){
             $teacheres = Teacher::all();
             $classes = Classes::all();
             return view('teacherAdmin')->with('teacheres', $teacheres);
-        }
-        else
-        {
-            return view(null);
-        }
     }
 
 
