@@ -168,18 +168,18 @@ Route::group(['prefix' => '/student'] ,function() {
 //-------------------------------------------------------------------------supervisorPAGE
     Route::group(['prefix' => '/supervisor'] ,function() {
 
-        Route::get('/', function () {
-
-            return view('supervisorFirst');
-        });
-        Route::get('/attendance', function () {
-
-            return view('attendance');
-        });
-        Route::get('/messages', function () {
-
-            return view('supervisorMessages');
-        });
+        Route::get('/', [
+            'uses'=>'supervisorController@getSupervisor',
+            'as'=>'supervisorFirst'
+        ]);
+        Route::get('/attendance', [
+            'uses'=>'supervisorController@getAttendance',
+            'as'=>'supervisorAttendance'
+        ]);
+        Route::get('/messages', [
+            'uses'=>'supervisorController@getMessages',
+            'as'=>'supervisorMessages'
+        ]);
     });
 
 });
