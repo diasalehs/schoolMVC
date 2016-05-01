@@ -131,8 +131,11 @@ class adminTeacherController extends Controller{
         $this->validate($request,['id'=>'integer|required']);
         $id=$request->input('id');
         $employee=Employee::find($id);
-        if($employee!=null)
-            $employee->person.delete();
+        if($employee!=null) {
+            $p = $employee->person;
+            $p->delete();
+        }
+        return redirect()->route('adminTeacher');
 
     }
 

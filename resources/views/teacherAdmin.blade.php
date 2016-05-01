@@ -292,15 +292,32 @@
               <div class="caption">
                 <h3>{{$employee->person->name->first}}</h3>
                 <p>{{$employee->person->religon}}</p>
-                <p><a href="#" class="btn btn-success" role="button">عرض</a>
-                    <a href="#" class="btn btn-primary" role="button">تعديل</a>
-                    <a href="#" class="btn btn-danger" role="button">حذف</a></p>
+                <p>
+                  <form  method="post" action="">
+                    <a id="/teacher/show" class="btn btn-success post" role="button">عرض</a>
+                    <a id="/teacher/edit" class="btn btn-primary post" role="button">تعديل</a>
+                    <a id ="teacher/delete"class="btn btn-danger post" role="button">حذف</a>
+                  <input type="hidden" name="id" value="{{$employee->id}}" id="employeeid">
+                  <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
+                  </form></p>
               </div>
             </div>
             </div>
             @endforeach
                  {{--@endif--}}
           </div>
+    <script>
+        $(document).ready(function(){
+
+       $('.post').click(function () {
+           var action = $(this).attr('id');
+           var form = $(this).closest('form')
+//           console.log(action);
+           form.attr('action', action);
+           form.submit();
+       });
+       });
+    </script>
 @endsection
 
           
