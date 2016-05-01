@@ -79,11 +79,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  style="margin-left: 100px;">اقسام الموقع <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{url('admin/teacher')}}">الموظفين</a></li>
-                            <li><a href="{{URL('admin/student')}}">الطلاب</a></li>
-                            <li><a href="{{URL('admin/class')}}">الشعب</a></li>
-                            <li><a href="{{url('admin/subject')}}">المواضيع</a></li>
-                            <li><a href="{{url('admin/messages')}}">الرسائل</a></li>
+                            <li><a href="{{url('teacher/student')}}">الطلاب</a></li>
+                            <li><a href="{{URL('teacher/marks')}}">العلامات</a></li>
+                            <li><a href="{{url('teacher/messages')}}">الرسائل</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -98,12 +96,11 @@
                 <ul class="nav ">
                     <li><img class="teacherimg" src={{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}></li>
                     <li><span><hr></span></li>
-                    <li id="st"><a href="{{URL('teacher/student')}}" >الطلاب</a></li>
-                    <li id="cl"><a href="{{URL('admin/class')}}" onclick="">الشعب
+                    <li id="st"><a href="{{URL('teacher/student')}}"> الطلاب</a></li>
                         </a></li>
-                    <li class="" id="te"><a href="{{url('admin/teacher')}}" >العلامات</a></li>
+                    <li class="" id="te"><a href="{{url('teacher/marks')}}" >العلامات</a></li>
 
-                    <li id="su"><a href="{{url('/messages')}}" onclick="">الرسائل</a></li>
+                    <li id="su"><a href="{{url('teacher/messages')}}" onclick="">الرسائل</a></li>
                 </ul>
 
             </div>

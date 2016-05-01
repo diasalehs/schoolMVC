@@ -9,7 +9,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapse1" class="">اضافة مادة  <span class="glyphicon glyphicon-plus"></span></a>
+                <a data-toggle="collapse" href="#collapse1" class="">  <span class="glyphicon glyphicon-plus"></span> اضافة مادة </a>
             </h4>
         </div>
         <div id="collapse1" class="panel-collapse collapse colla">
@@ -53,7 +53,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapse11" class="">تعديل / حذف المادة  <span class="glyphicon glyphicon-edit"></span></a>
+                <a data-toggle="collapse" href="#collapse11" class=""> <span class="glyphicon glyphicon-edit"></span> تعديل / حذف المادة  </a>
             </h4>
         </div>
         <div id="collapse11" class="panel-collapse collapse colla">
@@ -104,7 +104,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapse111" class="">ربط المواد مع الصفوف   <span class="glyphicon glyphicon-calendar"></span></a>
+                <a data-toggle="collapse" href="#collapse111" class="">  <span class="glyphicon glyphicon-calendar"></span> ربط المواد مع الصفوف  </a>
             </h4>
         </div>
         <div id="collapse111" class="panel-collapse collapse colla">

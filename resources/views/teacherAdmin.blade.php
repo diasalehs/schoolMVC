@@ -8,7 +8,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" href="#collapse1" class="">اضافة معلم   <span class="glyphicon glyphicon-plus"></span></a>
+          <a data-toggle="collapse" href="#collapse1" class="">   <span class="glyphicon glyphicon-plus"></span> اضافة معلم </a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse">
@@ -205,7 +205,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" href="#collapse2" class=""> بحث    <span class="glyphicon glyphicon-search"></span></a>
+          <a data-toggle="collapse" href="#collapse2" class="">   <span class="glyphicon glyphicon-search"></span>  بحث  </a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
@@ -286,7 +286,7 @@
          <div class="row glyphicon-align-right">
 {{--             @if(isset($teacheres))--}}
          @foreach($teacheres as $t=>$teacher)
-          <div class="col-sm-4 col-md-4">
+          <div class="  col-xm-6 col-md-3">
             <div class="panel panel-default " style="padding: 5px; text-align: center">
               <img class="timg" style="width: 90%" src="{{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}" alt="...">
               <div class="caption">

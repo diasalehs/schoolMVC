@@ -8,7 +8,7 @@
       <div class="panel panel-default">
           <div class="panel-heading">
               <h4 class="panel-title">
-                  <a data-toggle="collapse" href="#collapse1" class="">اضافة شعبة  <span class="glyphicon glyphicon-plus"></span></a>
+                  <a data-toggle="collapse" href="#collapse1" class="">  <span class="glyphicon glyphicon-plus"></span> اضافة شعبة </a>
               </h4>
           </div>
           <div id="collapse1" class="panel-collapse collapse colla">
@@ -85,7 +85,7 @@
       <div class="panel panel-default">
           <div class="panel-heading">
               <h4 class="panel-title">
-                  <a data-toggle="collapse" href="#collapse11" class="">الجدول  <span class="glyphicon glyphicon-calendar"></span></a>
+                  <a data-toggle="collapse" href="#collapse11" class="">  <span class="glyphicon glyphicon-calendar"></span> الجدول </a>
               </h4>
           </div>
           <div id="collapse11" class="panel-collapse collapse colla">
@@ -174,7 +174,95 @@
       <div class="panel panel-default">
           <div class="panel-heading">
               <h4 class="panel-title">
-                  <a data-toggle="collapse" href="#collapse111" class="">بحث  <span class="glyphicon glyphicon-search"></span></a>
+                  <a data-toggle="collapse" href="#collapse1111" class="">  <span class="glyphicon glyphicon-calendar"></span> اضافة طلاب الى شعبة </a>
+              </h4>
+          </div>
+          <div id="collapse1111" class="panel-collapse collapse colla">
+              <div class="container-fluid">
+                  @if (count($errors)>0)
+                      @foreach($errors -> all() as $error)
+
+                          <div class="alert alert-danger" role="alert">
+                              <a href="#" class="alert-link"> {{ $error }}}</a>
+                          </div>
+
+                      @endforeach
+                  @endif
+                  <div class="row ">
+                      <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
+
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic">الصف</label>
+                              <select id="sts" class="form-control " >
+                                  <option value="full">مواصلات كاملة</option>
+                                  <option value="family">مع الاهل</option>
+                                  <option value="walk">مشاه</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic">الشعبة</label>
+                              <select id="sts" class="form-control" >
+                                  <option value="full">مواصلات كاملة</option>
+                                  <option value="family">مع الاهل</option>
+                                  <option value="walk">مشاه</option>
+
+                              </select>
+                          </div>
+
+
+                      </form>
+                      <table class="table table-bordered text-center">
+                          <thead>
+                          <tr class="success">
+                              <th  >رقم الطالب</th>
+                              <th >اسم الطالب</th>
+                          </tr>
+                          </thead>
+                          <tbody id="test">
+                          <tr>
+                              <td>١</td>
+                              <td>
+
+                                  <div class="form-group" style="padding: 0; margin: 0; width: 300px;">
+                                      <select id="sts" class="form-control " >
+                                          <option value="full">مواصلات كاملة</option>
+                                          <option value="family">مع الاهل</option>
+                                          <option value="walk">مشاه</option>
+                                      </select>
+                                  </div>
+
+                              </td>
+                              <td >
+
+                                  <div class="form-group" style="padding: 0; margin: 0;">
+                                      <div class="input-group">
+                                          <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail" >
+                                      </div>
+                                  </div>
+
+                              </td>
+
+                          </tr>
+
+                          </tbody>
+                      </table>
+                      <div class="">
+                          <div class="col-md-8 col-md-offset-2 bm" >
+                              <button class="btn btn-success btn-block" type="submit" >حفظ</button></div>
+                      </div>
+
+                  </div>
+          </div>
+
+
+      </div>
+  </div>
+  </div>
+  <div class="panel-group">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h4 class="panel-title">
+                  <a data-toggle="collapse" href="#collapse111" class=""> <span class="glyphicon glyphicon-search"></span> بحث  </a>
               </h4>
           </div>
           <div id="collapse111" class="panel-collapse collapse colla">

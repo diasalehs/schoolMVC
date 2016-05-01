@@ -124,10 +124,16 @@ Route::group(['prefix' => '/admin'] ,function() {
 //-------------------------------------------------------------------------TeacherPAGE
     Route::group(['prefix' => '/teacher'] ,function() {
         Route::get('/', function () {
-            return view('teacher');
+            return view('teacherFirst');
         });
         Route::get('/student', function () {
             return view('teacherStudent');
+        });
+        Route::get('/marks', function () {
+            return view('teacherMarks');
+        });
+        Route::get('/messages', function () {
+            return view('teacherMessages');
         });
     });
 
@@ -136,7 +142,7 @@ Route::group(['prefix' => '/student'] ,function() {
 
     Route::get('/', function () {
 
-        return view('student');
+        return view('studentFirst');
     });
 });
 
