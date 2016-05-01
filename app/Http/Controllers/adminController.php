@@ -7,12 +7,13 @@
  */
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 class adminController extends Controller{
     public function getAdmin(){
-        return view('admin');
-    }
-    public function getAdminFirst(){
+        if(!Auth::check()){
+            return redirect()->route('loginPage');
+        }
         return view('adminFirst');
     }
 }

@@ -32,18 +32,19 @@ Route::post('/', [
     'as' => 'loginFunc'
 ]);
 
+    Route::get('/logout',[
+        'uses'=>'logoutController@getLogout',
+        'as'=>'logout'
+    ]);
+
 //-------------------------------------------------------------------------adminPAGE
 Route::group(['prefix' => '/admin'] ,function() {
 
     Route::get('/', [
         'uses'=>'adminController@getAdmin',
-        'as'=>'admin'
-    ]);
-
-    Route::get('/', [
-        'uses'=>'adminController@getAdminFirst',
         'as'=>'adminFirst'
     ]);
+
 
     //----------------------------------------------------------------student
     Route::group(['prefix' => '/student'] ,function() {

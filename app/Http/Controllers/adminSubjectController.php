@@ -7,9 +7,13 @@
  */
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 class adminSubjectController extends Controller{
     public function getSubject(){
+        if(!Auth::check()){
+            return redirect()->back();
+        }
         return view('SubjectAdmin');
     }
 }
