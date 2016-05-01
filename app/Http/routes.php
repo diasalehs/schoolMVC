@@ -144,8 +144,11 @@ Route::post('/admin/class/create',function(Request $request){
     Classes::create(['level_id'=>$name,'section'=>$section,'capacity'=>$capacity]);
     return redirect('/admin/class');
 });
-Route::get('/', function () {
-    return view('login');
+Route::get('/', [
+        'uses' => 'loginController@getLogin',
+        'as' => 'loginPage'
+]
+
 
 ////    echo Name::where('person_id','3')->first()['first'];
 //    $persons=(Person::all());
@@ -199,4 +202,9 @@ Route::get('/', function () {
 //        echo $course->coursename;
 //    }
 
-});
+);
+
+Route::post('/',[
+    'uses' => 'loginController@postLogin',
+    'as' => 'loginFunc'
+]);
