@@ -13,6 +13,6 @@ class Level extends Model
         return $this->belongsToMany('App\Subject');
     }
     public function classes(){
-        return $this->hasMany('App\Level');
+        return $this->hasMany('App\Classes');
     }
 }

@@ -23,22 +23,21 @@
                       @endforeach
                   @endif
                   <div class="row ">
-                      <form action="{{url('admin/teacher/create')}}"role="form" class="form-inline" method="post">
+                      <form action="{{url('admin/class/levels')}}"role="form" class="form-inline" method="post">
+                          <input type="hidden" value="{{csrf_token()}}" name="_token">
 
                               <div class="form-group">
                                   <label for="InputEmail" class="ic">الصف</label>
-                                  <select id="sts" class="form-control " >
-                                      <option value="full">الاول</option>
-                                      <option value="family">الثاني</option>
-                                      <option value="walk">الثالث</option>
+                                  <select id="level" class="form-control " >
+                                      <option value=""></option>
+                                      @foreach($levels as $level)
+                                      <option value="{{$level->id}}">{{$level->name}}</option>
+                                      @endforeach
                                   </select>
                               </div>
                               <div class="form-group">
                                   <label for="InputEmail" class="ic"> رمز الشعبة</label>
-                                  <select id="sts" class="form-control" >
-                                      <option value="full">أ</option>
-                                      <option value="family">ب</option>
-                                      <option value="walk">ج</option>
+                                  <select id="class" class="form-control" >
 
                                   </select>
                               </div>
@@ -86,7 +85,7 @@
                       @endforeach
                   @endif
                   <div class="row ">
-                      <form action="{{url('admin/teacher/create')}}"role="form" class="form-inline" method="post">
+                      <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
 
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الصف</label>
@@ -171,6 +170,25 @@
       </div>
   </div>
 
-    
+
+     <script>$(document).ready(function(){
+          $.ajaxSetup({
+              headers: {'X-CSRF-Token': $('meta[name=_token]').attr('content')}
+          });
+             getClasses();
+             $('#level').change(getClasses);
+          function getClasses() {
+                     $('#class').html('');
+                   $.post('class/levels',"id="+$(this).children('option:selected').attr('value')+"&_token="+$('input[name=_token]').val(),function (response) {
+                       var classes=JSON.parse(response);
+                       for(var i=0;i<classes.length;i++)
+                       {
+                           console.log(classes[i]);
+                           $('#class').append($("<option></option>") .attr("value", classes[i].id).text(classes[i].section));
+                       }
+                   })
+                 }
+         });
+      </script>
     @endsection
     

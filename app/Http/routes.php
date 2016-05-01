@@ -16,6 +16,8 @@ use App\Employee;
 use App\Classes;
 use App\Teacher;
 use App\Course;
+use App\Level;
+
 use Illuminate\Http\Request ;
 Route::get('/admin',function(){
 
@@ -119,11 +121,23 @@ Route::get('/admin/student',function(){
 
     return view('studentAdmin');
 });
-Route::get('/admin/subject',function(){
+Route::post('/admin/subject',function(){
 
     return view('subjectAdmin');
 });
+Route::post('/admin/class/levels',function(Request $request){
+    $id=$request['id'];
+    $level=Level::find($id);
+    $class=$level->classes;
+    return  response()->json($class->toJson());
+});
 Route::get('/admin/class',function(){
+
+    $levels=Level::all();
+    return view('classAdmin',['levels'=>$levels]);
+});
+Route::post('/admin/class/create',function(Request $request){
+
 
     return view('classAdmin');
 });

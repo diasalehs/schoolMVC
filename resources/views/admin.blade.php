@@ -9,6 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="_token" content="{!! csrf_token() !!}"/>
 
 
     <title>مدير الموقع</title>
