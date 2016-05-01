@@ -30,37 +30,37 @@
                               <label for="InputName" class="ic">الاسم الاول</label>
                               <div class="input-group">
                                   <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
-                                  <input type="text" class="form-control ci" name="firstName" id="InputName"  >
+                                  <input type="text" class="form-control ci" name="firstName" id="firstName"  >
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">اسم الاب</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailFirst" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailFirst" name="secondName"  >
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">اسم الجد</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="thirdName"  >
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">اسم العائلة</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="lastName"  >
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">جوال</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="mobile"  >
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الهاتف</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="phone"  >
                               </div>
                           </div>
 
