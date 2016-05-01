@@ -124,20 +124,8 @@
 
                               </select>
                           </div>
-                          <div class="form-group">
-                              <label for="InputEmail" class="ic"> البعد عن مكان الاقامة</label>
-                              <div class="input-group">
-                                  <input type="text" class="form-control col-md-5" id="InputEmailSecond" name="InputEmail" style="display: inline-block" >
-                              </div>
-                          </div>
 
 
-                          <div class="form-group">
-                              <label for="InputEmail" class="ic">الهاتف</label>
-                              <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
-                              </div>
-                          </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">عدد الاخوة</label>
                               <div class="input-group">

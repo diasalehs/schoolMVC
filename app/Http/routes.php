@@ -40,7 +40,7 @@ Route::group(['prefix' => '/admin'] ,function() {
         'as'=>'admin'
     ]);
 
-    Route::get('/first', [
+    Route::get('/', [
         'uses'=>'adminController@getAdminFirst',
         'as'=>'adminFirst'
     ]);
