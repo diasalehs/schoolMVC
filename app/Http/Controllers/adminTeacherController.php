@@ -6,6 +6,7 @@
  * Time: 12:59 PM
  */
 namespace App\Http\Controllers;
+use App\Employee;
 use Illuminate\Http\Request;
 use App\Teacher;
 use App\Person;
@@ -16,12 +17,9 @@ use Illuminate\Support\Facades\Auth;
 class adminTeacherController extends Controller{
 
     public function getTeacher(){
-        if (!Auth::check() or Auth::user()->type != 'admin') {
-            return redirect()->route('loginPage');
-        }
-            $teacheres = Teacher::all();
-            $classes = Classes::all();
-            return view('teacherAdmin')->with('teacheres', $teacheres);
+        $this->access("admin");
+            $employees = Employee::all();
+            return view('teacherAdmin')->with('employees', $employees);
     }
 
 
@@ -127,6 +125,15 @@ class adminTeacherController extends Controller{
             }
             return view('teacherAdmin')->with('teacheres', $teachers);
         }
+    }
+    public function delete(Request $request){
+        $this->access('admin');
+        $this->validate($request,['id'=>'integer|required']);
+        $id=$request->input('id');
+        $employee=Employee::find($id);
+        if($employee!=null)
+            $employee->person.delete();
+
     }
 
 
