@@ -24,7 +24,7 @@ CREATE TABLE `classes` (
   `id` int(11) NOT NULL,
   `level_id` int(11) NOT NULL,
   `section` set('Ã','È','ÌÜ','Ï','åÜ','æ','Ò','Í','Ø','í','ß','á','ã','ä','Ó','Ú') NOT NULL,
-  `capcity` int(11) NOT NULL,
+  `capacity` int(11) NOT NULL,
   `size` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -32,7 +32,7 @@ CREATE TABLE `classes` (
 -- Dumping data for table `classes`
 --
 
-INSERT INTO `classes` (`id`, `level_id`, `section`, `capcity`, `size`) VALUES
+INSERT INTO `classes` (`id`, `level_id`, `section`, `capacity`, `size`) VALUES
 (1, 1, 'Ã', 0, 0),
 (2, 1, 'È', 0, 0),
 (3, 2, 'Ã', 0, 0),

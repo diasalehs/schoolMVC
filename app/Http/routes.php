@@ -138,8 +138,11 @@ Route::get('/admin/class',function(){
 });
 Route::post('/admin/class/create',function(Request $request){
 
-
-    return view('classAdmin');
+   $name=$request->input('classname') ;
+    $section=$request->input('section') ;
+    $capacity=$request->input('capacity') ;
+    Classes::create(['level_id'=>$name,'section'=>$section,'capacity'=>$capacity]);
+    return redirect('/admin/class');
 });
 Route::get('/', function () {
     return view('login');

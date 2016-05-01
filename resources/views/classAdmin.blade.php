@@ -23,13 +23,12 @@
                       @endforeach
                   @endif
                   <div class="row ">
-                      <form action="{{url('admin/class/levels')}}"role="form" class="form-inline" method="post">
+                      <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
                           <input type="hidden" value="{{csrf_token()}}" name="_token">
 
                               <div class="form-group">
                                   <label for="InputEmail" class="ic">الصف</label>
-                                  <select id="level" class="form-control " >
-                                      <option value=""></option>
+                                  <select name="classname" id="level" class="form-control " >
                                       @foreach($levels as $level)
                                       <option value="{{$level->id}}">{{$level->name}}</option>
                                       @endforeach
@@ -37,14 +36,30 @@
                               </div>
                               <div class="form-group">
                                   <label for="InputEmail" class="ic"> رمز الشعبة</label>
-                                  <select id="class" class="form-control" >
+                                  <select id="class" name="section" class="form-control" >
+                                      <option value="أ">أ</option>
+                                      <option value="ب">ب</option>
+                                      <option value="جـ">جـ</option>
+                                      <option value="د">د</option>
+                                      <option value="هـ">هـ</option>
+                                      <option value="و">و</option>
+                                      <option value="ز">ز</option>
+                                      <option value="حـ">حـ</option>
+                                      <option value="ط">ط</option>
+                                      <option value="ي">ي</option>
+                                      <option value="ك">ك</option>
+                                      <option value="ل">ل</option>
+                                      <option value="م">م</option>
+                                      <option value="ن">ن</option>
+                                      <option value="س">س</option>
+
 
                                   </select>
                               </div>
                               <div class="form-group">
                                   <label for="InputEmail" class="ic"> السعة</label>
                                   <div class="input-group">
-                                      <input type="text" class="form-control col-md-5" id="InputEmailSecond" name="InputEmail" style="display: inline-block" >
+                                      <input type="text" class="form-control col-md-5" id="InputEmailSecond" name="capacity" style="display: inline-block" >
                                   </div>
                               </div>
 
@@ -175,8 +190,7 @@
           $.ajaxSetup({
               headers: {'X-CSRF-Token': $('meta[name=_token]').attr('content')}
           });
-             getClasses();
-             $('#level').change(getClasses);
+//             $('#level').change(getClasses);
           function getClasses() {
                      $('#class').html('');
                    $.post('class/levels',"id="+$(this).children('option:selected').attr('value')+"&_token="+$('input[name=_token]').val(),function (response) {

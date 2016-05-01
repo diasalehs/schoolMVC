@@ -8,7 +8,7 @@ class Classes extends Model
 {
 
     protected $table='classes';
-    protected $fillable=['level_id','section'];
+    protected $fillable=['level_id','section','capacity','size'];
     public $timestamps=false;
     //
     public function teachers(){
