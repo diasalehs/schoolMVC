@@ -24,9 +24,7 @@ class loginController extends Controller implements  \Illuminate\Contracts\Auth\
         ]);
 
         if(!Auth::attempt(['id'=>$request['inputName'],'password'=>$request['inputPassword']])){
-//            return redirect()->back()->with(['fail'=>'Could not login you']);
-            echo $request['inputName'];
-            echo $request['inputPassword'];
+          return redirect()->back()->with(['fail'=>'Could not login you']);
         }
         return redirect('admin');
     }

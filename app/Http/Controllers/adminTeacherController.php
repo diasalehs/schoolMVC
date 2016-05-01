@@ -22,17 +22,33 @@ class adminTeacherController extends Controller{
 
 
     public function postCreate($action,Request $request){
-        if (isset($request['firstName']) and !empty($request['firstName'])) {
-            $name = $request['firstName'];
-            $person = Person::create(["religon" => "hello"]);
-            $person->name()->create(['first' => $name]);
-            $person->employee()->create([]);
-            $person->employee->teacher()->create([]);
-            $person->user()->create(['password' => bcrypt($person->id)]);
-            $teacheres = Teacher::all();
-            $classes = Classes::all();
-            return view('teacherAdmin')->with('teacheres', $teacheres);
-        }
+        $this->validate($request,[
+            'phone' => 'integer', 'secondName|alpha' => 'required', 'lastName|alpha' => 'required|alpha',
+            'firstName' => 'required|alpha', 'thirdName' => 'required|alpha'
+        ]);
+
+        $phone= $request['phone'];
+        if(!isset($phone)){$phone = null;}
+        $first= $request['firstName'];
+        $second= $request['secondName'];
+        $third= $request['thirdName'];
+        $last= $request['lastName'];
+
+        $name = $request['firstName'];
+
+        $person = Person::create(["religon" => "hello"]);
+        $person->name()->create(['first' => $name]);
+        $person->create(['phone'=>$phone]);
+        $person->name()->create(['second'=>$second]);
+        $person->name()->create(['third'=>$third]);
+        $person->name()->create(['last'=>$last]);
+        $person->employee()->create([]);
+        $person->employee->teacher()->create([]);
+        $person->user()->create(['password' => bcrypt($person->id)]);
+        $teacheres = Teacher::all();
+        $classes = Classes::all();
+        return view('teacherAdmin')->with('teacheres', $teacheres);
+
     }
 
     public function postSearch($action,Request $request){
