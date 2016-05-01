@@ -173,5 +173,5 @@ Route::group(['prefix' => '/student'] ,function() {
             return view('supervisorMessages');
         });
     });
-    
+
 });
