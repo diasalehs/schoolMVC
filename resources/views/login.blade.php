@@ -38,7 +38,7 @@
     <form class="form-signin" method="post" action="">
         <h2 class="form-signin-heading">تسجيل الدخول</h2>
         <label for="inputEmail" class="sr-only">رقم المستخدم</label>
-            <input type="email" id="inputEmail" class="form-control" name="inputEmail" placeholder="رقم المستخدم" required autofocus>
+            <input type="text" id="inputEmail" class="form-control" name="inputEmail" placeholder="رقم المستخدم" required autofocus>
             <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
         <label for="inputPassword" class="sr-only">كلمة السر</label>
             <input type="password" id="inputPassword" class="form-control" name="inputPassword" placeholder="كلمة السر" required>
