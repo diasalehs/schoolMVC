@@ -60,7 +60,6 @@ Route::group(['prefix' => '/admin'] ,function() {
             'as'=>'adminSubject'
         ]);
     });
->>>>>>> b03441a1aab9c0fbce4107ccdeab20ef7a90b1a4
 
     //----------------------------------------------------------------class
     Route::group(['prefix' => '/class'] ,function() {
@@ -153,4 +152,22 @@ Route::group(['prefix' => '/student'] ,function() {
     });
 });
 
+
+
+//-------------------------------------------------------------------------supervisorPAGE
+    Route::group(['prefix' => '/supervisor'] ,function() {
+
+        Route::get('/', function () {
+
+            return view('supervisorFirst');
+        });
+        Route::get('/attendance', function () {
+
+            return view('attendance');
+        });
+        Route::get('/messages', function () {
+
+            return view('supervisorMessages');
+        });
+    });
 });
