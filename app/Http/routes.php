@@ -21,7 +21,7 @@ use App\Level;
 use Illuminate\Http\Request ;
 Route::get('/admin',function(){
 
-    return view('admin');
+    return view('adminFirst');
 });
 Route::get('/teacher',function(){
 
@@ -121,7 +121,7 @@ Route::get('/admin/student',function(){
 
     return view('studentAdmin');
 });
-Route::post('/admin/subject',function(){
+Route::get('/admin/subject',function(){
 
     return view('subjectAdmin');
 });
