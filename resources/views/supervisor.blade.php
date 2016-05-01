@@ -11,39 +11,12 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
 
-    <title>المعلم</title>
+    <title>المشرف</title>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script>
 
-        if ( $(window).width() > 739) {
-            //Add your javascript for large screens here
-            tinymce.init({
-                selector: '#myTextarea',
-                theme: 'modern',
-                width: 800,
-                height: 300,
-                plugins: [
-                    'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
-                    'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-                    'save table contextmenu directionality emoticons template paste textcolor'
-                ],
-            });
-        }
-        else {
-            //Add your javascript for small screens here
-            tinymce.init({
-                selector: '#myTextarea',
-                theme: 'modern',
-                width: 350,
-                height: 300,
-                plugins: [
-                    'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
-                    'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-                    'save table contextmenu directionality emoticons template paste textcolor'
-                ],
-            });
-        }
+
 
     </script>
     <script>tinymce.init({ selector:'textarea' });</script>
@@ -68,19 +41,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{url('teacher/')}}"> المعلم</a>
+                <a class="navbar-brand" href="{{url('supervisor')}}"> المشرف</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a href="{{route('logout')}}">تسجيل الخروج</a></li>
+                    <li><a href="#">تسجيل الخروج</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  style="margin-left: 100px;">اقسام الموقع <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{url('teacher/student')}}">الطلاب</a></li>
-                            <li><a href="{{URL('teacher/marks')}}">العلامات</a></li>
+                            <li><a href="{{URL('teacher/marks')}}">الحضور والغياب</a></li>
                             <li><a href="{{url('teacher/messages')}}">الرسائل</a></li>
                         </ul>
                     </li>
@@ -95,13 +67,11 @@
             <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav " >
                     <li><img class="teacherimg" src={{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}></li>
-                    <li style="text-align: center; margin: 10px 0">اسم المعلم</li>
+                    <li style="text-align: center;margin: 10px 0">اسم المشرف</li>
                     <li><span><hr></span></li>
-                    <li id="st"><a href="{{URL('teacher/student')}}"> الطلاب</a></li>
-                        </a></li>
-                    <li class="" id="te"><a href="{{url('teacher/marks')}}" >العلامات</a></li>
+                    <li class="" id="te"><a href="{{url('supervisor/attendance')}}" >الحضور والغياب</a></li>
 
-                    <li id="su"><a href="{{url('teacher/messages')}}" onclick="">الرسائل</a></li>
+                    <li id="su"><a href="{{url('supervisor/messages')}}" onclick="">الرسائل</a></li>
                 </ul>
 
             </div>

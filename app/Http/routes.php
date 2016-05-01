@@ -10,18 +10,19 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-use App\Http\Controllers;
-use App\Http\Controllers\Admin;
 
 
 
 Route::group(['middleware' => ['web']],function(){
 
+<<<<<<< HEAD
     Route::get('/',function(){
         if (!Auth::check()) {
             return redirect()->route('loginPage');
         }
     });
+=======
+>>>>>>> 6558bf741d89ad3321d3e833eeb65a9d2cc3bea7
 
 //-------------------------------------------------------------------------loginPAGE
 Route::get('/', [
@@ -163,4 +164,24 @@ Route::group(['prefix' => '/student'] ,function() {
 });
 
 
+<<<<<<< HEAD
+=======
+
+//-------------------------------------------------------------------------supervisorPAGE
+    Route::group(['prefix' => '/supervisor'] ,function() {
+
+        Route::get('/', function () {
+
+            return view('supervisorFirst');
+        });
+        Route::get('/attendance', function () {
+
+            return view('attendance');
+        });
+        Route::get('/messages', function () {
+
+            return view('supervisorMessages');
+        });
+    });
+>>>>>>> 6558bf741d89ad3321d3e833eeb65a9d2cc3bea7
 });
