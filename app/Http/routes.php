@@ -153,6 +153,14 @@ Route::group(['prefix' => '/student'] ,function() {
 
         return view('studentFirst');
     });
+    Route::get('/messages', function () {
+
+        return view('studentMessages');
+    });
+    Route::get('/marks', function () {
+
+        return view('studentMarks');
+    });
 });
 
 
