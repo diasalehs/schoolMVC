@@ -16,10 +16,20 @@ use App\Employee;
 use App\Classes;
 use App\Teacher;
 use App\Course;
+use App\Level;
+
 use Illuminate\Http\Request ;
 Route::get('/admin',function(){
 
     return view('admin');
+});
+Route::get('/teacher',function(){
+
+    return view('teacher');
+});
+Route::get('/teacher/student',function(){
+
+    return view('teacherStudent');
 });
 Route::get('/admin/first',function(){
 
@@ -35,9 +45,13 @@ Route::get('/admin/teacher',function(){
 
 Route::get('/admin/messages',function(){
   
-    $teacheres=Teacher::all();
-    $classes=Classes::all();
-    return view('messagesAdmin')->with('teacheres',$teacheres);
+
+    return view('messagesAdmin');
+});
+Route::get('/admin/messages/show',function(){
+
+
+    return view('showMA');
 });
 
 Route::post('/admin/teacher/create',function(Request $request){
@@ -107,11 +121,23 @@ Route::get('/admin/student',function(){
 
     return view('studentAdmin');
 });
-Route::get('/admin/subject',function(){
+Route::post('/admin/subject',function(){
 
     return view('subjectAdmin');
 });
+Route::post('/admin/class/levels',function(Request $request){
+    $id=$request['id'];
+    $level=Level::find($id);
+    $class=$level->classes;
+    return  response()->json($class->toJson());
+});
 Route::get('/admin/class',function(){
+
+    $levels=Level::all();
+    return view('classAdmin',['levels'=>$levels]);
+});
+Route::post('/admin/class/create',function(Request $request){
+
 
     return view('classAdmin');
 });
@@ -144,7 +170,7 @@ Route::get('/', [
 //        echo $person->name->second;
 //        echo "\n";
 //        echo $person->name->last;
-    
+
 //    echo "\n";
 //    $employees=Employee::all();
 //    foreach ($employees as $employee){

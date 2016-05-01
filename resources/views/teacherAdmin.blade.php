@@ -13,7 +13,7 @@
       </div>
       <div id="collapse1" class="panel-collapse collapse">
 
-          <div class="container">
+          <div class="container-fluid">
               @if (count($errors)>0)
                   @foreach($errors -> all() as $error)
 
@@ -22,7 +22,7 @@
                       </div>
                   @endforeach
               @endif
-              <div class="row formm">
+              <div class="row ">
                   <form action="{{url('admin/teacher/create')}}"role="form" class="form-inline" method="post">
                         <div class="fp">
                             <h3 class="ft"> بيانات الموظف الشخصية</h3>
@@ -114,6 +114,14 @@
                                     <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
                                 </div>
                             </div>
+
+                      <div class="form-group mc" >
+                          <label for="InputEmail" > عدد الاطفال</label>
+                          <div class="input-group" style="width: 80px">
+                              <input type="number" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                          </div>
+                      </div>
+
                             <div class="form-group">
                                 <label for="InputEmail">متزوج</label>
                                 <div class="input-group">
@@ -124,7 +132,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mc">
                                 <label for="InputEmail">هل الزوج او الزوجة يعمل</label>
                                 <div class="input-group">
                                     <select id="sts" class="form-control">
@@ -135,21 +143,15 @@
                                 </div>
                             </div>
 
-                      <div class="form-group">
-                          <label for="InputEmail"> عدد الاطفال</label>
-                          <div class="input-group" style="width: 80px">
-                              <input type="number" class="form-control" id="InputEmailSecond" name="InputEmail"  >
-                          </div>
-                      </div>
 
                       <div class="form-group">
-                          <label for="InputEmail"> عدد الاطفال في نفس المدرسة </label>
+                          <label for="InputEmail" style="width: 250px"> عدد الاطفال في نفس المدرسة </label>
                           <div class="input-group" style="width: 80px">
                               <input type="number" class="form-control" id="InputEmailSecond" name="InputEmail"  >
                           </div>
                       </div>
                       <div class="form-group">
-                          <label for="InputEmail"> عدد الاطفال في المدارس اخرى</label>
+                          <label for="InputEmail"  style="width: 250px"> عدد الاطفال في المدارس اخرى</label>
                           <div class="input-group" style="width: 80px">
                               <input type="number" class="form-control" id="InputEmailSecond" name="InputEmail"  >
                           </div>

@@ -9,10 +9,9 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="_token" content="{!! csrf_token() !!}"/>
 
 
-    <title>مدير الموقع</title>
+    <title>المعلم</title>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script>
@@ -52,7 +51,7 @@
 
 
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/tcss.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/teac.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{url::asset('rtl/dist/css/bootstrap-rtl.css')}}">
 </head>
 
@@ -69,7 +68,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">مدير الموقع</a>
+                <a class="navbar-brand" href="#"> المعلم</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -97,12 +96,14 @@
             <!-- sidebar -->
             <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav ">
-                    <li class="" id="te"><a href="{{url('admin/teacher')}}" >الموظفين</a></li>
-                    <li id="st"><a href="{{URL('admin/student')}}" >الطلاب</a></li>
+                    <li><img class="teacherimg" src={{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}></li>
+                    <li><span><hr></span></li>
+                    <li id="st"><a href="{{URL('teacher/student')}}" >الطلاب</a></li>
                     <li id="cl"><a href="{{URL('admin/class')}}" onclick="">الشعب
-                    </a></li>
-                    <li id="su"><a href="{{url('admin/subject')}}" onclick="">المواضيع</a></li>
-                    <li id="su"><a href="{{url('admin/messages')}}" onclick="">الرسائل</a></li>
+                        </a></li>
+                    <li class="" id="te"><a href="{{url('admin/teacher')}}" >العلامات</a></li>
+
+                    <li id="su"><a href="{{url('/messages')}}" onclick="">الرسائل</a></li>
                 </ul>
 
             </div>
