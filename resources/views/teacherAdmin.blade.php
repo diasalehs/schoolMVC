@@ -192,6 +192,7 @@
                                   <input type="hidden" role="uploadcare-uploader" name="my_file" style="display: inline-block"/>
                               </div>
                           </div>
+                          <input type="file" name="pic" accept="image/*">
 
                       </div>
                       <div class="">
