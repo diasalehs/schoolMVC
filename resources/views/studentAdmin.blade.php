@@ -195,6 +195,13 @@
                               </div>
                           </div>
 
+                          <div class="form-group">
+                              <label for="InputEmail">صورة شخصية</label>
+                              <div class="input-group" style="width: 100px">
+                                  <input type="hidden" role="uploadcare-uploader" name="my_file" style="display: inline-block"/>
+                              </div>
+                          </div>
+
                           <div class="">
                               <div class="col-md-8 col-md-offset-2 bm" >
                                   <button class="btn btn-success btn-block" type="submit" >تسجيل</button></div>

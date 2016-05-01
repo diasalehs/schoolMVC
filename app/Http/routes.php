@@ -84,17 +84,7 @@ Route::group(['prefix' => '/admin'] ,function() {
 
     });
 
-    //----------------------------------------------------------------messages
-    Route::group(['prefix' => '/messages'] ,function() {
-        Route::get('/', [
-            'uses'=>'adminMessageController@getMessage',
-            'as'=>'adminMessage'
-        ]);
-        Route::get('/show', [
-            'uses'=>'adminMessageController@getShow',
-            'as'=>'Show'
-        ]);
-    });
+ 
 
 
     //----------------------------------------------------------------Teacher

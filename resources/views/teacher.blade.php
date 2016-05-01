@@ -10,7 +10,9 @@
     <link rel="icon" href="../../favicon.ico">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
-
+    <!-- The best place for this one is your <HEAD> tag -->
+    <script>UPLOADCARE_PUBLIC_KEY = "demopublickey";</script>
+    <script src="https://ucarecdn.com/widget/2.8.2/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>
     <title>المعلم</title>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>

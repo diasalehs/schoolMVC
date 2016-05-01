@@ -185,6 +185,14 @@
                                   <input type="number" class="form-control" id="InputEmailSecond" name="experince_abroad"  >
                               </div>
                           </div>
+
+                          <div class="form-group">
+                              <label for="InputEmail">صورة شخصية</label>
+                              <div class="input-group" style="width: 100px">
+                                  <input type="hidden" role="uploadcare-uploader" name="my_file" style="display: inline-block"/>
+                              </div>
+                          </div>
+
                       </div>
                       <div class="">
                           <div class="col-md-8 col-md-offset-2 bm" >

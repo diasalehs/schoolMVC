@@ -33,10 +33,6 @@
                                 </div>
 
 
-                                <div class="form-group">
-
-
-                                        <button class="btn btn-success" type="submit" style="width: 100px">بحث</button></div>
                             </div>
 
                         </form>
@@ -60,31 +56,25 @@
             <td>ضياء صالح سعودي</td>
             <td >اول</td>
             <td >أ</td>
-            <td ><div class="dropdown">
-                    <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0);">تعديل</a></li>
-                        <li><a href="javascript:void(0);">حذف</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>١</td>
-            <td>ضياء صالح سعودي</td>
-            <td >اول</td>
-            <td >أ</td>
-            <td ><div class="dropdown">
-                    <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0);">تعديل</a></li>
-                        <li><a href="javascript:void(0);">حذف</a></li>
-                    </ul>
+            <td >
+                <div class="form-group " style="padding: 0 0; margin: 0 0;">
+                    <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+                    <label for="checkbox_id">لم يحضر</label>
+
                 </div>
             </td>
         </tr>
 
+
         </tbody>
     </table>
+
+    <div class="form-group">
+
+
+        <button class="btn btn-success" type="submit" style="width: 100px">بحث</button>
+
+
+    </div>
 
 @endsection
