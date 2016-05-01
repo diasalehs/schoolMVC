@@ -8,21 +8,26 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Auth\Authenticatable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class loginController extends Controller{
+class loginController extends Controller implements  \Illuminate\Contracts\Auth\Authenticatable{
+    use Authenticatable;
     public function getLogin(){
         return view('login');
     }
 
     public function postLogin(Request $request){
-        $this->valdiate($request,[
-            'inputEmail' => 'required|integer', 'inputPassword' => 'required|string'
+        $this->validate($request,[
+            'inputName' => 'required|integer', 'inputPassword' => 'required|string'
         ]);
 
-        if(Auth::attempt(['name'=>$request['inputName'],'password'=>$request['inputPassword']])){
-            return redirect()->back()->with(['fail'=>'Could not login you']);
+        if(!Auth::attempt(['id'=>$request['inputName'],'password'=>$request['inputPassword']])){
+//            return redirect()->back()->with(['fail'=>'Could not login you']);
+            echo $request['inputName'];
+            echo $request['inputPassword'];
         }
-        return redirect()->route('admin.blade');
+        return redirect('admin');
     }
 }

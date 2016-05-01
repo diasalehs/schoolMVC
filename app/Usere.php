@@ -9,6 +9,7 @@ class Usere extends Model implements \Illuminate\Contracts\Auth\Authenticatable
 {
     use Authenticatable;
     protected $table = 'useres';
+    public $timestamps=false;
     protected $fillable = ['id','person_id','password','type'];
     
     public function user(){
