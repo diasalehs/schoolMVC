@@ -9,7 +9,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" href="#collapse1" class="">اضافة صف  <span class="glyphicon glyphicon-plus"></span></a>
+                    <a data-toggle="collapse" href="#collapse1" class=""><span class="glyphicon glyphicon-plus"></span> اضافة صف </a>
                 </h4>
             </div>
             <div id="collapse1" class="panel-collapse collapse colla">
