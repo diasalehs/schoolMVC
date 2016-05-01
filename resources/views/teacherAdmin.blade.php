@@ -285,13 +285,13 @@
 
          <div class="row glyphicon-align-right">
 {{--             @if(isset($teacheres))--}}
-         @foreach($teacheres as $t=>$teacher)
+         @foreach($employees as $t=>$employee)
           <div class="  col-xm-6 col-md-3">
             <div class="panel panel-default " style="padding: 5px; text-align: center">
               <img class="timg" style="width: 90%" src="{{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}" alt="...">
               <div class="caption">
-                <h3>{{$teacher->employee->person->name->first}}</h3>
-                <p>{{$teacher->employee->person->religon}}</p>
+                <h3>{{$employee->person->name->first}}</h3>
+                <p>{{$employee->person->religon}}</p>
                 <p><a href="#" class="btn btn-success" role="button">عرض</a>
                     <a href="#" class="btn btn-primary" role="button">تعديل</a>
                     <a href="#" class="btn btn-danger" role="button">حذف</a></p>
