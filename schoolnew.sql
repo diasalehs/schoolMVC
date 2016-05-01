@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2016 at 05:09 AM
+-- Generation Time: May 01, 2016 at 10:48 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -57,7 +57,9 @@ CREATE TABLE `attendances` (
 CREATE TABLE `classes` (
   `id` int(11) NOT NULL,
   `level_id` int(11) NOT NULL,
-  `section` set('�','�','��','�','��','�','�','�','�','�','�','�','�','�','�','�') NOT NULL
+  `section` set('أ','ب','جـ','د','هـ','و','ز','ح','ط','ي','ك','ل','م','ن','س','ع') NOT NULL,
+  `capacity` int(11) NOT NULL,
+  `size` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -133,11 +135,11 @@ CREATE TABLE `course_teacher` (
 
 CREATE TABLE `degrees` (
   `employee_id` int(11) NOT NULL,
-  `name` set('�������� ������','�����','��������','����� ����','�������') NOT NULL,
+  `name` set('الثانوية العامة','دبلوم','بكالوريس','دبلوم عالي','ماجستير') NOT NULL,
   `date` date NOT NULL,
   `source` varchar(20) NOT NULL,
   `avg` int(11) NOT NULL,
-  `rating` set('�����','��� ���','���','�����','����') NOT NULL,
+  `rating` set('ممتاز','جيد جدا','جيد','مقبول','ضعيف') NOT NULL,
   `specialty` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -171,8 +173,7 @@ INSERT INTO `employees` (`id`, `person_id`, `mobile`, `married`, `DoesPartnerWor
 (1, 1, 598480111, 'no', 0, 0, 4, 2, 'progammer', '2016-04-04', 'nothin', 1, 5),
 (31, 42, 0, '', 0, 0, 0, 0, '', '0000-00-00', '', 0, 0),
 (32, 43, 0, '', 0, 0, 0, 0, '', '0000-00-00', '', 0, 0),
-(33, 44, 0, '', 0, 0, 0, 0, '', '0000-00-00', '', 0, 0),
-(34, 45, 0, '', 0, 0, 0, 0, '', '0000-00-00', '', 0, 0);
+(33, 44, 0, '', 0, 0, 0, 0, '', '0000-00-00', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -230,16 +231,6 @@ CREATE TABLE `levels` (
   `name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `levels`
---
-
-INSERT INTO `levels` (`id`, `name`) VALUES
-(1, '���� �����'),
-(3, '���� ������'),
-(2, '���� ������'),
-(4, '���� ������');
-
 -- --------------------------------------------------------
 
 --
@@ -250,22 +241,6 @@ CREATE TABLE `level_subject` (
   `level_id` int(11) NOT NULL,
   `subject_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `level_subject`
---
-
-INSERT INTO `level_subject` (`level_id`, `subject_id`) VALUES
-(1, 1),
-(1, 2),
-(2, 3),
-(2, 4),
-(3, 1),
-(3, 4),
-(4, 1),
-(4, 2),
-(4, 3),
-(4, 4);
 
 -- --------------------------------------------------------
 
@@ -322,8 +297,7 @@ INSERT INTO `names` (`person_id`, `first`, `second`, `third`, `last`) VALUES
 (1, 'dia', 'omar', 'sudqi', 'jawabreh'),
 (42, 'mazen', '', '', ''),
 (43, 'laith', '', '', ''),
-(44, 'Nael', '', '', ''),
-(45, 'sudqi', '', '', '');
+(44, 'Nael', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -350,8 +324,7 @@ INSERT INTO `persones` (`id`, `nationality`, `religon`, `placeOfBirth`, `ni`, `i
 (1, 'palestinan', 'muslim', 'nablus', 1234, 'green', 9, 92396650),
 (42, '', 'hello', '', 0, '', 0, 0),
 (43, '', 'hello', '', 0, '', 0, 0),
-(44, '', 'hello', '', 0, '', 0, 0),
-(45, '', 'hello', '', 0, '', 0, 0);
+(44, '', 'hello', '', 0, '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -398,16 +371,6 @@ CREATE TABLE `subjects` (
   `name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `subjects`
---
-
-INSERT INTO `subjects` (`id`, `name`) VALUES
-(1, '����'),
-(2, '����'),
-(3, '�������'),
-(4, '���');
-
 -- --------------------------------------------------------
 
 --
@@ -440,8 +403,7 @@ INSERT INTO `teacheres` (`id`, `employee_id`) VALUES
 (1, 1),
 (22, 31),
 (23, 32),
-(24, 33),
-(25, 34);
+(24, 33);
 
 -- --------------------------------------------------------
 
@@ -495,7 +457,7 @@ ALTER TABLE `attendances`
 -- Indexes for table `classes`
 --
 ALTER TABLE `classes`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`,`level_id`) USING BTREE,
   ADD KEY `level_id` (`level_id`);
 
 --
@@ -574,14 +536,13 @@ ALTER TABLE `grades`
 -- Indexes for table `levels`
 --
 ALTER TABLE `levels`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`);
+  ADD PRIMARY KEY (`id`,`name`);
 
 --
 -- Indexes for table `level_subject`
 --
 ALTER TABLE `level_subject`
-  ADD PRIMARY KEY (`level_id`,`subject_id`) USING BTREE,
+  ADD PRIMARY KEY (`level_id`,`subject_id`),
   ADD KEY `subject_id` (`subject_id`);
 
 --
@@ -664,7 +625,7 @@ ALTER TABLE `useres`
 -- AUTO_INCREMENT for table `classes`
 --
 ALTER TABLE `classes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `class_course`
 --
@@ -679,12 +640,12 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `levels`
 --
 ALTER TABLE `levels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `marks`
 --
@@ -699,7 +660,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `persones`
 --
 ALTER TABLE `persones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT for table `students`
 --
@@ -709,12 +670,12 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `teacheres`
 --
 ALTER TABLE `teacheres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- Constraints for dumped tables
 --
@@ -738,7 +699,7 @@ ALTER TABLE `attendances`
 -- Constraints for table `classes`
 --
 ALTER TABLE `classes`
-  ADD CONSTRAINT `classes_ibfk_1` FOREIGN KEY (`level_id`) REFERENCES `levels` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `classes_ibfk_1` FOREIGN KEY (`level_id`) REFERENCES `levels` (`id`);
 
 --
 -- Constraints for table `classes_teacher`
