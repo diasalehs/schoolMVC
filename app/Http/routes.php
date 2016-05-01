@@ -14,6 +14,11 @@ use App\Http\Controllers;
 use App\Http\Controllers\Admin;
 
 
+Route::get('/admin/level',function(){
+
+    return view('levelAdmin');
+});
+
 Route::group(['middleware' => ['web']],function(){
 
 //-------------------------------------------------------------------------loginPAGE

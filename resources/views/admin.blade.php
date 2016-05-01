@@ -82,7 +82,8 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{url('admin/teacher')}}">الموظفين</a></li>
                             <li><a href="{{URL('admin/student')}}">الطلاب</a></li>
-                            <li><a href="{{URL('admin/class')}}">الشعب</a></li>
+                            <li><a href="{{URL('admin/level')}}">الصفوف</a></li>
+                            <li><a href="{{URL('admin/class')}}">الشُعب</a></li>
                             <li><a href="{{url('admin/subject')}}">المواد</a></li>
                             <li><a href="{{url('admin/messages')}}">الرسائل</a></li>
                         </ul>
@@ -97,10 +98,10 @@
             <!-- sidebar -->
             <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav ">
-                    <li class="" id="te"><a href="{{url('admin/teacher')}}" >الموظفين</a></li>
+                    <li  id="te"   ><a href="{{url('admin/teacher')}}">الموظفين</a></li>
                     <li id="st"><a href="{{URL('admin/student')}}" >الطلاب</a></li>
-                    <li id="cl"><a href="{{URL('admin/class')}}" onclick="">الشعب
-                    </a></li>
+                    <li id="cl"><a href="{{URL('admin/level')}}" onclick="">الصفوف</a></li>
+                    <li id="cl"><a href="{{URL('admin/class')}}" onclick="">الشٌعب</a></li>
                     <li id="su"><a href="{{url('admin/subject')}}" onclick="">المواد</a></li>
                     <li id="su"><a href="{{url('admin/messages')}}" onclick="">الرسائل</a></li>
                 </ul>
