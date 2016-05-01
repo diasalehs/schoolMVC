@@ -17,7 +17,8 @@ use App\Classes;
 use App\Teacher;
 use App\Course;
 use App\Level;
-
+use App\Message;
+use App\Usere;
 use Illuminate\Http\Request ;
 Route::get('/admin',function(){
 
@@ -43,16 +44,29 @@ Route::get('/admin/teacher',function(){
     return view('teacherAdmin')->with('teacheres',$teacheres);
 });
 
+
+Route::post('/admin/messages/send',function(Request $request){
+    $user=Usere::find(1);
+    $user->sentMessages()->create(['send_to'=>$request['sender'],'title'=>$request['subject'],'body'=>$request['message']]);
+   return redirect('admin/messages');
+});
+Route::get('/admin/messages/show',function(){
+   $user=Usere::find(1);
+    $sent=$user->sentMessages;
+    $receive=$user->receivedMessages;
+
+
+});
 Route::get('/admin/messages',function(){
   
 
     return view('messagesAdmin');
 });
-Route::get('/admin/messages/show',function(){
-
-
-    return view('showMA');
-});
+//Route::get('/admin/messages/show',function(){
+//
+//
+//    return view('showMA');
+//});
 
 Route::post('/admin/teacher/create',function(Request $request){
 

@@ -15,24 +15,25 @@
         </div>
         <div id="collapse1" class="panel-collapse collapse colla">
 <div class="row">
-    <form role="form" class="form-inline">
+    <form role="form" class="form-inline" action="{{URL('admin/send')}}" method="post">
+        <input type="hidden" value="{{csrf_token()}}" name="_token">
         <div class="form-group mi">
             <label for="InputName">المرسل اليه</label>
             <div class="input-group "  >
-                <input type="text" class="form-control" name="InputName" id="InputName"  required>
+                <input type="text" class="form-control" name="sender" id="InputName"  required>
             </div>
         </div>
 
         <div class="form-group mi ">
             <label for="InputEmail" >العنوان</label>
             <div class="input-group" >
-                <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  required>
+                <input type="text" class="form-control" id="InputEmailSecond" name="subject"  required>
             </div>
         </div>
         <div class="form-group mi">
             <label for="InputEmail">نص الرسالة </label>
             <div class="input-group">
-                <textarea style="" id="myTextarea"></textarea>
+                    <textarea style="" id="myTextarea" name="message"></textarea>
             </div>
         </div>
         <div class="form-group mi">

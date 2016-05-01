@@ -106,16 +106,12 @@
                               <label for="InputEmail" class="ic">الصف</label>
                               <select id="sts" class="form-control " >
                                   <option value="full">مواصلات كاملة</option>
-                                  <option value="family">مع الاهل</option>
-                                  <option value="walk">مشاه</option>
                               </select>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الشعبة</label>
                               <select id="sts" class="form-control" >
                                   <option value="full">مواصلات كاملة</option>
-                                  <option value="family">مع الاهل</option>
-                                  <option value="walk">مشاه</option>
 
                               </select>
                           </div>
