@@ -114,6 +114,38 @@
                                 <input type="text" class="form-control" id="InputEmailSecond" name="childrenOtherSchools" disabled >
                             </div>
                         </div>
+                        <div >
+                            <h3 class="ft">البيانات الوظيفية</h3>
+                            <div class="form-group">
+                                <label for="InputEmail">المسمى الوظيفي</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="childrenOtherSchools" disabled >
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="InputEmail">التصنيف الوظيفي</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="childrenOtherSchools" disabled >
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="InputEmail"> سنوات الخبرةالداخلية</label>
+                                <div class="input-group" >
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="experince_local"  disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="InputEmail"> سنوات الخبرة الخارجية</label>
+                                <div class="input-group" >
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="experince_abroad" disabled >
+                                </div>
+                            </div>
+
+
+                        </div>
 
                     </div>
                     <div >
