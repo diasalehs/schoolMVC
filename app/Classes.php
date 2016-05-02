@@ -12,10 +12,13 @@ class Classes extends Model
     public $timestamps=false;
     //
     public function teachers(){
-        return $this->belongsToMany('App\Teacher','classes_teacher','class_id','teacher_id');
+        return $this->belongsToMany('App\Teacher','lectures');
     }
-    public function courses(){
-        return $this->belongsToMany('App\Course','class_course','class_id','course_id');
+    public function subjects(){
+        return $this->belongsToMany('App\Subject','lectures');
+    }
+    public function lectures(){
+        return $this->hasMany('App\Lecture');
     }
     public function level(){
         return $this->belongsTo('App\Level');

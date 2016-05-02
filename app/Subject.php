@@ -11,4 +11,5 @@ class Subject extends Model
    public function levels(){
        return $this->belongsToMany('App\Level');
    }
+    
 }

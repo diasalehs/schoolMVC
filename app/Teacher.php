@@ -14,11 +14,14 @@ class Teacher extends Model
         return $this->belongsTo('App\Employee');
 
     }
-    public function klasses(){
-        return $this->belongsToMany('App\Classes','classes_teacher','teacher_id','class_id');
+    public function lectures(){
+        return $this->belongsToMany('App\Lecture');
     }
-    public function courses(){
-        return $this->belongsToMany('App\Course');
+    public function classes(){
+        return $this->belongsToMany('App\Classes','lectures');
+    }
+    public function subjects(){
+        return $this->belongsToMany('App\Subject','lectures');
     }
     public function teacherarrival(){
         return $this->belongsToMany('App\Teacherarrival');
