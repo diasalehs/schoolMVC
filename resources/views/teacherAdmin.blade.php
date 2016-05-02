@@ -304,7 +304,7 @@
                  <form  method="post" action="">
                     <a id="/teacher/show" class="btn btn-success post" role="button">عرض</a>
                     <a id="/teacher/edit" class="btn btn-primary post" role="button">تعديل</a>
-                    <a id ="teacher/delete"class="btn btn-danger post" role="button">حذف</a>
+                    <a data-target="#deleteC" data-toggle="modal" id ="teacher/delete"class="btn btn-danger post" role="button">حذف</a>
                   <input type="hidden" name="id" value="{{$employee->id}}" id="employeeid">
                   <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
                   </form></p>
@@ -549,18 +549,16 @@
           </div>
     <script>
         $(document).ready(function(){
+            form=null;
+
             deleteConfirm=false;
             $('#deleteConfirm').click(function () {
-               deleteConfirm=true;
+                form.submit();
             });
             $('.post').click(function () {
-                if(deleteConfrim) {
                     var action = $(this).attr('id');
-                    var form = $(this).closest('form')
-//           console.log(action);
+                    form = $(this).closest('form')
                     form.attr('action', action);
-                    form.submit();
-                }
             });
        });
 
