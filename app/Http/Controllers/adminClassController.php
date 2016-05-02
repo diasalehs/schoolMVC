@@ -8,6 +8,8 @@
 
 namespace App\Http\Controllers;
 use App\Level;
+use App\Student;
+use App\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Classes;
@@ -19,7 +21,10 @@ class adminClassController extends Controller{
             return redirect()->route('loginPage');
         }
         $levels = Level::all();
-        return view('classAdmin', ['levels' => $levels]);
+        $Classes = Classes::all();
+        $teachers=Teacher::all();
+        $students=Student::all();
+        return view('classAdmin', ['levels' => $levels,'classes' => $Classes,'teachers'=>$teachers,'students'=>$students]);
     }
 
     public function  Create(Request $request){

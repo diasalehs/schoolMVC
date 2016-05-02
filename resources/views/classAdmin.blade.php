@@ -105,13 +105,29 @@
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الصف</label>
                               <select id="sts" class="form-control " >
-                                  <option value="full">مواصلات كاملة</option>
+                                  @foreach($levels as $level)
+                                      <option value="{{$level->id}}">{{$level->name}}</option>
+                                  @endforeach
                               </select>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الشعبة</label>
                               <select id="sts" class="form-control" >
-                                  <option value="full">مواصلات كاملة</option>
+                                  <option value="أ">أ</option>
+                                  <option value="ب">ب</option>
+                                  <option value="جـ">جـ</option>
+                                  <option value="د">د</option>
+                                  <option value="هـ">هـ</option>
+                                  <option value="و">و</option>
+                                  <option value="ز">ز</option>
+                                  <option value="حـ">حـ</option>
+                                  <option value="ط">ط</option>
+                                  <option value="ي">ي</option>
+                                  <option value="ك">ك</option>
+                                  <option value="ل">ل</option>
+                                  <option value="م">م</option>
+                                  <option value="ن">ن</option>
+                                  <option value="س">س</option>
 
                               </select>
                           </div>
@@ -133,9 +149,9 @@
 
                                   <div class="form-group" style="padding: 0; margin: 0; width: 300px;">
                                       <select id="sts" class="form-control " >
-                                          <option value="full">مواصلات كاملة</option>
-                                          <option value="family">مع الاهل</option>
-                                          <option value="walk">مشاه</option>
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->fullName()}}</option>
+                                          @endforeach
                                       </select>
                                   </div>
 
@@ -190,17 +206,29 @@
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الصف</label>
                               <select id="sts" class="form-control " >
-                                  <option value="full">مواصلات كاملة</option>
-                                  <option value="family">مع الاهل</option>
-                                  <option value="walk">مشاه</option>
+                                  @foreach($levels as $level)
+                                      <option value="{{$level->id}}">{{$level->name}}</option>
+                                  @endforeach
                               </select>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الشعبة</label>
                               <select id="sts" class="form-control" >
-                                  <option value="full">مواصلات كاملة</option>
-                                  <option value="family">مع الاهل</option>
-                                  <option value="walk">مشاه</option>
+                                  <option value="أ">أ</option>
+                                  <option value="ب">ب</option>
+                                  <option value="جـ">جـ</option>
+                                  <option value="د">د</option>
+                                  <option value="هـ">هـ</option>
+                                  <option value="و">و</option>
+                                  <option value="ز">ز</option>
+                                  <option value="حـ">حـ</option>
+                                  <option value="ط">ط</option>
+                                  <option value="ي">ي</option>
+                                  <option value="ك">ك</option>
+                                  <option value="ل">ل</option>
+                                  <option value="م">م</option>
+                                  <option value="ن">ن</option>
+                                  <option value="س">س</option>
 
                               </select>
                           </div>
@@ -221,9 +249,9 @@
 
                                   <div class="form-group" style="padding: 0; margin: 0; width: 300px;">
                                       <select id="sts" class="form-control " >
-                                          <option value="full">مواصلات كاملة</option>
-                                          <option value="family">مع الاهل</option>
-                                          <option value="walk">مشاه</option>
+                                          @foreach($students as $student)
+                                              <option value="{{$student->id}}">{{$student->person->name->fullName()}}</option>
+                                          @endforeach
                                       </select>
                                   </div>
 
@@ -278,17 +306,30 @@
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الصف</label>
                               <select id="sts" class="form-control " >
-                                  <option value="full">مواصلات كاملة</option>
-                                  <option value="family">مع الاهل</option>
-                                  <option value="walk">مشاه</option>
+                                  @foreach($levels as $level)
+                                      <option value="{{$level->id}}">{{$level->name}}</option>
+                                  @endforeach
                               </select>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الشعبة</label>
                               <select id="sts" class="form-control" >
-                                  <option value="full">مواصلات كاملة</option>
-                                  <option value="family">مع الاهل</option>
-                                  <option value="walk">مشاه</option>
+                                  <option value="أ">أ</option>
+                                  <option value="ب">ب</option>
+                                  <option value="جـ">جـ</option>
+                                  <option value="د">د</option>
+                                  <option value="هـ">هـ</option>
+                                  <option value="و">و</option>
+                                  <option value="ز">ز</option>
+                                  <option value="حـ">حـ</option>
+                                  <option value="ط">ط</option>
+                                  <option value="ي">ي</option>
+                                  <option value="ك">ك</option>
+                                  <option value="ل">ل</option>
+                                  <option value="م">م</option>
+                                  <option value="ن">ن</option>
+                                  <option value="س">س</option>
+
 
                               </select>
                           </div>
@@ -310,9 +351,9 @@
 
                                   <div class="form-group" style="padding: 0; margin: 0; width: 300px;">
                                       <select id="sts" class="form-control " >
-                                          <option value="full">مواصلات كاملة</option>
-                                          <option value="family">مع الاهل</option>
-                                          <option value="walk">مشاه</option>
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->fullName()}}</option>
+                                          @endforeach
                                       </select>
                                   </div>
 
