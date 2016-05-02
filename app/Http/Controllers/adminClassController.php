@@ -10,6 +10,8 @@ namespace App\Http\Controllers;
 use App\Level;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Classes;
+
 
 class adminClassController extends Controller{
     public function getClass(){

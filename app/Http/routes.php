@@ -81,28 +81,36 @@ Route::group(['prefix' => '/admin'] ,function() {
     });
 
     //----------------------------------------------------------------levels
-    Route::get('/level',[
-        'uses'=>'adminLevelController@getLevel',
-        'as'=>'adminLevel'
-    ]);
+    Route::group(['prefix' => '/level'] ,function() {
+        Route::get('/', [
+            'uses' => 'adminLevelController@getLevel',
+            'as' => 'adminLevel'
+        ]);
+
+        Route::post('/create', [
+            'uses' => 'adminLevelController@create',
+            'as' => 'levelCreate'
+        ]);
+    });
+
 
 
     //----------------------------------------------------------------class
     Route::group(['prefix' => '/class'] ,function() {
 
         Route::get('/', [
-            'uses'=>'adminClassController@getClass',
+            'uses'=>'adminClassController@class',
             'as'=>'adminClass'
         ]);
 
         Route::post('/levels', [
-            'uses'=>'adminClassController@postLevels',
-            'as'=>'levels'
+            'uses'=>'adminClassController@level',
+            'as'=>'classLevel'
         ]);
 
         Route::post('/create', [
-            'uses'=>'adminClassController@postCreate',
-            'as'=>'create'
+            'uses'=>'adminClassController@create',
+            'as'=>'classCreate'
         ]);
 
     });

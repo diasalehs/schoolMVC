@@ -18,19 +18,18 @@
                         @foreach($errors -> all() as $error)
 
                             <div class="alert alert-danger" role="alert">
-                                <a href="#" class="alert-link"> {{ $error }}}</a>
+                                <a href="#" class="alert-link"> {{ $error }}</a>
                             </div>
 
                         @endforeach
                     @endif
                     <div class="row ">
-                        <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
-                            <input type="hidden" value="{{csrf_token()}}" name="_token">
+                        <form action="{{route('levelCreate')}}"role="form" class="form-inline" method="post">
 
                             <div class="form-group">
                                 <label for="InputEmail">اسم الصف</label>
                                 <div class="input-group" >
-                                    <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="levelName"  >
                                 </div>
                             </div>
 
@@ -38,6 +37,7 @@
                             <div class="">
                                 <div class="col-md-8 col-md-offset-2 bm" >
                                     <button class="btn btn-success btn-block" type="submit" >اضافة</button></div>
+                                <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
                             </div>
 
                         </form>

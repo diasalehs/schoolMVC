@@ -24,7 +24,7 @@
     @if (Session::has('fail'))
         @foreach($errors -> all() as $error)
             <div class="alert alert-danger" role="alert">
-                <a href="#" class="alert-link"> {{ session::get('fail') }}}</a>
+                <a href="#" class="alert-link"> {{ Session::get('fail') }}}</a>
             </div>
         @endforeach
     @endif
