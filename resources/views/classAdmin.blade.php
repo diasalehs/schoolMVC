@@ -27,8 +27,8 @@
                           <input type="hidden" value="{{csrf_token()}}" name="_token">
 
                               <div class="form-group">
-                                  <label for="InputEmail" class="ic">الصف</label>
-                                  <select name="classId" id="level" class="form-control "  >
+                                  <label for="InputEmail" class="ic ">الصف</label>
+                                  <select name="classId" class="form-control level"  >
                                       @foreach($levels as $level)
                                       <option value="{{$level->id}}">{{$level->name}}</option>
                                       @endforeach
@@ -37,22 +37,6 @@
                               <div class="form-group">
                                   <label for="InputEmail" class="ic"> رمز الشعبة</label>
                                   <select id="class" name="section" class="form-control" >
-                                      <option value="أ">أ</option>
-                                      <option value="ب">ب</option>
-                                      <option value="جـ">جـ</option>
-                                      <option value="د">د</option>
-                                      <option value="هـ">هـ</option>
-                                      <option value="و">و</option>
-                                      <option value="ز">ز</option>
-                                      <option value="حـ">حـ</option>
-                                      <option value="ط">ط</option>
-                                      <option value="ي">ي</option>
-                                      <option value="ك">ك</option>
-                                      <option value="ل">ل</option>
-                                      <option value="م">م</option>
-                                      <option value="ن">ن</option>
-                                      <option value="س">س</option>
-
 
                                   </select>
                               </div>
@@ -101,41 +85,51 @@
                       @endforeach
                   @endif
                   <div class="row ">
-                      <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
+                      <form action="{{url('admin/class/')}}"role="form" class="form-inline" method="post">
                           <input type="hidden" value="{{csrf_token()}}" name="_token">
                           <div class="form-group">
-                              <label for="InputEmail" class="ic">الصف</label>
-                              <select id="sts" class="form-control " >
-                                  <option value="full">مواصلات كاملة</option>
-                                  <option value="family">مع الاهل</option>
-                                  <option value="walk">مشاه</option>
+                              <label for="InputEmail" class="ic ">الصف</label>
+                              <select id="sts" class="form-control level" >
+                                  @foreach($levels as $level)
+                                  <option value="{{$level->id}}">{{$level->name}}</option>
+                                      @endforeach
+
                               </select>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الشعبة</label>
-                              <select id="sts" class="form-control " >
-                                  <option value="full">مواصلات كاملة</option>
-                                  <option value="family">مع الاهل</option>
-                                  <option value="walk">مشاه</option>
+                              <select id="sts" name="classId" class="form-control " >
                               </select>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail">سعة الجديدة</label>
                               <div class="input-group" >
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="newCapacity"  >
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">رمز الشعبة الجديد</label>
                               <select id="sts" class="form-control " >
-                                  <option value="full">مواصلات كاملة</option>
-                                  <option value="family">مع الاهل</option>
-                                  <option value="walk">مشاه</option>
+                                  <option value="أ">أ</option>
+                                  <option value="ب">ب</option>
+                                  <option value="جـ">جـ</option>
+                                  <option value="د">د</option>
+                                  <option value="هـ">هـ</option>
+                                  <option value="و">و</option>
+                                  <option value="ز">ز</option>
+                                  <option value="حـ">حـ</option>
+                                  <option value="ط">ط</option>
+                                  <option value="ي">ي</option>
+                                  <option value="ك">ك</option>
+                                  <option value="ل">ل</option>
+                                  <option value="م">م</option>
+                                  <option value="ن">ن</option>
+                                  <option value="س">س</option>
                               </select>
                           </div>
                           <p class="butn">
-                              <a href="#" class="btn btn-primary" role="button">تعديل</a>
-                              <a href="#" class="btn btn-danger" role="button">حذف</a>
+                              <a id="class/edit" class="btn btn-primary post" role="button">تعديل</a>
+                              <a  data-target="#deleteC"  id="class/delete" class="btn btn-danger post" data-toggle="modal" role="button">حذف</a>
                           </p>
 
 
@@ -172,8 +166,8 @@
                       <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
 
                           <div class="form-group">
-                              <label for="InputEmail" class="ic">الصف</label>
-                              <select id="sts" class="form-control " >
+                              <label for="InputEmail" class="ic ">الصف</label>
+                              <select id="sts" class="form-control level " >
                                   @foreach($levels as $level)
                                       <option value="{{$level->id}}">{{$level->name}}</option>
                                   @endforeach
@@ -182,21 +176,6 @@
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الشعبة</label>
                               <select id="sts" class="form-control" >
-                                  <option value="أ">أ</option>
-                                  <option value="ب">ب</option>
-                                  <option value="جـ">جـ</option>
-                                  <option value="د">د</option>
-                                  <option value="هـ">هـ</option>
-                                  <option value="و">و</option>
-                                  <option value="ز">ز</option>
-                                  <option value="حـ">حـ</option>
-                                  <option value="ط">ط</option>
-                                  <option value="ي">ي</option>
-                                  <option value="ك">ك</option>
-                                  <option value="ل">ل</option>
-                                  <option value="م">م</option>
-                                  <option value="ن">ن</option>
-                                  <option value="س">س</option>
 
                               </select>
                           </div>
@@ -353,8 +332,8 @@
                       <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
 
                           <div class="form-group">
-                              <label for="InputEmail" class="ic">الصف</label>
-                              <select id="sts" class="form-control " >
+                              <label for="InputEmail" class="ic ">الصف</label>
+                              <select id="sts" class="form-control level" >
                                   @foreach($levels as $level)
                                       <option value="{{$level->id}}">{{$level->name}}</option>
                                   @endforeach
@@ -363,21 +342,6 @@
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الشعبة</label>
                               <select id="sts" class="form-control" >
-                                  <option value="أ">أ</option>
-                                  <option value="ب">ب</option>
-                                  <option value="جـ">جـ</option>
-                                  <option value="د">د</option>
-                                  <option value="هـ">هـ</option>
-                                  <option value="و">و</option>
-                                  <option value="ز">ز</option>
-                                  <option value="حـ">حـ</option>
-                                  <option value="ط">ط</option>
-                                  <option value="ي">ي</option>
-                                  <option value="ك">ك</option>
-                                  <option value="ل">ل</option>
-                                  <option value="م">م</option>
-                                  <option value="ن">ن</option>
-                                  <option value="س">س</option>
 
                               </select>
                           </div>
@@ -445,7 +409,7 @@
 
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الصف</label>
-                              <select id="sts" class="form-control " >
+                              <select id="sts" name=class="form-control " >
                                   @foreach($levels as $level)
                                       <option value="{{$level->id}}">{{$level->name}}</option>
                                   @endforeach
@@ -523,6 +487,24 @@
 
           </div>
       </div>
+      <div id="deleteC" class="modal fade">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <!-- dialog body -->
+                  <div class="modal-body">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      هل انت متاكد ؟
+                  </div>
+                  <!-- dialog buttons -->
+                  <div class="modal-footer">
+                      <button type="button" id="deleteCancel" class="btn btn-primary" data-dismiss="modal">لا</button>
+                      <button type="button" id="deleteConfirm" class="btn btn-danger" data-dismiss="modal">نعم</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
   </div>
 
 
@@ -530,18 +512,35 @@
           $.ajaxSetup({
               headers: {'X-CSRF-Token': $('meta[name=_token]').attr('content')}
           });
-//             $('#level').change(getClasses);
+       $('.level').change(getClasses);
+
           function getClasses() {
-                     $('#class').html('');
-                   $.post('teacher/getEmployee',"id="+$(this).children('option:selected').attr('value')+"&_token="+$('input[name=_token]').val(),function (response) {
+                var drop =$(this).closest('form').find('select')[1];
+              console.log(drop);
+                $(drop).html('');
+                   $.post('class/levels',"id="+$(this).children('option:selected').attr('value')+"&_token="+$('input[name=_token]').val(),function (response) {
                        var classes=JSON.parse(response);
                        for(var i=0;i<classes.length;i++)
                        {
-                           console.log(classes[i]);
-                           $('#class').append($("<option></option>") .attr("value", classes[i].id).text(classes[i].section));
+                           $(drop).append($("<option></option>") .attr("value", classes[i].id).text(classes[i].section));
                        }
                    })
                  }
+                 form=null;
+
+                 deleteConfirm=false;
+                 $('#deleteConfirm').click(function () {
+                     form.submit();
+                 });
+                 $('.post').click(function () {
+                     var action = $(this).attr('id');
+                     form = $(this).closest('form')
+                     form.attr('action', action);
+                     if($(this).attr('id')=="level/edit")
+                         form.submit();
+                 });
+
+
          });
       </script>
 

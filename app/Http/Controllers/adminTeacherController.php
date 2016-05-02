@@ -105,9 +105,8 @@ class adminTeacherController extends Controller{
 
         $person->employee->teacher()->create([]);
         $person->user()->create(['password' => bcrypt($ni),'id'=>$ni, 'type'=>$job_type]);
-        $teacheres = Teacher::all();
-        $classes = Classes::all();
-        return view('teacherAdmin')->with('teacheres', $teacheres);
+        $employees = Employee::all();
+        return view('teacherAdmin')->with('employees', $employees);
 
     }
 

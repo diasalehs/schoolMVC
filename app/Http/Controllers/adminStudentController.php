@@ -37,7 +37,7 @@ class adminStudentController extends Controller{
 //            'nationality' => 'alpha',
 //            'placeOfBirth' => 'alpha',
 //            'religon' => 'alpha',
-            'ni' => 'required',
+            'ni' => 'required|Numeric',
 //            'idType' => 'required|alpha',
 //            'distanceFromSchool' => 'Numeric',
 //            'dateOfBirth' => 'Date',
@@ -100,7 +100,9 @@ class adminStudentController extends Controller{
             "surgeries" => $surgeries,
             ]);
 
+
         $person->user()->create(['password' => bcrypt($ni),'id'=>$ni, 'type'=>'student']);
+//        echo $person->id;
         $students = Student::all();
         return view('studentAdmin')->with('students', $students);
 
