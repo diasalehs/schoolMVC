@@ -22,18 +22,18 @@ class adminClassController extends Controller{
         return view('classAdmin', ['levels' => $levels]);
     }
 
-    public function  postCreate(Request $request){
+    public function  Create(Request $request){
         if(!Auth::check()){
             return redirect()->route('loginPage');
         }
-        $name = $request->input('classname');
+        $name = $request->input('className');
         $section = $request->input('section');
         $capacity = $request->input('capacity');
-        Classes::create(['level_id' => $name, 'section' => $section, 'capacity' => $capacity]);
-        return redirect('/admin/class');
+        Classes::create(['level_id' => RandomCompat_strlen($name), 'section' => $section, 'capacity' => $capacity]);
+        return redirect()->route('adminClass');
     }
 
-    public function  postLevels(Request $request){
+    public function  Level(Request $request){
         if(!Auth::check()){
             return redirect()->route('loginPage');
         }

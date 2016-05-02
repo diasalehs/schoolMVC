@@ -68,20 +68,20 @@
                     @endforeach
                 @endif
                 <div class="row ">
-                    <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
+                    <form action="{{route('subjectEdit)}}"role="form" class="form-inline" method="post">
                         <input type="hidden" value="{{csrf_token()}}" name="_token">
                         <div class="form-group">
                             <label for="InputEmail" class="ic">المادة</label>
-                            <select id="sts" class="form-control " >
-                                <option value="full">مواصلات كاملة</option>
-                                <option value="family">مع الاهل</option>
-                                <option value="walk">مشاه</option>
+                            <select id="sts" class="form-control " name="oldSubjectName" >
+                                @foreach($subjects as $subject)
+                                    <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail">الاسم الجديد</label>
                             <div class="input-group" >
-                                <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="newSubjectName"  >
                             </div>
                         </div>
 
@@ -109,57 +109,23 @@
         </div>
         <div id="collapse111" class="panel-collapse collapse colla">
             <div class="container-fluid">
-                @if (count($errors)>0)
-                    @foreach($errors -> all() as $error)
-
-                        <div class="alert alert-danger" role="alert">
-                            <a href="#" class="alert-link"> {{ $error }}}</a>
-                        </div>
-
-                    @endforeach
-                @endif
                 <div class="row ">
                     <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
 
                         <div class="form-group">
                             <label for="InputEmail" class="ic">الصف</label>
                             <select id="sts" class="form-control " >
-                                <option value="full">مواصلات كاملة</option>
-                                <option value="family">مع الاهل</option>
-                                <option value="walk">مشاه</option>
+                                @foreach($levels as $level)
+                                    <option value="{{$level->id}}">{{$level->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                             <br>
                         <div class="form-group matCheck" >
-                            <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
-                            <label for="checkbox_id">وجهك</label>
-
-                        </div>
-                        <div class="form-group matCheck" >
-                            <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
-                            <label for="checkbox_id">وجهك</label>
-
-                        </div>
-                        <div class="form-group matCheck" >
-                            <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
-                            <label for="checkbox_id" >وجهك</label>
-
-                        </div>
-                        <div class="form-group matCheck" >
-                            <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
-                            <label for="checkbox_id">وجهك</label>
-
-                        </div>
-                        <div class="form-group matCheck" >
-                            <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
-                            <label for="checkbox_id">وجهك</label>
-
-                        </div>
-                        <div class="form-group matCheck" >
-                            <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
-                            <label for="checkbox_id">وجهك</label>
-
-                        </div>
+                            @foreach($subjects as $subject)
+                                <input type="checkbox" name="checkbox" id="checkbox_id"  value="{{$subject->id}}">
+                                <label for="checkbox_id">{{$subject->name}}</label>
+                            @endforeach
 
                         <div class="">
                             <div class="col-md-8 col-md-offset-2 bm" >

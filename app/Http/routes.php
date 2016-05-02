@@ -83,6 +83,11 @@ Route::group(['prefix' => '/admin'] ,function() {
             'uses' => 'adminSubjectController@create',
             'as' => 'subjectCreate'
         ]);
+
+        Route::post('/edit', [
+            'uses' => 'adminSubjectController@edit',
+            'as' => 'subjectEdit'
+        ]);
     });
 
     //----------------------------------------------------------------levels
@@ -104,7 +109,7 @@ Route::group(['prefix' => '/admin'] ,function() {
     Route::group(['prefix' => '/class'] ,function() {
 
         Route::get('/', [
-            'uses'=>'adminClassController@class',
+            'uses'=>'adminClassController@getClass',
             'as'=>'adminClass'
         ]);
 

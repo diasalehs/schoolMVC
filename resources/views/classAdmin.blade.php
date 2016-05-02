@@ -23,12 +23,12 @@
                       @endforeach
                   @endif
                   <div class="row ">
-                      <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
+                      <form action="{{route('classCreate')}}"role="form" class="form-inline" method="post">
                           <input type="hidden" value="{{csrf_token()}}" name="_token">
 
                               <div class="form-group">
                                   <label for="InputEmail" class="ic">الصف</label>
-                                  <select name="classname" id="level" class="form-control " >
+                                  <select name="className" id="level" class="form-control "  >
                                       @foreach($levels as $level)
                                       <option value="{{$level->id}}">{{$level->name}}</option>
                                       @endforeach
