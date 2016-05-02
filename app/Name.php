@@ -14,4 +14,9 @@ class Name extends Model
     public function person(){
         return $this->belongsTo('App\Person');
     }
+
+    public function fullName()
+    {
+        return $this->first." ".$this->second." ".$this->third." ".$this->last;
+    }
 }
