@@ -8,8 +8,12 @@
 
 namespace App\Http\Controllers;
 use App\Level;
+use App\Student;
+use App\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Classes;
+
 
 class adminClassController extends Controller{
     public function getClass(){
@@ -17,21 +21,24 @@ class adminClassController extends Controller{
             return redirect()->route('loginPage');
         }
         $levels = Level::all();
-        return view('classAdmin', ['levels' => $levels]);
+        $Classes = Classes::all();
+        $teachers=Teacher::all();
+        $students=Student::all();
+        return view('classAdmin', ['levels' => $levels,'classes' => $Classes,'teachers'=>$teachers,'students'=>$students]);
     }
 
-    public function  postCreate(Request $request){
+    public function  Create(Request $request){
         if(!Auth::check()){
             return redirect()->route('loginPage');
         }
-        $name = $request->input('classname');
+        $name = $request->input('classId');
         $section = $request->input('section');
         $capacity = $request->input('capacity');
         Classes::create(['level_id' => $name, 'section' => $section, 'capacity' => $capacity]);
-        return redirect('/admin/class');
+        return redirect()->route('adminClass');
     }
 
-    public function  postLevels(Request $request){
+    public function  Level(Request $request){
         if(!Auth::check()){
             return redirect()->route('loginPage');
         }

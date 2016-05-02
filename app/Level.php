@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Level extends Model
 {
-    protected $fillable=['name'];
+    protected $fillable=['name','id'];
     public $timestamps=false;
     
     public function subjects(){
