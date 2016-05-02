@@ -123,7 +123,7 @@
                             <br>
                         <div class="form-group matCheck" >
                             @foreach($subjects as $subject)
-                                <input type="checkbox" name="checkbox" id="checkbox_id"  value="{{$subject->id}}">
+                                <input type="checkbox" name="subject " id="checkbox_id"  value="{{$subject->id}}">
                                 <label for="checkbox_id">{{$subject->name}}</label>
                             @endforeach
 
