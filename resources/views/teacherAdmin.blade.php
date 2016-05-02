@@ -305,7 +305,7 @@
                  <form  method="post" action="">
                     <a id="/teacher/show" class="btn btn-success post" role="button">عرض</a>
                     <a id="/teacher/edit" class="btn btn-primary post" role="button">تعديل</a>
-                    <a id ="teacher/delete"class="btn btn-danger post" role="button">حذف</a>
+                    <a id ="teacher/delete"class="btn btn-danger post" role="button" data-target="#deleteC" data-toggle="modal">حذف</a>
                   <input type="hidden" name="id" value="{{$employee->id}}" id="employeeid">
                   <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
                   </form></p>
