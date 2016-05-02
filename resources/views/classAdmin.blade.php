@@ -352,7 +352,7 @@
 //             $('#level').change(getClasses);
           function getClasses() {
                      $('#class').html('');
-                   $.post('class/levels',"id="+$(this).children('option:selected').attr('value')+"&_token="+$('input[name=_token]').val(),function (response) {
+                   $.post('teacher/getEmployee',"id="+$(this).children('option:selected').attr('value')+"&_token="+$('input[name=_token]').val(),function (response) {
                        var classes=JSON.parse(response);
                        for(var i=0;i<classes.length;i++)
                        {

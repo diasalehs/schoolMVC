@@ -304,9 +304,9 @@
                 <p>
                  <form  method="post" action="">
                     <a id="/teacher/show" class="btn btn-success post" role="button">عرض</a>
-                    <a id="/teacher/edit" class="btn btn-primary post" role="button" data-toggle="modal" data-target="#myModal">تعديل</a>
+                    <a id="getEmployee" class="btn btn-primary edit" role="button" data-toggle="modal" data-target="#myModal">تعديل</a>
 
-                    <a id ="teacher/delete"class="btn btn-danger post" role="button" data-target="#deleteC" data-toggle="modal">حذف</a>
+                    <a id ="showEmployee"class="btn btn-danger edit" role="button" data-target="#deleteC" data-toggle="modal">حذف</a>
 
 
                   <input type="hidden" name="id" value="{{$employee->id}}" id="employeeid">
@@ -555,6 +555,21 @@
         $(document).ready(function(){
             form=null;
 
+
+            function getClasses() {
+                $.ajaxSetup({
+                    headers: {'X-CSRF-Token': $('meta[name=_token]').attr('content')}
+                });
+                $.post('teacher/getEmployee',"id="+$('#employeeid').attr('value'),function(response){
+                    var  employee=JSON.parse(response[0]);
+                    var  person=JSON.parse(response[1]);
+                    var  name=JSON.parse(response[2]);
+                    console.log(employee);
+                    console.log(person);
+                    console.log(name);
+                });
+            }
+            getClasses();
             deleteConfirm=false;
             $('#deleteConfirm').click(function () {
                 form.submit();
