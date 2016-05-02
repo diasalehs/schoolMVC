@@ -71,7 +71,7 @@
                         <form action="/"role="form" class="form-inline" method="post">
                             <input type="hidden" value="{{csrf_token()}}" name="_token">
                             <div class="form-group">
-                                <label for="InputEmail" class="ic">المادة</label>
+                                <label for="InputEmail" class="ic">الصف</label>
                                 <select id="sts" name="levelId" class="form-control " >
                                     @foreach($levels as $level)
                                     <option value="{{$level->id}}">{{$level->name}}</option>

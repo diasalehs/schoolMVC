@@ -104,6 +104,14 @@
                       <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
                           <input type="hidden" value="{{csrf_token()}}" name="_token">
                           <div class="form-group">
+                              <label for="InputEmail" class="ic">الصف</label>
+                              <select id="sts" class="form-control " >
+                                  <option value="full">مواصلات كاملة</option>
+                                  <option value="family">مع الاهل</option>
+                                  <option value="walk">مشاه</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
                               <label for="InputEmail" class="ic">الشعبة</label>
                               <select id="sts" class="form-control " >
                                   <option value="full">مواصلات كاملة</option>
@@ -195,7 +203,7 @@
 
 
                       </form>
-                      <table class="table table-bordered text-center">
+                      <table class="table table-bordered text-center cla">
                           <thead>
                           <tr class="success">
                               <th  >المادة</th>
