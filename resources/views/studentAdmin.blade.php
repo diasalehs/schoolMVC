@@ -239,88 +239,42 @@
   </div>
 
 
-       <div class="panel-group">
+<div class="panel-group">
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" href="#collapse2" class="">   <span class="glyphicon glyphicon-search">  </span>  بحث </a>
-        </h4>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse">
-          <div class="container-fluid">
-              @if (count($errors)>0)
-                  @foreach($errors -> all() as $error)
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2" class="">   <span class="glyphicon glyphicon-search"></span>  بحث  </a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="container">
+                <div class="row formm">
+                    <form action="{{url('admin/student/search')}}"role="form" class="form-inline" method="post">
+                        <div class="form-group">
+                            <label for="InputName">الاسم</label>
+                            <div class="input-group">
+                                <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
+                                <input type="text" class="form-control" name="name" id="InputName"  >
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="col-md-8 col-md-offset-2 bm" >
+                                <button class="btn btn-success btn-block" type="submit" >بحث</button></div>
+                        </div>
+                    </form>
 
-                      <div class="alert alert-danger" role="alert">
-                          <a href="#" class="alert-link"> {{ $error }}}</a>
-                      </div>
-
-                  @endforeach
-              @endif
-              <div class="row ">
-                  <form action="{{route('studentSearch')}}"role="form" class="form-inline" method="post">
-                      <div class="fp">
-                          <div class="form-group">
-                              <label for="InputName" class="ic">الاسم الاول</label>
-                              <div class="input-group">
-                                  <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
-                                  <input type="text" class="form-control ci" name="firstName" id="InputName"  >
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label for="InputEmail" class="ic">اسم الاب</label>
-                              <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailFirst" name="InputEmail"  >
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label for="InputEmail" class="ic">اسم الجد</label>
-                              <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label for="InputEmail" class="ic">اسم العائلة</label>
-                              <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label for="InputEmail" class="ic">الديانة</label>
-                              <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label for="InputEmail" class="ic">الشعبة</label>
-                              <div class="input-group">
-                                  <select id="sts" class="form-control " >
-                                      <option value="full">الاول أ </option>
-                                      <option value="family">الاول ب</option>
-                                      <option value="walk">الثاني ج</option>
-                                  </select>
-                              </div>
-                          </div>
-
-
-
-
-                          <div class="">
-                              <div class="col-md-8 col-md-offset-2 bm" >
-                                  <button class="btn btn-success btn-block" type="submit" >بحث</button></div>
-                              <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
-
-                          </div>
-                      </div>
-
-                  </form>
-
-              </div>
-          </div>
-
-      </div>
+                    @if (count($errors)>0)
+                        @foreach($errors -> all() as $error)
+                            <div class="alert alert-danger" role="alert">
+                                <a href="#" class="alert-link"> {{ $error }}}</a>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
        
        
         <table class="table table-bordered text-center">
