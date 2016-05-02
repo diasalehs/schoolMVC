@@ -92,35 +92,55 @@
             </div>
         </div>
     </div>
-
     <table class="table table-bordered text-center">
         <thead>
         <tr class="success">
             <th  >رقم الطالب</th>
             <th >اسم الطالب</th>
-            <th >الصف</th>
-            <th >الشعبة</th>
-            <th >المادة</th>
-            <th >الامتحان</th>
-            <th >العلامة</th>
+
+            <th >الاول</th>
+            <th >الثاني</th>
+            <th >الشهرين</th>
+            <th >الثالث</th>
+            <th >الرابع</th>
+            <th >النهائي</th>
         </tr>
         </thead>
         <tbody id="test">
         <tr>
             <td>١</td>
-            <td>ضياء صالح سعودي</td>
+
             <td >اول</td>
-            <td >أ</td>
-            <td >بطيخ</td>
-            <td >بطيخ</td>
-            <td >
-                <input type="number" class="form-control" id="InputEmailSecond" name="InputEmail" style="width: 70px; " >
+
+            <td>
+                <input type="number" class="form-control" id="InputEmailSecond" name="newName" style="width: 70px" >
+            </td>
+            <td>
+                <input type="number" class="form-control" id="InputEmailSecond" name="newName" style="width: 70px" >
+            </td>
+            <td>
+                <input type="number" class="form-control" id="InputEmailSecond" name="newName" style="width: 70px" >
             </td>
 
+            <td>
+                <input type="number" class="form-control" id="InputEmailSecond" name="newName" style="width: 70px" >
+            </td>
+            <td>
+                <input type="number" class="form-control" id="InputEmailSecond" name="newName" style="width: 70px" >
+            </td>
+            <td>
+                <input type="number" class="form-control" id="InputEmailSecond" name="newName" style="width: 70px" >
+            </td>
+
+
+
         </tr>
+
 
         </tbody>
     </table>
 
+
+    <button class="btn btn-success btn-block" type="submit" >حفظ</button></div>
 
 @endsection
