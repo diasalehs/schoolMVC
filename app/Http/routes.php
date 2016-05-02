@@ -78,6 +78,11 @@ Route::group(['prefix' => '/admin'] ,function() {
             'uses'=>'adminSubjectController@getSubject',
             'as'=>'adminSubject'
         ]);
+
+        Route::post('/create', [
+            'uses' => 'adminSubjectController@create',
+            'as' => 'subjectCreate'
+        ]);
     });
 
     //----------------------------------------------------------------levels

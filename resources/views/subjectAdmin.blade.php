@@ -24,20 +24,20 @@
                     @endforeach
                 @endif
                 <div class="row ">
-                    <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
+                    <form action="{{route('subjectCreate')}}"role="form" class="form-inline" method="post">
                         <input type="hidden" value="{{csrf_token()}}" name="_token">
 
                         <div class="form-group">
                             <label for="InputEmail">اسم المادة</label>
                             <div class="input-group" >
-                                <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="subjectName"  >
                             </div>
                         </div>
 
 
                         <div class="">
                             <div class="col-md-8 col-md-offset-2 bm" >
-                                <button class="btn btn-success btn-block" type="submit" >اضافة</button></div>
+                                <button class="btn btn-success btn-block" type="submit"  >اضافة</button></div>
                         </div>
 
                     </form>
