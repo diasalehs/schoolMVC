@@ -88,6 +88,10 @@ Route::group(['prefix' => '/admin'] ,function() {
             'uses' => 'adminSubjectController@edit',
             'as' => 'subjectEdit'
         ]);
+        Route::post('/delete', [
+            'uses' => 'adminSubjectController@delete',
+            'as' => 'subjectDelete'
+        ]);
     });
 
     //----------------------------------------------------------------levels

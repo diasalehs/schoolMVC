@@ -39,11 +39,24 @@ class adminSubjectController extends Controller{
             return redirect()->route('loginPage');
         }
         $newName = $request['newSubjectName'];
-        $name=$request->input('oldSubjectName');
-        $subject=Subject::find($name);
+        $id=$request->input('subjectId');
+        $subject=Subject::find($id);
         if($subject!=null) {
             $subject->name =$newName;
-            $p->put('name',$newName);
+            echo $subject->name;
+            $subject->save();
+        }
+        return redirect()->route('adminSubject');
+    }
+    public function delete(Request $request)
+    {
+        if (!Auth::check() or Auth::user()->type != 'admin') {
+            return redirect()->route('loginPage');
+        }
+        $id=$request->input('subjectId');
+        $subject=Subject::find($id);
+        if($subject!=null) {
+            $subject->delete();
         }
         return redirect()->route('adminSubject');
     }

@@ -68,11 +68,11 @@
                     @endforeach
                 @endif
                 <div class="row ">
-                    <form action="{{route('subjectEdit')}}"role="form" class="form-inline" method="post">
+                    <form action="" role="form" class="form-inline" method="post">
                         <input type="hidden" value="{{csrf_token()}}" name="_token">
                         <div class="form-group">
                             <label for="InputEmail" class="ic">المادة</label>
-                            <select id="sts" class="form-control " name="oldSubjectName" >
+                            <select id="sts" class="form-control " name="subjectId" >
                                 @foreach($subjects as $subject)
                                     <option value="{{$subject->id}}">{{$subject->name}}</option>
                                 @endforeach
@@ -86,8 +86,8 @@
                         </div>
 
                         <p class="butn">
-                            <a href="#" class="btn btn-primary" role="button">تعديل</a>
-                            <a href="#" class="btn btn-danger" role="button">حذف</a>
+                            <a id="subject/edit" class="btn btn-primary post" role="button">تعديل</a>
+                            <a  data-target="#deleteC"  id="subject/delete" class="btn btn-danger post" data-toggle="modal" role="button">حذف</a>
                         </p>
 
 
@@ -141,5 +141,42 @@
 
         </div>
     </div>
+
+    <div id="deleteC" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- dialog body -->
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    هل انت متاكد ؟
+                </div>
+                <!-- dialog buttons -->
+                <div class="modal-footer">
+                    <button type="button" id="deleteCancel" class="btn btn-primary" data-dismiss="modal">لا</button>
+                    <button type="button" id="deleteConfirm" class="btn btn-danger" data-dismiss="modal">نعم</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<script>
+    $(document).ready(function(){
+        form=null;
+
+        deleteConfirm=false;
+        $('#deleteConfirm').click(function () {
+            form.submit();
+        });
+        $('.post').click(function () {
+            alert("hi");
+            var action = $(this).attr('id');
+            form = $(this).closest('form')
+            form.attr('action', action);
+            if($(this).attr('id')=="subject/edit")
+                    form.submit();
+        });
+
+    });
+
+</script>
 @endsection

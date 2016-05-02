@@ -17,7 +17,8 @@ class adminLevelController extends Controller{
         if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
         }
-        return view('levelAdmin');
+        $levels=Level::all();
+        return view('levelAdmin')->with('levels',$levels);
     }
 
     public function create(Request $request)
