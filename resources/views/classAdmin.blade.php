@@ -101,7 +101,7 @@
                       @endforeach
                   @endif
                   <div class="row ">
-                      <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
+                      <form action="{{url('admin/class/')}}"role="form" class="form-inline" method="post">
                           <input type="hidden" value="{{csrf_token()}}" name="_token">
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الشعبة</label>
@@ -114,7 +114,7 @@
                           <div class="form-group">
                               <label for="InputEmail">سعة الجديدة</label>
                               <div class="input-group" >
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="newCapacity"  >
                               </div>
                           </div>
                           <div class="form-group">
@@ -126,8 +126,8 @@
                               </select>
                           </div>
                           <p class="butn">
-                              <a href="#" class="btn btn-primary" role="button">تعديل</a>
-                              <a href="#" class="btn btn-danger" role="button">حذف</a>
+                              <a id="class/edit" class="btn btn-primary post" role="button">تعديل</a>
+                              <a  data-target="#deleteC"  id="class/delete" class="btn btn-danger post" data-toggle="modal" role="button">حذف</a>
                           </p>
 
 
@@ -524,6 +524,24 @@
 
           </div>
       </div>
+      <div id="deleteC" class="modal fade">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <!-- dialog body -->
+                  <div class="modal-body">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      هل انت متاكد ؟
+                  </div>
+                  <!-- dialog buttons -->
+                  <div class="modal-footer">
+                      <button type="button" id="deleteCancel" class="btn btn-primary" data-dismiss="modal">لا</button>
+                      <button type="button" id="deleteConfirm" class="btn btn-danger" data-dismiss="modal">نعم</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
   </div>
 
 
@@ -531,7 +549,7 @@
           $.ajaxSetup({
               headers: {'X-CSRF-Token': $('meta[name=_token]').attr('content')}
           });
-//             $('#level').change(getClasses);
+       $('#level').change(getClasses);
           function getClasses() {
                      $('#class').html('');
                    $.post('teacher/getEmployee',"id="+$(this).children('option:selected').attr('value')+"&_token="+$('input[name=_token]').val(),function (response) {
@@ -543,6 +561,21 @@
                        }
                    })
                  }
+                 form=null;
+
+                 deleteConfirm=false;
+                 $('#deleteConfirm').click(function () {
+                     form.submit();
+                 });
+                 $('.post').click(function () {
+                     var action = $(this).attr('id');
+                     form = $(this).closest('form')
+                     form.attr('action', action);
+                     if($(this).attr('id')=="level/edit")
+                         form.submit();
+                 });
+
+
          });
       </script>
 
