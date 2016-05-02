@@ -105,6 +105,14 @@ Route::group(['prefix' => '/admin'] ,function() {
             'uses' => 'adminLevelController@create',
             'as' => 'levelCreate'
         ]);
+        Route::post('/edit', [
+            'uses' => 'adminLevelController@edit',
+            'as' => 'levelEdit'
+        ]);
+        Route::post('/delete', [
+            'uses' => 'adminLevelController@delete',
+            'as' => 'levelDelete'
+        ]);
     });
 
 

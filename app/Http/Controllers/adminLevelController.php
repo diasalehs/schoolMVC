@@ -37,5 +37,37 @@ class adminLevelController extends Controller{
 
         return redirect()->route('adminLevel');
     }
+    public function edit(Request $request)
+    {
+        if (!Auth::check() or Auth::user()->type != 'admin') {
+            return redirect()->route('loginPage');
+        }
+
+        $id = $request['levelId'];
+        $name=$request['newName'];
+        $level=Level::find($id);
+        if($level!=null){
+            $level->name=$name;
+            $level->save();
+        }
+
+
+        return redirect()->route('adminLevel');
+    }
+    public function delete(Request $request)
+    {
+        if (!Auth::check() or Auth::user()->type != 'admin') {
+            return redirect()->route('loginPage');
+        }
+
+        $id = $request['levelId'];
+        $level=Level::find($id);
+        if($level!=null){
+            $level->delete();
+        }
+
+
+        return redirect()->route('adminLevel');
+    }
 
 }
