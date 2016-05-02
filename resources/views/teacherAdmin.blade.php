@@ -220,61 +220,18 @@
       <div id="collapse2" class="panel-collapse collapse">
           <div class="container">
               <div class="row formm">
-                  <form action="{{url('admin/teacher/search')}}"role="form" class="form-inline" method="post">
+                  <form action="{{route('teacherSearch')}}"role="form" class="form-inline" method="post">
                       <div class="form-group">
-                          <label for="InputName">الاسم الاول</label>
+                          <label for="InputName">اسم المعلم</label>
                           <div class="input-group">
-                              <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
                               <input type="text" class="form-control" name="name" id="InputName"  >
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="InputEmail">اسم الاب</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control" id="InputEmailFirst" name="InputEmail"  >
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="InputEmail">اسم الجد</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="InputEmail">اسم العائلة</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="InputEmail">جوال</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="InputEmail"> اجزاء القرآن المحفوظة</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                          <label for="InputEmail">امراض</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="InputEmail"> عمليات جراحية</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
                           </div>
                       </div>
 
                       <div class="">
                           <div class="col-md-8 col-md-offset-2 bm" >
                               <button class="btn btn-success btn-block" type="submit" >بحث</button></div>
+                          <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
                       </div>
                   </form>
 

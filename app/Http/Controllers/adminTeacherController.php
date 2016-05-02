@@ -117,7 +117,9 @@ class adminTeacherController extends Controller{
             return redirect()->route('loginPage');
         }
         DB::enableQueryLog();
-            $name = Name::where('first', $request['name'])->first();
+            $names = Name::all();
+        $found = [];
+        foreach($names as $name)
             $t = ($name->person->employee->teacher);
             $teachers = [$t];
             foreach ($teachers as $ob) {
