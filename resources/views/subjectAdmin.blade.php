@@ -68,7 +68,7 @@
                     @endforeach
                 @endif
                 <div class="row ">
-                    <form action="{{route('subjectEdit)}}"role="form" class="form-inline" method="post">
+                    <form action="{{route('subjectEdit')}}"role="form" class="form-inline" method="post">
                         <input type="hidden" value="{{csrf_token()}}" name="_token">
                         <div class="form-group">
                             <label for="InputEmail" class="ic">المادة</label>

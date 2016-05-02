@@ -224,7 +224,7 @@
                       <div class="form-group">
                           <label for="InputName">اسم المعلم</label>
                           <div class="input-group">
-                              <input type="text" class="form-control" name="name" id="InputName"  >
+                              <input type="text" class="form-control" name="name" id="InputName" name="searchName"  >
                           </div>
                       </div>
 
@@ -250,6 +250,35 @@
 
 
          <div class="row glyphicon-align-right">
+             @if($found != null)
+                 @foreach($found as $t=>$id)
+                     <div class="  col-xm-6 col-md-3">
+                         <div class="panel panel-default " style="padding: 5px; text-align: center">
+                             <img class="timg" style="width: 90%" src="{{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}" alt="...">
+                             <div class="caption">
+                                 <h3>{{$id->person->name->first}}</h3>
+                                 <p>{{$id->person->religon}}</p>
+                                 <p>
+                                 <form  method="post" action="">
+                                     <a id="/teacher/show" class="btn btn-success post" role="button">عرض</a>
+                                     <a id="getEmployee" class="btn btn-primary edit" role="button" data-toggle="modal" data-target="#myModal">تعديل</a>
+
+                                     <a id ="showEmployee"class="btn btn-danger edit" role="button" data-target="#deleteC" data-toggle="modal">حذف</a>
+
+
+                                     <input type="hidden" name="id" value="{{$id->id}}" id="employeeid">
+                                     <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
+                                 </form></p>
+                                 </p>
+                             </div>
+                         </div>
+                     </div>
+                 @endforeach
+             @endif
+
+
+
+             @if($found == null)
 {{--             @if(isset($teacheres))--}}
          @foreach($employees as $t=>$employee)
           <div class="  col-xm-6 col-md-3">
@@ -677,6 +706,7 @@
 
 
              @endforeach
+             @endif
                  {{--@endif--}}
           </div>
     <script>

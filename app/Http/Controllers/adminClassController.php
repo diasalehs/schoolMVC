@@ -26,10 +26,10 @@ class adminClassController extends Controller{
         if(!Auth::check()){
             return redirect()->route('loginPage');
         }
-        $name = $request->input('className');
+        $name = $request->input('classId');
         $section = $request->input('section');
         $capacity = $request->input('capacity');
-        Classes::create(['level_id' => RandomCompat_strlen($name), 'section' => $section, 'capacity' => $capacity]);
+        Classes::create(['level_id' => $name, 'section' => $section, 'capacity' => $capacity]);
         return redirect()->route('adminClass');
     }
 

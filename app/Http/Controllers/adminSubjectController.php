@@ -33,7 +33,7 @@ class adminSubjectController extends Controller{
         return redirect()->route('adminSubject');
     }
 
- /*   public function edit(Request $request)
+  public function edit(Request $request)
     {
         if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
@@ -43,8 +43,8 @@ class adminSubjectController extends Controller{
         $subject=Subject::find($name);
         if($subject!=null) {
             $subject->name =$newName;
-//            $p->put('name',$newName);
+            $p->put('name',$newName);
         }
         return redirect()->route('adminSubject');
-    }*/
+    }
 }

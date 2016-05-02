@@ -13,14 +13,13 @@ use App\Person;
 use App\Name;
 use App\Classes;
 use Illuminate\Support\Facades\Auth;
-
 class adminTeacherController extends Controller{
 
     public function getTeacher(){
         if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
         }            $employees = Employee::all();
-            return view('teacherAdmin')->with('employees', $employees);
+            return view('teacherAdmin',['employees'=> $employees ,'found' => $found=['']]);
     }
 
 
@@ -116,16 +115,19 @@ class adminTeacherController extends Controller{
         if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
         }
-        DB::enableQueryLog();
+        $searchName=$request['searchName'];
             $names = Name::all();
         $found = [];
+        $i = 0;
         foreach($names as $name)
-            $t = ($name->person->employee->teacher);
-            $teachers = [$t];
-            foreach ($teachers as $ob) {
-                echo $ob->id;
+            if($name->fullName() == $searchName){
+                $found[$i]=$name->id;
+                $i++;
             }
-            return view('teacherAdmin')->with('teacheres', $teachers);
+/*            foreach ($found as $ob) {
+                echo $ob->id;
+            }*/
+            return view('teacherAdmin')->with('found', $found);
     }
     public function delete(Request $request){
         if (!Auth::check() or Auth::user()->type != 'admin') {

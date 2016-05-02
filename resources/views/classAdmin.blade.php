@@ -28,7 +28,7 @@
 
                               <div class="form-group">
                                   <label for="InputEmail" class="ic">الصف</label>
-                                  <select name="className" id="level" class="form-control "  >
+                                  <select name="classId" id="level" class="form-control "  >
                                       @foreach($levels as $level)
                                       <option value="{{$level->id}}">{{$level->name}}</option>
                                       @endforeach
