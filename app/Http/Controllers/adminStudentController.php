@@ -112,16 +112,24 @@ class adminStudentController extends Controller{
         if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
         }
-        DB::enableQueryLog();
-        if (isset($request['name']) and !empty($request['name'])) {
-            $name = Name::where('first', $request['name'])->first();
-            $s = ($name->person->student);
-            $students = [$s];
-            foreach ($students as $ob) {
-                echo $ob->id;
+        $searchName=$request['name'];
+        $names = Name::all();
+//        echo $searchName;
+        $found = [];
+        $students=[];
+        foreach($names as $name) {
+            if (strstr($name->fullName(), $searchName)) {
+                array_push($found,$name->person);
             }
-            return view('studentAdmin')->with('students', $students);
         }
+        foreach($found as $person){
+            $temp=$person->student;
+            if($temp){
+                array_push($students,$temp) ;
+            }
+        }
+
+        return view('studentAdmin')->with('students', $students);
     }
     public function delete(Request $request){
         if (!Auth::check() or Auth::user()->type != 'admin') {
