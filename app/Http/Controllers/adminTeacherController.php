@@ -141,5 +141,19 @@ class adminTeacherController extends Controller{
 
     }
 
+    public function getEmployee(Request $request){
+        if (!Auth::check() or Auth::user()->type != 'admin') {
+            return redirect()->route('loginPage');
+        }
+//        $this->validate($request,['id'=>'integer|required']);
+        $id=$request['id'];
+        $employee=Employee::find($id);
+        $person=$employee->person;
+        $name=$person->name;
+       return  response()->json([$employee->toJson(),$person->toJson(),$name->toJson()]);
+
+    }
+
+
 
 }

@@ -136,6 +136,11 @@ Route::group(['prefix' => '/admin'] ,function() {
             'uses'=>'adminTeacherController@delete',
             'as'=>'teacherDelete'
         ]);
+        
+        Route::post('/getEmployee', [
+            'uses'=>'adminTeacherController@getEmployee',
+            'as'=>'getEmployee'
+        ]);
     });
 
 });
