@@ -5,7 +5,7 @@
 
     <div class="jumbotron" id="adminJumbo">
         <h1>مرحبا بك!</h1>
-        <p>اسم المعلم.</p>
+        <p>{{Auth::user()->person->name->fullName()}}</p>
     </div>
 
         <div class="container-fluid" style="margin-bottom: 150px">
@@ -17,86 +17,89 @@
                         <div class="form-group">
                             <label for="InputEmail" class="ic">جوال</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="mobile"  value="" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="mobile"  value="{{Auth::user()->person->mobile}}" disabled >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail" class="ic">الهاتف</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="phone" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="phone" value="{{Auth::user()->person->employee->phone}}" disabled >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="InputEmail" class="ic"> الجنسية</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="nationality"disabled  >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="nationality" value="{{Auth::user()->person->nationality}}" disabled  >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail" class="ic"> مكان الولادة</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="placeOfBirth" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="placeOfBirth" value="{{Auth::user()->person->placeOfBirth}}" disabled >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="InputEmail" class="ic">الديانة</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="religon"  disabled>
+                                <input type="text" class="form-control" id="InputEmailSecond" name="religon" value="{{Auth::user()->person->religon}}"  disabled>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail" class="ic"> رقم الهوية</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="ni" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="ni" value="{{Auth::user()->person->ni}}" disabled >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail" class="ic"> نوع الهوية</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="idType" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="idType" value="{{Auth::user()->person->idType}}" disabled >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail" class="ic"> البعد عن مكان الاقامة</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="distanceFromSchool" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="distanceFromSchool" value="{{Auth::user()->person->distanceFromSchool}}" disabled >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail" class="ic"> تاريخ الولادة</label>
                             <div class="input-group" >
-                                <input type="text" class="form-control" id="InputEmailSecond" name="dateOfBirth"  disabled>
+                                <input type="text" class="form-control" id="InputEmailSecond" name="dateOfBirth" value="{{Auth::user()->person->dateOfBirth}}"  disabled>
                             </div>
                         </div>
                         <h3 class="ft">الوضع الاجتماعي والعائلي</h3>
                         <div class="form-group">
                             <label for="InputEmail"> اسم الزوج/ة</label>
                             <div class="input-group" >
-                                <input type="text" class="form-control" id="InputEmailSecond" name="married" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="married" value="{{Auth::user()->person->employee->married}}" disabled >
                             </div>
                         </div>
 
                         <div class="form-group mc" >
                             <label for="InputEmail" > عدد الاطفال</label>
                             <div class="input-group" >
-                                <input type="text" class="form-control" id="InputEmailSecond" name="numberOfChildren" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="numberOfChildren" value="{{Auth::user()->person->employee->numberOfChildren}}" disabled >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="InputEmail">متزوج</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="numberOfChildren" disabled >
-
-
+                                @if(Auth::user()->person->employee->married != null)
+                                <input type="text" class="form-control" id="InputEmailSecond" name="numberOfChildren" value="نعم" disabled >
+                                    @endif
+                                    @if(Auth::user()->person->employee->married == null)
+                                        <input type="text" class="form-control" id="InputEmailSecond" name="numberOfChildren" value="لا" disabled >
+                                    @endif
                             </div>
                         </div>
                         <div class="form-group mc">
                             <label for="InputEmail">هل الزوج او الزوجة يعمل</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="numberOfChildren" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="numberOfChildren" value="{{Auth::user()->person->employee->religon}}" disabled >
 
                             </div>
                         </div>
@@ -105,13 +108,13 @@
                         <div class="form-group">
                             <label for="InputEmail" > عدد الاطفال في نفس المدرسة </label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="childrenInSchool" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="childrenInSchool" value="{{Auth::user()->person->employee->childrenInSchool}}" disabled >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail" > عدد الاطفال في المدارس اخرى</label>
                             <div class="input-group" >
-                                <input type="text" class="form-control" id="InputEmailSecond" name="childrenOtherSchools" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="childrenOtherSchools" value="{{Auth::user()->person->employee->childrenOtherSchools}}" disabled >
                             </div>
                         </div>
                         <div >

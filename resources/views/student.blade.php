@@ -95,7 +95,7 @@
             <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav " >
                     <li><img class="teacherimg" src={{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}></li>
-                    <li style="text-align: center; margin: 10px 0">اسم الطالب</li>
+                    <li style="text-align: center; margin: 10px 0">{{Auth::user()->person->name->fullName()}}</li>
                     <li><span><hr></span></li>
                     <li class="" id="te"><a href="{{url('student/marks')}}" >العلامات</a></li>
 
