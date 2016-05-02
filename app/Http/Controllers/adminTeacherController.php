@@ -115,19 +115,23 @@ class adminTeacherController extends Controller{
         if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
         }
-        $searchName=$request['searchName'];
+        $searchName=$request['name'];
             $names = Name::all();
         $found = [];
-        $i = 0;
-        foreach($names as $name)
-            if($name->fullName() == $searchName){
-                $found[$i]=$name->id;
-                $i++;
+        $employees=[];
+        foreach($names as $name) {
+            if (strstr($name->fullName(), $searchName)) {
+                array_push($found,$name->person);
             }
-/*            foreach ($found as $ob) {
-                echo $ob->id;
-            }*/
-            return view('teacherAdmin')->with('found', $found);
+        }
+        foreach($found as $person){
+            $temp=$person->employee;
+            if($temp){
+               array_push($employees,$temp) ;
+            }
+        }
+
+            return view('teacherAdmin')->with('employees', $employees);
     }
     public function delete(Request $request){
         if (!Auth::check() or Auth::user()->type != 'admin') {
