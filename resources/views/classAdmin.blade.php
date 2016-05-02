@@ -81,6 +81,67 @@
           </div>
       </div>
 </div>
+
+  <div class="panel-group">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h4 class="panel-title">
+                  <a data-toggle="collapse" href="#collapse11" class=""> <span class="glyphicon glyphicon-edit"></span> تعديل / حذف شعبة  </a>
+              </h4>
+          </div>
+          <div id="collapse11" class="panel-collapse collapse colla">
+              <div class="container-fluid">
+                  @if (count($errors)>0)
+                      @foreach($errors -> all() as $error)
+
+                          <div class="alert alert-danger" role="alert">
+                              <a href="#" class="alert-link"> {{ $error }}}</a>
+                          </div>
+
+                      @endforeach
+                  @endif
+                  <div class="row ">
+                      <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
+                          <input type="hidden" value="{{csrf_token()}}" name="_token">
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic">الشعبة</label>
+                              <select id="sts" class="form-control " >
+                                  <option value="full">مواصلات كاملة</option>
+                                  <option value="family">مع الاهل</option>
+                                  <option value="walk">مشاه</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail">سعة الجديدة</label>
+                              <div class="input-group" >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic">رمز الشعبة الجديد</label>
+                              <select id="sts" class="form-control " >
+                                  <option value="full">مواصلات كاملة</option>
+                                  <option value="family">مع الاهل</option>
+                                  <option value="walk">مشاه</option>
+                              </select>
+                          </div>
+                          <p class="butn">
+                              <a href="#" class="btn btn-primary" role="button">تعديل</a>
+                              <a href="#" class="btn btn-danger" role="button">حذف</a>
+                          </p>
+
+
+                      </form>
+
+                  </div>
+              </div>
+
+
+          </div>
+      </div>
+  </div>
+
+
   <div class="panel-group">
       <div class="panel panel-default">
           <div class="panel-heading">
@@ -122,8 +183,12 @@
                           <thead>
                           <tr class="success">
                               <th  >المادة</th>
+                              <th >الاحد </th>
+                              <th >الاثنين </th>
+                              <th >الثلاثاء </th>
+                              <th > الاربعاء</th>
+                              <th > الخميس</th>
                               <th >اسم المعلم</th>
-                              <th >الوقت</th>
                           </tr>
                           </thead>
                           <tbody id="test">
@@ -131,7 +196,91 @@
                               <td>١</td>
                               <td>
 
-                                  <div class="form-group" style="padding: 0; margin: 0; width: 300px;">
+                                  <div class="form-group" >
+
+                                      <select id="sts" class="form-control " >
+                                          <option value="full">8:40-8</option>
+                                          <option value="full">9:20-8:40</option>
+                                          <option value="full">10-9:20</option>
+                                          <option value="full">11:10-10:40</option>
+                                          <option value="full">11:50-11:10</option>
+                                          <option value="full">12:30-11:50</option>
+                                          <option value="full">1:10-12:30</option>
+
+                                      </select>
+                                  </div>
+
+                              </td>
+                              <td>
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          <option value="full">8:40-8</option>
+                                          <option value="full">9:20-8:40</option>
+                                          <option value="full">10-9:20</option>
+                                          <option value="full">11:10-10:40</option>
+                                          <option value="full">11:50-11:10</option>
+                                          <option value="full">12:30-11:50</option>
+                                          <option value="full">1:10-12:30</option>
+
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td>
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          <option value="full">8:40-8</option>
+                                          <option value="full">9:20-8:40</option>
+                                          <option value="full">10-9:20</option>
+                                          <option value="full">11:10-10:40</option>
+                                          <option value="full">11:50-11:10</option>
+                                          <option value="full">12:30-11:50</option>
+                                          <option value="full">1:10-12:30</option>
+
+                                      </select>
+
+                                  </div>
+
+                              </td>
+                              <td>
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          <option value="full">8:40-8</option>
+                                          <option value="full">9:20-8:40</option>
+                                          <option value="full">10-9:20</option>
+                                          <option value="full">11:10-10:40</option>
+                                          <option value="full">11:50-11:10</option>
+                                          <option value="full">12:30-11:50</option>
+                                          <option value="full">1:10-12:30</option>
+
+                                      </select>
+
+                                  </div>
+
+                              </td>
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          <option value="full">8:40-8</option>
+                                          <option value="full">9:20-8:40</option>
+                                          <option value="full">10-9:20</option>
+                                          <option value="full">11:10-10:40</option>
+                                          <option value="full">11:50-11:10</option>
+                                          <option value="full">12:30-11:50</option>
+                                          <option value="full">1:10-12:30</option>
+
+                                      </select>
+                                  </div>
+
+                              </td>
+                              <td >
+
+                                  <div class="form-group" >
                                       <select id="sts" class="form-control " >
                                           <option value="full">مواصلات كاملة</option>
                                           <option value="family">مع الاهل</option>
@@ -140,16 +289,6 @@
                                   </div>
 
                               </td>
-                              <td >
-
-                                  <div class="form-group" style="padding: 0; margin: 0;">
-                                      <div class="input-group">
-                                          <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail" >
-                                      </div>
-                                  </div>
-
-                              </td>
-
                           </tr>
 
                           </tbody>

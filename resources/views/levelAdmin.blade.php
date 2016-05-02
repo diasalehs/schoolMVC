@@ -71,7 +71,7 @@
                         <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
                             <input type="hidden" value="{{csrf_token()}}" name="_token">
                             <div class="form-group">
-                                <label for="InputEmail" class="ic">المادة</label>
+                                <label for="InputEmail" class="ic">الصف</label>
                                 <select id="sts" class="form-control " >
                                     <option value="full">مواصلات كاملة</option>
                                     <option value="family">مع الاهل</option>
