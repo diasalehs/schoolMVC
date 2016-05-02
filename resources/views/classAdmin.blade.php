@@ -353,6 +353,7 @@
                           <tr class="success">
                               <th  >رقم الطالب</th>
                               <th >اسم الطالب</th>
+                              <th > اضافة</th>
                           </tr>
                           </thead>
                           <tbody id="test">
@@ -360,22 +361,12 @@
                               <td>١</td>
                               <td>
 
-                                  <div class="form-group" style="padding: 0; margin: 0; width: 300px;">
-                                      <select id="sts" class="form-control " >
-                                          @foreach($students as $student)
-                                              <option value="{{$student->id}}">{{$student->person->name->fullName()}}</option>
-                                          @endforeach
-                                      </select>
-                                  </div>
+                                    اسم الطالب
 
                               </td>
                               <td >
-
-                                  <div class="form-group" style="padding: 0; margin: 0;">
-                                      <div class="input-group">
-                                          <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail" >
-                                      </div>
-                                  </div>
+                                  <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+                                  <label for="checkbox_id">تحديد</label>
 
                               </td>
 
