@@ -25,4 +25,7 @@ class Person extends Model
     public function employee(){
         return $this->hasOne('App\Employee');
     }
+    public function student(){
+    return $this->hasOne('App\Student');
+    }
 }
