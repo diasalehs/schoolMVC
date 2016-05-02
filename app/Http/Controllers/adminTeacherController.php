@@ -117,7 +117,6 @@ class adminTeacherController extends Controller{
             return redirect()->route('loginPage');
         }
         DB::enableQueryLog();
-        if (isset($request['name']) and !empty($request['name'])) {
             $name = Name::where('first', $request['name'])->first();
             $t = ($name->person->employee->teacher);
             $teachers = [$t];
@@ -125,7 +124,6 @@ class adminTeacherController extends Controller{
                 echo $ob->id;
             }
             return view('teacherAdmin')->with('teacheres', $teachers);
-        }
     }
     public function delete(Request $request){
         if (!Auth::check() or Auth::user()->type != 'admin') {

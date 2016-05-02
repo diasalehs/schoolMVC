@@ -13,7 +13,7 @@ class Usere extends Model implements \Illuminate\Contracts\Auth\Authenticatable
 
     protected $fillable = ['id','person_id','password','type','remember_token','name'];
     
-    public function user(){
+    public function person(){
         return $this->belongsTo('App\Person');
     }
     public function sentMessages(){

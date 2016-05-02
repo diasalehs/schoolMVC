@@ -70,7 +70,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{url('teacher/')}}"> المعلم</a>
+                <a class="navbar-brand" href="{{url('teacher/')}}"> الصفحة الشخصية</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -97,7 +97,7 @@
             <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav " >
                     <li><img class="teacherimg" src={{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}></li>
-                    <li style="text-align: center; margin: 10px 0">اسم المعلم</li>
+                    <li style="text-align: center; margin: 10px 0">{{Auth::user()->person->name->fullName()}}</li>
                     <li><span><hr></span></li>
                     <li id="st"><a href="{{URL('teacher/student')}}"> الطلاب</a></li>
                         </a></li>
