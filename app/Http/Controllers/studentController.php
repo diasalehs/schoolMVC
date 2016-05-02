@@ -16,7 +16,9 @@ class studentController extends Controller{
         if (!Auth::check() or Auth::user()->type != 'student') {
             return redirect()->route('loginPage');
         }
-        return view('studentFirst');
+        $user=Auth::user();
+//        echo $user->person->name->first;
+        return view('studentFirst')->with('user',$user);
     }
 
     public function getMessages()
