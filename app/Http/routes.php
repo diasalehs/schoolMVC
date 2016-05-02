@@ -47,6 +47,21 @@ Route::group(['prefix' => '/admin'] ,function() {
             'uses'=>'adminStudentController@getStudent',
             'as'=>'adminStudent'
         ]);
+
+        Route::post('/create', [
+            'uses'=>'adminStudentController@postCreate',
+            'as'=>'studentCreate'
+        ]);
+
+        Event::listen('illuminate.query', function ($query) {
+            echo($query);
+        });
+
+        Route::post('/search', [
+            'uses'=>'adminStudentController@postSearch',
+            'as'=>'studentSearch'
+        ]);
+
     });
 
     //----------------------------------------------------------------message

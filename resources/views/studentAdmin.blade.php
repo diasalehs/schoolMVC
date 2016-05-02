@@ -23,7 +23,7 @@
                   @endforeach
               @endif
               <div class="row ">
-                  <form action="{{url('admin/teacher/create')}}"role="form" class="form-inline" method="post">
+                  <form action="{{route('studentCreate')}}"role="form" class="form-inline" method="post">
                       <div class="fp">
                           <h3 class="ft"> بيانات الطالب الشخصية</h3>
                           <div class="form-group">
@@ -67,83 +67,102 @@
                           <div class="form-group">
                               <label for="InputEmail" class="ic"> الجنسية</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="nationality"  >
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic"> مكان الولادة</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="placeOfBirth"  >
                               </div>
                           </div>
 
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الديانة</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="religon"  >
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic"> رقم الهوية</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="ni"  >
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic"> نوع الهوية</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="idType"  >
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic"> البعد عن مكان الاقامة</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="distanceFromSchool"  >
                               </div>
                           </div>
-                          <div class="form-group">
-                              <label for="InputEmail" class="ic"> تاريخ الولادة</label>
-                              <div class="input-group" >
-                                  <input type="date" class="form-control" id="InputEmailSecond" name="InputEmail" >
-                              </div>
-                          </div>
-                          <div class="form-group">
-                                  <label for="InputEmail" class="ic"> المواصلات صباحا</label>
-                                      <select id="sts" class="form-control " >
-                                          <option value="full">مواصلات كاملة</option>
-                                          <option value="family">مع الاهل</option>
-                                          <option value="walk">مشاه</option>
-                                      </select>
-                          </div>
-                          <div class="form-group">
-                              <label for="InputEmail" class="ic"> المواصلات ظهرا</label>
-                              <select id="sts" class="form-control" >
-                                  <option value="full">مواصلات كاملة</option>
-                                  <option value="family">مع الاهل</option>
-                                  <option value="walk">مشاه</option>
-
-                              </select>
-                          </div>
-
-
                           <div class="form-group">
                               <label for="InputEmail" class="ic">عدد الاخوة</label>
                               <div class="input-group">
-                                  <input type="number" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="number" class="form-control" id="InputEmailSecond" name="numberBrothers"  >
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic">عدد الاخوات</label>
                               <div class="input-group">
-                                  <input type="number" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="number" class="form-control" id="InputEmailSecond" name="numberSisters"  >
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="InputEmail" class="ic"> كم جزء تحفظ من كتاب الله</label>
                               <div class="input-group">
-                                  <input type="text" class="form-control" id="InputEmailSecond" name="InputEmail"  >
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="numberPartMemorize"  >
                               </div>
                           </div>
+
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic"> الأمراض</label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="diseases"  >
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic"> العمليات الجراحية </label>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="InputEmailSecond" name="surgeries"  >
+                              </div>
+                          </div>
+
+
+
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic"> تاريخ الولادة</label>
+                              <div class="input-group" >
+                                  <input type="date" class="form-control" id="InputEmailSecond" name="dateOfBirth" >
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                                  <label for="InputEmail" class="ic" > المواصلات صباحا</label>
+                                      <select id="sts" class="form-control " name="transMorning">
+                                          <option value="bus">مواصلات كاملة</option>
+                                          <option value="parent">مع الاهل</option>
+                                          <option value="on foot">مشاه</option>
+                                      </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputEmail" class="ic" > المواصلات ظهرا</label>
+                              <select id="sts" class="form-control" name="transAfternoon">
+                                  <option value="bus">مواصلات كاملة</option>
+                                  <option value="parent">مع الاهل</option>
+                                  <option value="on foot">مشاه</option>
+
+                              </select>
+                          </div>
+
+
+
 
                           <h3 class="ft ta">بيانات ولي الامر</h3>
                           <div class="form-group">
@@ -205,6 +224,7 @@
                           <div class="">
                               <div class="col-md-8 col-md-offset-2 bm" >
                                   <button class="btn btn-success btn-block" type="submit" >تسجيل</button></div>
+                              <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
                           </div>
                       </div>
 
@@ -238,7 +258,7 @@
                   @endforeach
               @endif
               <div class="row ">
-                  <form action="{{url('admin/teacher/create')}}"role="form" class="form-inline" method="post">
+                  <form action="{{route('studentSearch')}}"role="form" class="form-inline" method="post">
                       <div class="fp">
                           <div class="form-group">
                               <label for="InputName" class="ic">الاسم الاول</label>
@@ -288,6 +308,8 @@
                           <div class="">
                               <div class="col-md-8 col-md-offset-2 bm" >
                                   <button class="btn btn-success btn-block" type="submit" >بحث</button></div>
+                              <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
+
                           </div>
                       </div>
 
@@ -312,25 +334,21 @@
                     </tr>
                 </thead>
                 <tbody id="test">
+                <?php $var = 0;?>
+                     @foreach($students as $student)
+                         <?php $var ++; ?>
                      <tr>
-                        <td>١</td>
-                        <td>ضياء صالح سعودي</td>
-                        <td >اول</td>
-                        <td >أ</td>
-                        <td ><div class="dropdown">
-                        <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0);">تعديل</a></li>
-                            <li><a href="javascript:void(0);">حذف</a></li>
-                        </ul>
-                            </div>
-                        </td>
-                    </tr>
-                     <tr>
-                         <td>١</td>
-                         <td>ضياء صالح سعودي</td>
-                         <td >اول</td>
-                         <td >أ</td>
+                         <td>{{$var--}}</td>
+
+                         <td>{{$student->person->name->fullName()}}</td>
+                         @if($student->class != null)
+                         <td >{{$student->class->level->name}}</td>
+                         <td >{{$student->class->level->section}}</td>
+                         @endif
+                         @if($student->class == null)
+                             <td >غير مضاف</td>
+                             <td >غير مضاف</td>
+                         @endif
                          <td ><div class="dropdown">
                                  <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
                                  <ul class="dropdown-menu">
@@ -340,7 +358,8 @@
                              </div>
                          </td>
                      </tr>
-                    
+                         <?php $var = $var +1; ?>
+                    @endforeach
                 </tbody>
             </table>
 

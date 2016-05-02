@@ -9,6 +9,7 @@ class Student extends Model
     protected $fillable=['id','person_id','transMorning','transAfternoon','regestrationDate','numberBrothers',
     'numberSister','numberPartMemorize','diseases','surgaries'];
     //
+    public $timestamps=false;
     public function klass(){
         return $this->hasOne('App\Classes');
         

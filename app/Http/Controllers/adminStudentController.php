@@ -7,14 +7,20 @@
  */
 
 namespace App\Http\Controllers;
+use App\Employee;
+use Illuminate\Http\Request;
+use App\Student;
+use App\Person;
+use App\Name;
+use App\Classes;
 use Illuminate\Support\Facades\Auth;
-
 class adminStudentController extends Controller{
     public function getStudent(){
         if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
         }
-        return view('studentAdmin');
+        $students = Student::all();
+       return view('studentAdmin')->with('students', $students);
     }
 
     public function postCreate(Request $request){
@@ -35,15 +41,14 @@ class adminStudentController extends Controller{
 //            'idType' => 'required|alpha',
 //            'distanceFromSchool' => 'Numeric',
 //            'dateOfBirth' => 'Date',
-//            'married' => 'alpha',
-//            'numberOfChildren' => 'integer',
-//            'DoesPartnerWork' => 'Boolean',
-//            'childrenInSchool' => 'integer',
-//            'childrenOtherSchools' => 'integer',
-//            'job_con' => 'required',
-//            'job_type' => 'required',
-//            'experince_local' => 'integer',
-//            'experince_abroad' => 'integer'
+//            'transMorning' => 'alpha',
+//            'transAfternoon' => 'integer',
+//            'numberBrothers' => 'Boolean',
+//            'numberSisters' => 'integer',
+//            'numberPartMemorize' => 'integer',
+//            'diseases' => 'required',
+//            'surgeries' => 'required',
+
         ]);
 
         //DB Name
@@ -60,16 +65,14 @@ class adminStudentController extends Controller{
         $idType= $request['idType'];
         $distanceFromSchool= $request['distanceFromSchool'];
         $dateOfBirth= $request['dateOfBirth'];
-        //DB employee
-        $married= $request['married'];
-        $numberOfChildren= $request['numberOfChildren'];
-        $DoesPartnerWork= $request['DoesPartnerWork'];
-        $childrenInSchool= $request['childrenInSchool'];
-        $childrenOtherSchools= $request['childrenOtherSchools'];
-        $job_con= $request['job_con'];
-        $job_type= $request['job_type'];
-        $experince_local= $request['experince_local'];
-        $experince_abroad= $request['experince_abroad'];
+        //DB student
+        $transMorning= $request['transMorning'];
+        $transAfternoon= $request['transAfternoon'];
+        $numberBrothers= $request['numberBrothers'];
+        $numberSisters= $request['numberSisters'];
+        $numberPartMemorize= $request['numberPartMemorize'];
+        $diseases= $request['diseases'];
+        $surgeries= $request['surgeries'];
         $mobile= $request['mobile'];
 
         //DB Person
@@ -87,21 +90,19 @@ class adminStudentController extends Controller{
             'third'=>$third,
             'last'=>$last]);
         //DB employee
-        $person->employee()->create(["mobile" => $mobile, "married" => $married,
-            "numberOfChildren" => $numberOfChildren,
-            "DoesPartnerWork" => $DoesPartnerWork,
-            "childrenInSchool" => $childrenInSchool,
-            "childrenOtherSchools" => $childrenOtherSchools,
-            "job_con" => $job_con,
-            "job_type" => $job_type,
-            "experince_local" => $experince_local,
-            "experince_abroad" => $experince_abroad]);
+        $person->student()->create(["mobile" => $mobile,
+            "transMorning" => $transMorning,
+            "transAfternoon" => $transAfternoon,
+            "numberBrothers" => $numberBrothers,
+            "numberSisters" => $numberSisters,
+            "numberPartMemorize" => $numberPartMemorize,
+            "diseases" => $diseases,
+            "surgeries" => $surgeries,
+            ]);
 
-        $person->employee->teacher()->create([]);
-        $person->user()->create(['password' => bcrypt($ni),'id'=>$ni, 'type'=>$job_type]);
-        $teacheres = Teacher::all();
-        $classes = Classes::all();
-        return view('teacherAdmin')->with('teacheres', $teacheres);
+        $person->user()->create(['password' => bcrypt($ni),'id'=>$ni, 'type'=>'student']);
+        $students = Student::all();
+        return view('studentAdmin')->with('students', $students);
 
     }
 
@@ -112,24 +113,25 @@ class adminStudentController extends Controller{
         DB::enableQueryLog();
         if (isset($request['name']) and !empty($request['name'])) {
             $name = Name::where('first', $request['name'])->first();
-            $t = ($name->person->employee->teacher);
-            $teachers = [$t];
-            foreach ($teachers as $ob) {
+            $s = ($name->person->student);
+            $students = [$s];
+            foreach ($students as $ob) {
                 echo $ob->id;
             }
-            return view('teacherAdmin')->with('teacheres', $teachers);
+            return view('studentAdmin')->with('students', $students);
         }
     }
     public function delete(Request $request){
-        $this->access('admin');
-        $this->validate($request,['id'=>'integer|required']);
+        if (!Auth::check() or Auth::user()->type != 'admin') {
+            return redirect()->route('loginPage');
+        }        $this->validate($request,['id'=>'integer|required']);
         $id=$request->input('id');
         $employee=Employee::find($id);
         if($employee!=null) {
             $p = $employee->person;
             $p->delete();
         }
-        return redirect()->route('adminTeacher');
+        return redirect()->route('adminStudent');
 
     }
 
