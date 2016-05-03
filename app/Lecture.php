@@ -15,6 +15,9 @@ class Lecture extends Model
         return $this->belongsTo('App\Classes');
     }
     public function subject(){
-        return $this->hasOne('App\Subject');
+        return $this->belongsTo('App\Subject');
+    }
+    public function lectureTime(){
+        return $this->belongsTo('App\LectureTime','lecturetime_id');
     }
 }

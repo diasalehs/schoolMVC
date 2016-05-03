@@ -8,16 +8,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Lecture;
-use App\Subject;
-use Illuminate\Auth\Authenticatable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Usere;
-use App\Teacher;
-use App\Classes;
+
 
 class loginController extends Controller {
+
 
     public function getLogin(){
         if(Auth::check()){
@@ -39,9 +35,10 @@ class loginController extends Controller {
     }
 
     public function postLogin(Request $request){
+        $this->validate($request,[
+            'inputName' => 'required', 'inputPassword' => 'required'
+        ]);
 
-        $this->validate($request,['inputName' => 'required',
-            'inputPassword' => 'required',]);
         if(!Auth::attempt(['id'=>$request['inputName'],'password'=>$request['inputPassword']])){
           return redirect()->back()->with(['fail'=>'Could not login you']);
         }
