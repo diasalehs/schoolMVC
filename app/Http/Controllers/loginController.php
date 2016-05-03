@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 
 class loginController extends Controller {
 
+
     public function getLogin(){
         if(Auth::check()){
             $user= Auth::user();
@@ -34,9 +35,10 @@ class loginController extends Controller {
     }
 
     public function postLogin(Request $request){
+        $this->validate($request,[
+            'inputName' => 'required', 'inputPassword' => 'required'
+        ]);
 
-        $this->validate($request,['inputName' => 'required',
-            'inputPassword' => 'required',]);
         if(!Auth::attempt(['id'=>$request['inputName'],'password'=>$request['inputPassword']])){
           return redirect()->back()->with(['fail'=>'Could not login you']);
         }

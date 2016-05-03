@@ -146,6 +146,10 @@ Route::group(['middleware' => ['web']],function(){
                     'uses'=>'adminClassController@create',
                     'as'=>'classCreate'
                 ]);
+                Route::post('/schedule', [
+                        'uses'=>'adminClassController@schedule',
+                        'as'=>'getSchedule'
+                    ]);
 
             });
 
