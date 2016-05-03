@@ -124,22 +124,15 @@
         </tr>
         </thead>
         <tbody id="test">
-        <tr>
-            <td>١</td>
-
-            <td >اول</td>
-
-
-
-
-
+        <?php $var = 0;?>
+        @foreach($levels as $level)
+            <?php $var ++; ?>
+            <tr>
+            <td>{{$var--}}</td>
+            <td >{{$level->name}}</td>
         </tr>
-        <tr>
-            <td>٢</td>
-            <td>الثاني</td>
-
-        </tr>
-
+            <?php $var = $var +1; ?>
+        @endforeach
         </tbody>
     </table>
 
@@ -153,7 +146,7 @@
                 });
                 $('.post').click(function () {
                     var action = $(this).attr('id');
-                    form = $(this).closest('form')
+                    form = $(this).closest('form');
                     form.attr('action', action);
                     if($(this).attr('id')=="level/edit")
                         form.submit();

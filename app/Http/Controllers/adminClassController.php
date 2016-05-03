@@ -21,10 +21,16 @@ class adminClassController extends Controller{
             return redirect()->route('loginPage');
         }
         $levels = Level::all();
-        $Classes = Classes::all();
+        $classes = Classes::all();
         $teachers=Teacher::all();
         $students=Student::all();
-        return view('classAdmin', ['levels' => $levels,'classes' => $Classes,'teachers'=>$teachers,'students'=>$students]);
+        $found = [];
+        foreach ($classes as $class) {
+            array_push($found, $class->section);
+        }
+        $results = array_unique($found);
+        return view('classAdmin', ['levels' => $levels,'classes' => $classes,
+            'teachers'=>$teachers,'students'=>$students,'results'=>$results]);
     }
 
     public function  Create(Request $request){

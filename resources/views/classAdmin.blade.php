@@ -37,7 +37,21 @@
                               <div class="form-group">
                                   <label for="InputEmail" class="ic"> رمز الشعبة</label>
                                   <select id="class" name="section" class="form-control" >
-
+                                      <option value="أ">أ</option>
+                                      <option value="ب">ب</option>
+                                      <option value="جـ">جـ</option>
+                                      <option value="د">د</option>
+                                      <option value="هـ">هـ</option>
+                                      <option value="و">و</option>
+                                      <option value="ز">ز</option>
+                                      <option value="حـ">حـ</option>
+                                      <option value="ط">ط</option>
+                                      <option value="ي">ي</option>
+                                      <option value="ك">ك</option>
+                                      <option value="ل">ل</option>
+                                      <option value="م">م</option>
+                                      <option value="ن">ن</option>
+                                      <option value="س">س</option>
                                   </select>
                               </div>
                               <div class="form-group">
@@ -77,11 +91,9 @@
               <div class="container-fluid">
                   @if (count($errors)>0)
                       @foreach($errors -> all() as $error)
-
                           <div class="alert alert-danger" role="alert">
-                              <a href="#" class="alert-link"> {{ $error }}}</a>
+                              <a href="#" class="alert-link"> {{ $error }}</a>
                           </div>
-
                       @endforeach
                   @endif
                   <div class="row ">
@@ -92,8 +104,7 @@
                               <select id="sts" class="form-control level" >
                                   @foreach($levels as $level)
                                   <option value="{{$level->id}}">{{$level->name}}</option>
-                                      @endforeach
-
+                                  @endforeach
                               </select>
                           </div>
                           <div class="form-group">
@@ -155,11 +166,9 @@
               <div class="container-fluid">
                   @if (count($errors)>0)
                       @foreach($errors -> all() as $error)
-
                           <div class="alert alert-danger" role="alert">
-                              <a href="#" class="alert-link"> {{ $error }}}</a>
+                              <a href="#" class="alert-link"> {{ $error }}</a>
                           </div>
-
                       @endforeach
                   @endif
                   <div class="row ">
@@ -176,7 +185,21 @@
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الشعبة</label>
                               <select id="sts" class="form-control" >
-
+                                  <option value="أ">أ</option>
+                                  <option value="ب">ب</option>
+                                  <option value="جـ">جـ</option>
+                                  <option value="د">د</option>
+                                  <option value="هـ">هـ</option>
+                                  <option value="و">و</option>
+                                  <option value="ز">ز</option>
+                                  <option value="حـ">حـ</option>
+                                  <option value="ط">ط</option>
+                                  <option value="ي">ي</option>
+                                  <option value="ك">ك</option>
+                                  <option value="ل">ل</option>
+                                  <option value="م">م</option>
+                                  <option value="ن">ن</option>
+                                  <option value="س">س</option>
                               </select>
                           </div>
 
@@ -202,14 +225,14 @@
                                   <div class="form-group" >
 
                                       <select id="sts" class="form-control " >
-<<<<<<< HEAD
-                                          <option value="full">8:40-8</option>
-                                          <option value="full">9:20-8:40</option>
-                                          <option value="full">10-9:20</option>
-                                          <option value="full">11:10-10:40</option>
-                                          <option value="full">11:50-11:10</option>
-                                          <option value="full">12:30-11:50</option>
-                                          <option value="full">1:10-12:30</option>
+                                          <option value="null">لا يوجد</option>
+                                          <option value="first">الأولى</option>
+                                          <option value="second">الثانية</option>
+                                          <option value="third">الثالثة</option>
+                                          <option value="fourth">الرابعة</option>
+                                          <option value="fifth">الخامسة</option>
+                                          <option value="sixth">السادسة</option>
+                                          <option value="seventh">السابعة</option>
 
                                       </select>
                                   </div>
@@ -219,15 +242,14 @@
 
                                   <div class="form-group" >
                                       <select id="sts" class="form-control " >
-                                          <option value="full">8:40-8</option>
-                                          <option value="full">9:20-8:40</option>
-                                          <option value="full">10-9:20</option>
-                                          <option value="full">11:10-10:40</option>
-                                          <option value="full">11:50-11:10</option>
-                                          <option value="full">12:30-11:50</option>
-                                          <option value="full">1:10-12:30</option>
-
-
+                                          <option value="null">لا يوجد</option>
+                                          <option value="first">الأولى</option>
+                                          <option value="second">الثانية</option>
+                                          <option value="third">الثالثة</option>
+                                          <option value="fourth">الرابعة</option>
+                                          <option value="fifth">الخامسة</option>
+                                          <option value="sixth">السادسة</option>
+                                          <option value="seventh">السابعة</option>
                                       </select>
                                   </div>
 
@@ -237,14 +259,14 @@
 
                                   <div class="form-group" >
                                       <select id="sts" class="form-control " >
-                                          <option value="full">8:40-8</option>
-                                          <option value="full">9:20-8:40</option>
-                                          <option value="full">10-9:20</option>
-                                          <option value="full">11:10-10:40</option>
-                                          <option value="full">11:50-11:10</option>
-                                          <option value="full">12:30-11:50</option>
-                                          <option value="full">1:10-12:30</option>
-
+                                          <option value="null">لا يوجد</option>
+                                          <option value="first">الأولى</option>
+                                          <option value="second">الثانية</option>
+                                          <option value="third">الثالثة</option>
+                                          <option value="fourth">الرابعة</option>
+                                          <option value="fifth">الخامسة</option>
+                                          <option value="sixth">السادسة</option>
+                                          <option value="seventh">السابعة</option>
                                       </select>
 
                                   </div>
@@ -254,14 +276,14 @@
 
                                   <div class="form-group" >
                                       <select id="sts" class="form-control " >
-                                          <option value="full">8:40-8</option>
-                                          <option value="full">9:20-8:40</option>
-                                          <option value="full">10-9:20</option>
-                                          <option value="full">11:10-10:40</option>
-                                          <option value="full">11:50-11:10</option>
-                                          <option value="full">12:30-11:50</option>
-                                          <option value="full">1:10-12:30</option>
-
+                                          <option value="null">لا يوجد</option>
+                                          <option value="first">الأولى</option>
+                                          <option value="second">الثانية</option>
+                                          <option value="third">الثالثة</option>
+                                          <option value="fourth">الرابعة</option>
+                                          <option value="fifth">الخامسة</option>
+                                          <option value="sixth">السادسة</option>
+                                          <option value="seventh">السابعة</option>
                                       </select>
 
                                   </div>
@@ -271,14 +293,14 @@
 
                                   <div class="form-group" >
                                       <select id="sts" class="form-control " >
-                                          <option value="full">8:40-8</option>
-                                          <option value="full">9:20-8:40</option>
-                                          <option value="full">10-9:20</option>
-                                          <option value="full">11:10-10:40</option>
-                                          <option value="full">11:50-11:10</option>
-                                          <option value="full">12:30-11:50</option>
-                                          <option value="full">1:10-12:30</option>
-
+                                          <option value="null">لا يوجد</option>
+                                          <option value="first">الأولى</option>
+                                          <option value="second">الثانية</option>
+                                          <option value="third">الثالثة</option>
+                                          <option value="fourth">الرابعة</option>
+                                          <option value="fifth">الخامسة</option>
+                                          <option value="sixth">السادسة</option>
+                                          <option value="seventh">السابعة</option>
                                       </select>
                                   </div>
 
@@ -321,11 +343,9 @@
               <div class="container-fluid">
                   @if (count($errors)>0)
                       @foreach($errors -> all() as $error)
-
                           <div class="alert alert-danger" role="alert">
-                              <a href="#" class="alert-link"> {{ $error }}}</a>
+                              <a href="#" class="alert-link"> {{ $error }}</a>
                           </div>
-
                       @endforeach
                   @endif
                   <div class="row ">
@@ -342,7 +362,21 @@
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الشعبة</label>
                               <select id="sts" class="form-control" >
-
+                                  <option value="أ">أ</option>
+                                  <option value="ب">ب</option>
+                                  <option value="جـ">جـ</option>
+                                  <option value="د">د</option>
+                                  <option value="هـ">هـ</option>
+                                  <option value="و">و</option>
+                                  <option value="ز">ز</option>
+                                  <option value="حـ">حـ</option>
+                                  <option value="ط">ط</option>
+                                  <option value="ي">ي</option>
+                                  <option value="ك">ك</option>
+                                  <option value="ل">ل</option>
+                                  <option value="م">م</option>
+                                  <option value="ن">ن</option>
+                                  <option value="س">س</option>
                               </select>
                           </div>
 
@@ -397,11 +431,9 @@
               <div class="container-fluid">
                   @if (count($errors)>0)
                       @foreach($errors -> all() as $error)
-
                           <div class="alert alert-danger" role="alert">
-                              <a href="#" class="alert-link"> {{ $error }}}</a>
+                              <a href="#" class="alert-link"> {{ $error }}</a>
                           </div>
-
                       @endforeach
                   @endif
                   <div class="row ">

@@ -254,11 +254,12 @@ Route::group(['prefix' => '/parent'] ,function() {
 });
 
 
-//-------------------------------------------------------------------------parentPAGE
+//-------------------------------------------------------------------------mainPAGE
 Route::group(['prefix' => '/main'] ,function() {
 
     Route::get('/', [
         'uses'=>'mainController@getMain',
         'as'=>'main'
     ]);
+
 });
