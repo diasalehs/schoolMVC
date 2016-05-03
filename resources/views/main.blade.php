@@ -52,7 +52,7 @@
         </button>
         <a href="#" class="navbar-brand" >المدرسة الإسلامية الاساسية</a>
         <div class="form-inline pull-xs-left">
-            <button class="btn btn-success-outline" >تسجيل الدخول</button>
+            <a class="btn btn-success-outline"  href="{{route('loginPage')}}">تسجيل الدخول</a>
         </div>
     </div>
 </div>

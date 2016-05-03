@@ -8,14 +8,14 @@
 
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Auth;
+
 
 class mainController extends Controller{
     public function getMain()
     {
-       
         return view('main');
     }
+
     
 
 }
