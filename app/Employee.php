@@ -10,7 +10,6 @@ class Employee extends Model
         ,'childrenInSchool','childrenOtherSchools'
         ,'job_type','hiring_date','job_con'
     ,'experince_abroad','experince_local'];
-    //
     public $timestamps=false;
     public function person(){
         
