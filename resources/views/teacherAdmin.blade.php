@@ -255,7 +255,7 @@
 
                     <div class="caption">
                         <h3>{{$employee->person->name->fullName()}}</h3>
-                        <p>{{$employee->person->religon}}</p>
+                        <p>رقم : {{ $employee->person->id}}</p>
                         <p>
                         <form  method="post" action="">
                             <a id="/teacher/show" class="btn btn-success post" role="button" data-toggle="modal" data-target="#show">عرض</a>

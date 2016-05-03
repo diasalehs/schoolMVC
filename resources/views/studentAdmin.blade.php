@@ -268,6 +268,7 @@
                     <tr class="success">
                         <th  >رقم الطالب</th>
                         <th >اسم الطالب</th>
+                        <th  >رقم المستخدم</th>
                         <th >الصف</th>
                         <th >الشعبة</th>
                         <th>العمليات</th>
@@ -278,17 +279,18 @@
                      @foreach($students as $student)
                          <?php $var ++; ?>
                      <tr>
-                         <td>{{$var--}}</td>
+                         <td>{{$var}}</td>
 
                          <td>{{$student->person->name->fullName()}}</td>
                          @if($student->class != null)
                          <td >{{$student->class->level->name}}</td>
-                         <td >{{$student->class->level->section}}</td>
+                         <td >{{$student->class->section}}</td>
+                         @else
+                             <td >لم يضف</td>
+                             <td >لم يضف</td>
                          @endif
-                         @if($student->class == null)
-                             <td >غير مضاف</td>
-                             <td >غير مضاف</td>
-                         @endif
+                             <td>{{$student->person->id}}</td>
+
                          <td ><div class="dropdown">
                                  <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
                                  <ul class="dropdown-menu">
@@ -307,7 +309,6 @@
                              </div>
                          </td>
                      </tr>
-                         <?php $var = $var +1; ?>
                     @endforeach
                 </tbody>
             </table>

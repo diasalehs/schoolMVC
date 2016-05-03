@@ -70,12 +70,11 @@
         <th >عمليات</th>
 
     </tr>
-    </thead>
-    <tbody id="test">
+
     @foreach($received as $message)
-    <tr>
-        <td>ضياء صالح سعودي</td>
-        <td >اول</td>
+    <tr class="success">
+        <th  >{{$message->id}}</th>
+        <th >{{$message->title}}</th>
         <td ><div class="dropdown">
                 <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
                 <ul class="dropdown-menu">
@@ -86,9 +85,8 @@
             </div>
         </td>
     </tr>
-@endforeach
+        @endforeach
 
-    </tbody>
 </table>
 
             </div>
@@ -117,20 +115,21 @@
                     </tr>
                     </thead>
                     <tbody id="test">
-                    <tr>
-                        <td>ضياء صالح سعودي</td>
-                        <td >اول</td>
-                        <td ><div class="dropdown">
-                                <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:void(0);">رد</a></li>
-                                    <li><a href="{{url('admin/messages/show')}}">عرض</a></li>
-                                    <li><a href="javascript:void(0);">حذف</a></li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-
+                    @foreach($sent as $message)
+                        <tr class="success">
+                            <th  >{{$message->id}}</th>
+                            <th >{{$message->title}}</th>
+                            <td ><div class="dropdown">
+                                    <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:void(0);">رد</a></li>
+                                        <li><a href="{{url('admin/messages/show')}}">عرض</a></li>
+                                        <li><a href="javascript:void(0);">حذف</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
 
                     </tbody>
                 </table>
