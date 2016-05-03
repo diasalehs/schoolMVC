@@ -122,7 +122,7 @@
                             <div class="col-md-4">
 
                         <fieldset class="form-group" >
-                            <label for="SelectedSubjects" >المواد المختارة</label>
+                            <label for="SelectedSubjects" style="width: 110px;">المواد المختارة</label>
                         <select  class="chosen-cities" name="chosen-cities-name" multiple="multiple"style="width: 200px;height: 200px" >
 
                         </select>
