@@ -37,4 +37,6 @@ class teacherController extends Controller{
         }
         return view('teacherMessages');
     }
+
+
 }

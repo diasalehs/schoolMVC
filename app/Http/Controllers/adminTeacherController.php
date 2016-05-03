@@ -104,7 +104,7 @@ class adminTeacherController extends Controller{
             "experince_abroad" => $experince_abroad]);
 
         $person->employee->teacher()->create([]);
-        $person->user()->create(['password' => bcrypt($ni),'id'=>$ni, 'type'=>$job_type]);
+        $person->user()->create(['password' => bcrypt($ni),'id'=>$person->id, 'type'=>$job_type]);
         $employees = Employee::all();
         return view('teacherAdmin')->with('employees', $employees);
 

@@ -101,10 +101,9 @@ class adminStudentController extends Controller{
             ]);
 
 
-        $person->user()->create(['password' => bcrypt($ni),'id'=>$ni, 'type'=>'student']);
-//        echo $person->id;
+        $person->user()->create(['password' => bcrypt($ni),'id'=> $person->id, 'type'=>'student']);
         $students = Student::all();
-        return view('studentAdmin')->with('students', $students);
+        return redirect()->route('adminStudent')->with('students', $students);
 
     }
 
@@ -129,21 +128,21 @@ class adminStudentController extends Controller{
             }
         }
 
-        return view('studentAdmin')->with('students', $students);
+        return redirect()->route('adminStudent')->with('students', $students);
     }
     public function delete(Request $request){
         if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
-        }
-        $this->validate($request,['id'=>'integer|required']);
-        $id=$request->input('id');
+        }        $this->validate($request,['id'=>'integer|required']);
+
+        $id=$request['id'];
         $student=Student::find($id);
         if($student!=null) {
             $p = $student->person;
             $p->delete();
         }
-//        view('\student');
-        return redirect()->route('adminStudent');
+        $students = Student::all();
+        return redirect()->route('adminStudent')->with('students', $students);
 
     }
 
