@@ -13,15 +13,7 @@
           </div>
           <div id="collapse1" class="panel-collapse collapse colla">
               <div class="container-fluid">
-                  @if (count($errors)>0)
-                      @foreach($errors -> all() as $error)
 
-                          <div class="alert alert-danger" role="alert">
-                              <a href="#" class="alert-link"> {{ $error }}}</a>
-                          </div>
-
-                      @endforeach
-                  @endif
                   <div class="row ">
                       <form action="{{route('classCreate')}}"role="form" class="form-inline" method="post">
                           <input type="hidden" value="{{csrf_token()}}" name="_token">
