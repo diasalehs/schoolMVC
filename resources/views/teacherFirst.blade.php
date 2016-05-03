@@ -17,13 +17,13 @@
                         <div class="form-group">
                             <label for="InputEmail" class="ic">جوال</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="mobile"  value="{{Auth::user()->person->mobile}}" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="mobile"  value="{{Auth::user()->person->phone}}" disabled >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail" class="ic">الهاتف</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="phone" value="{{Auth::user()->person->employee->phone}}" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="phone" value="{{Auth::user()->person->employee->mobile}}" disabled >
                             </div>
                         </div>
 
@@ -122,14 +122,14 @@
                             <div class="form-group">
                                 <label for="InputEmail">المسمى الوظيفي</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="InputEmailSecond" name="childrenOtherSchools" disabled >
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="childrenOtherSchools" value="{{Auth::user()->person->employee->job_type}}" disabled >
 
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="InputEmail">التصنيف الوظيفي</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="InputEmailSecond" name="childrenOtherSchools" disabled >
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="childrenOtherSchools" value="{{Auth::user()->person->employee->job_con}}" disabled >
 
                                 </div>
                             </div>
@@ -137,13 +137,13 @@
                             <div class="form-group">
                                 <label for="InputEmail"> سنوات الخبرةالداخلية</label>
                                 <div class="input-group" >
-                                    <input type="text" class="form-control" id="InputEmailSecond" name="experince_local"  disabled>
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="experince_local" value="{{Auth::user()->person->employee->experince_abroad}}" disabled>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="InputEmail"> سنوات الخبرة الخارجية</label>
                                 <div class="input-group" >
-                                    <input type="text" class="form-control" id="InputEmailSecond" name="experince_abroad" disabled >
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="experince_abroad" value="{{Auth::user()->person->employee->experince_local}}" disabled >
                                 </div>
                             </div>
 
