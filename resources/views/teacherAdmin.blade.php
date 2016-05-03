@@ -251,10 +251,12 @@
 
     <div class="row glyphicon-align-right">
         {{--             @if(isset($teacheres))--}}
+
         @foreach($employees as $t=>$employee)
-            <div class="  col-xm-6 col-md-3">
-                <div class="panel panel-default " style="padding: 5px; text-align: center">
-                    <img class="timg" style="width: 90%" src="{{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}" alt="...">
+            <div class="  col-sm-6 col-md-3">
+                <div class="panel panel-default " style=" text-align: center ; height: 340px">
+                    <img class="timg " style="width: 100% "  src="{{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}" alt="...">
+
                     <div class="caption">
                         <h3>{{$employee->person->name->fullName()}}</h3>
                         <p>{{$employee->person->religon}}</p>
