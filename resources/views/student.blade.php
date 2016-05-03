@@ -88,7 +88,7 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row row-offcanvas row-offcanvas-left">
 
             <!-- sidebar -->

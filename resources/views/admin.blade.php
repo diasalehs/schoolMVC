@@ -120,7 +120,7 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-    <div class="container">
+    <div class="container" style="">
         <div class="row row-offcanvas row-offcanvas-left">
 
             <!-- sidebar -->
