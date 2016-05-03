@@ -32,11 +32,10 @@ body {
   margin-bottom: 0;
   background-color: #fff;
     border-radius: 0px;
-  background-image: url('img/banjo.jpg');
+  background-image:linear-gradient(rgba(0, 0, 0,.6),rgba(0, 0, 0, .6)), url('../../school-buildinh-photo.jpg') ;
   background-repeat: no-repeat;
-  background-position: bottom center;
+  background-position:  center;
   background-size: cover;
-    background: #73af73;
 }
 
 .jumbotron-heading {
@@ -46,7 +45,7 @@ body {
 
 .jumbotron .container {
   max-width: 40rem;
-  background: rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.5);
   padding: 2rem;
   color: white;
     border-radius: 10px;
