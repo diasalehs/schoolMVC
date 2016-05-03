@@ -41,6 +41,7 @@
 
             <div class="input-group mi" >
                 <input class="btn btn-success btn-block" type="submit"value= "ارسال">
+                <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
             </div>
         </div>
     </form>

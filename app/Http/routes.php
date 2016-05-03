@@ -209,6 +209,12 @@ Route::group(['middleware' => ['web']],function(){
                 'uses'=>'teacherController@getTeacherMessages',
                 'as'=>'teacherMessages'
             ]);
+
+
+            Route::post('/change', [
+                'uses'=>'teacherController@changePassword',
+                'as'=>'teacherChangePassword'
+            ]);
         });
 
 //-------------------------------------------------------------------------studentPAGE

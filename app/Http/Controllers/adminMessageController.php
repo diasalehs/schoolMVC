@@ -25,7 +25,7 @@ class adminMessageController extends Controller{
             return redirect()->route('loginPage');
         }
         $user=Usere::find(Auth::user()->id);
-        $user->sentMessages()->create(['send_to'=>$request['sender'],'title'=>$request['subject'],'body'=>$request['message']
+        $user->sentMessages()->create(['send_to'=>(int)$request['sender'],'title'=>$request['subject'],'body'=>$request['message']
         ,'send_from'=>Auth::user()->id]);
         return redirect('admin/messages');
     }

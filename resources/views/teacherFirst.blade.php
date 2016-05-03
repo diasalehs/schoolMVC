@@ -21,7 +21,7 @@
                     <div class="row ">
 
 
-                        <form action="" role="form" class="form-inline" method="post">
+                        <form action="{{route('teacherChangePassword')}}" role="form" class="form-inline" method="post">
                             <div class="form-group">
                                 <label for="InputEmail">كلمة السر القديمة</label>
                                 <div class="input-group" >
@@ -37,6 +37,7 @@
                             <div class="">
                                 <div class="col-md-8 col-md-offset-2 bm" >
                                     <button class="btn btn-success btn-block" type="submit" >حفظ</button></div>
+                                <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
                             </div>
                         </form>
 
