@@ -201,6 +201,7 @@
                                   <button class="btn btn-success btn-block"  role="button" data-target="#scheduleTablepopup" data-toggle="modal">تصميم الجدول</button></div>
                           </div>
                       </form>
+<<<<<<< HEAD
                       <div id="scheduleTablepopup" class="modal fade" role="dialog" style=" width: 80%; position: fixed; right: 10%">
                           <div class="modal-dialog" style="width: 100%">
 
@@ -587,14 +588,1081 @@
                                   </div>
                                   <div class="modal-footer">
                                       <button type="button" class="btn btn-default" data-dismiss="modal">اغلاق</button>
+=======
+
+                      
+                      <table id="scheduleTable" class="table table-bordered text-center cla" style="width: 100%">
+                          <thead>
+                          <tr class="success">
+                              <th  > </th>
+                              <th  >الأولى</th>
+                              <th >الثانية </th>
+                              <th >الثالثة </th>
+                              <th >الثلاثاء </th>
+                              <th > الرابعة</th>
+                              <th > الخامسة</th>
+                              <th >السادسة </th>
+                              <th >السابعة </th>
+                              <th >الثامنة </th>
+                          </tr>
+                          </thead>
+                          <tbody id="test">
+                          <tr>
+                                <td>السبت</td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control "  >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+                          </tr>
+                          <tr>
+                                <td>الاحد</td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+>>>>>>> 189efe150747096441ee6d0cd0a7b137bf297d6c
                                   </div>
                               </div>
 
                           </div>
                       </div>
 
+<<<<<<< HEAD
+=======
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+>>>>>>> 189efe150747096441ee6d0cd0a7b137bf297d6c
 
 
+<<<<<<< HEAD
+=======
+                          <tr>
+                              <td>الاثنين</td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>الثلاثاء</td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>الاربعاء</td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>الخميس</td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+
+                              <td >
+
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                                  <div class="form-group" >
+                                      <select id="sts" class="form-control " >
+                                          @foreach($teachers as $teacher)
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                              </td>
+                          </tr>
+                          </tbody>
+                      </table>
+                      <div class="">
+                          <div class="col-md-8 col-md-offset-2 bm" >
+                              <button class="btn btn-success btn-block" type="submit" >حفظ</button></div>
+                      </div>
+>>>>>>> 189efe150747096441ee6d0cd0a7b137bf297d6c
 
                   </div>
           </div>
@@ -729,7 +1797,7 @@
                                   <div class="form-group" style="padding: 0; margin: 0; width: 300px;">
                                       <select class="form-control teachers" >
                                           @foreach($teachers as $teacher)
-                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->fullName()}}</option>
+                                              <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
                                           @endforeach
                                       </select>
                                   </div>
@@ -799,13 +1867,24 @@
              function getTableinfo(method){
 //                 $.post('class/'+method,"classid="+$(this).children('option:selected').attr('value')+"&_token="+$('input[name=_token]').val(),function (response) {
                  $.post('class/'+method,"classid=4&_token="+$('input[name=_token]').val(),function (response) {
-                     var result=JSON.parse(response);
+                     result=JSON.parse(response);
                      console.log(result);
+                     day=result.day;
                      var rows=$('#scheduleTable').find('tr');
-                     for(var i=0;i<6;i++){
-                         var cloumns=$(row[i]).find('td');
-                         for(var i=0;i<columns.length;i++){
+                     for(var i=1;i<7;i++){
+                         if(day[i-1]!=null) {
+                              columns = $(rows[i]).find('td');
+                             lecture=day[i-1].lecture;
+                             console.log(day[i-1]);
+                             for (var j = 1; j < columns.length; j++) {
+                                 if(lecture[j]!=null) {
+                                     selects = $(columns[j]).find('select');
+                                     console.log(lecture[j].teacher.id);
+                                     $(selects[0]).find('option[value="'+lecture[j].teacher.id+'"]').attr('selected',true);
+                                     $(selects[1]).find('option[value="'+lecture[j].subject.id+'"]').attr('selected',true);
+                                 }
 
+                             }
                          }
                      }
 

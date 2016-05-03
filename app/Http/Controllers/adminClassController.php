@@ -75,8 +75,8 @@ class adminClassController extends Controller{
     private function scheduleTim($lecture,$lectureMap){
         $app=app();
         $time=$lecture->lectureTime;
-        $index=(int)($time->time);
-        $name=$lecture->teacher->employee->person->name->fullName();
+        $index=($time->time);
+        $name=$lecture->teacher->employee->person->name->formalName();
         $id=$lecture->teacher->id;
 
         if($time->day=='السبت'){
