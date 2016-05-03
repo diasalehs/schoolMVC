@@ -12,8 +12,11 @@
 
 
     <title>ولي الامر</title>
-    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+    <script>UPLOADCARE_PUBLIC_KEY = "demopublickey";</script>
+    <script src="{{URL::asset('js/uploadcare.full.min.js')}}"></script>
+    <script src="{{URL::asset('js/tinymce.min.js')}}"></script>
+    <script src="{{URL::asset('js/jquery.min.js')}}"></script>
     <script>
 
         if ( $(window).width() > 739) {

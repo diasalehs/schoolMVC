@@ -7,6 +7,10 @@ font-family: 'Noto Kufi Arabic', serif;
     font-weight: 100;
 
 }
+.cp{
+    margin-left: -140px;
+    margin-right: -70px;
+}
 #admin{
     font-weight: bold;
 }
@@ -20,8 +24,7 @@ font-family: 'Noto Kufi Arabic', serif;
   background-color: #fff;
 }
 .navbar{
-    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
-
+    border-radius: 0;
 }
 .panel-collapse {
    margin-top: 20px; 
@@ -42,7 +45,8 @@ font-family: 'Noto Kufi Arabic', serif;
     top: 0;
     height: 100%;
     background: #73af73;
-   box-shadow: -2px 0px 5px 0px rgba(0,0,0,0.75);
+    margin-left: 12px;
+
 }
 #sidebar .nav {
   width: 100%;

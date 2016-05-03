@@ -4,7 +4,7 @@
   <div class="page-header">
               <h1>الشعب <small></small></h1>
         </div>
-  <div class="panel-group">
+  <div class="panel-group cp">
       <div class="panel panel-default">
           <div class="panel-heading">
               <h4 class="panel-title">
@@ -72,7 +72,7 @@
       </div>
 </div>
 
-  <div class="panel-group">
+  <div class="panel-group cp">
       <div class="panel panel-default">
           <div class="panel-heading">
               <h4 class="panel-title">
@@ -148,14 +148,14 @@
   </div>
 
 
-  <div class="panel-group">
+  <div class="panel-group cp" >
       <div class="panel panel-default">
           <div class="panel-heading">
               <h4 class="panel-title">
                   <a data-toggle="collapse" href="#collapse11" class="">  <span class="glyphicon glyphicon-calendar"></span> الجدول </a>
               </h4>
           </div>
-          <div id="collapse11" class="panel-collapse collapse colla">
+          <div id="collapse11" class="panel-collapse collapse colla" style="margin-left: 0;margin-right: 0;">
               <div class="container-fluid">
                   @if (count($errors)>0)
                       @foreach($errors -> all() as $error)
@@ -198,7 +198,9 @@
 
 
                       </form>
-                      <table id="scheduleTable" class="table table-bordered text-center cla">
+
+                      
+                      <table id="scheduleTable" class="table table-bordered text-center cla" style="width: 100%">
                           <thead>
                           <tr class="success">
                               <th  > </th>
@@ -220,7 +222,7 @@
                               <td >
 
                                   <div class="form-group" >
-                                      <select id="sts" class="form-control " >
+                                      <select id="sts" class="form-control "  >
                                           @foreach($teachers as $teacher)
                                               <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
                                           @endforeach
@@ -1273,7 +1275,7 @@
       </div>
   </div>
   </div>
-  <div class="panel-group">
+  <div class="panel-group cp">
       <div class="panel panel-default">
           <div class="panel-heading">
               <h4 class="panel-title">
@@ -1347,7 +1349,7 @@
       </div>
   </div>
   </div>
-  <div class="panel-group">
+  <div class="panel-group cp">
       <div class="panel panel-default">
           <div class="panel-heading">
               <h4 class="panel-title">

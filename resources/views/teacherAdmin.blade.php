@@ -193,10 +193,7 @@
                                         <input type="hidden" role="uploadcare-uploader" name="my_file" style="display: inline-block"/>
                                     </div>
                                 </div>
-                                <label class="file">
-                                    <input type="image" id="img">
-                                    <span class="file-custom"></span>
-                                </label>
+
                             </div>
                             <div class="">
                                 <div class="col-md-8 col-md-offset-2 bm" >
@@ -250,7 +247,7 @@
 
         @foreach($employees as $t=>$employee)
             <div class="  col-sm-6 col-md-3">
-                <div class="panel panel-default " style=" text-align: center ; height: 340px">
+                <div class="panel panel-default " style=" text-align: center ; height: 380px">
                     <img class="timg " style="width: 100% "  src="{{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}" alt="...">
 
                     <div class="caption">
