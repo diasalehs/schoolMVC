@@ -114,6 +114,34 @@
             </div>
         </div>
         </div>
+    <table class="table table-bordered text-center">
+        <thead>
+        <tr class="success">
+            <th  >رقم الصف</th>
+            <th >اسم الصف</th>
+
+
+        </tr>
+        </thead>
+        <tbody id="test">
+        <tr>
+            <td>١</td>
+
+            <td >اول</td>
+
+
+
+
+
+        </tr>
+        <tr>
+            <td>٢</td>
+            <td>الثاني</td>
+
+        </tr>
+
+        </tbody>
+    </table>
 
         <script>
             $(document).ready(function(){

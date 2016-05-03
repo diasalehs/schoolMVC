@@ -262,7 +262,7 @@
                             <a id="/teacher/show" class="btn btn-success post" role="button" data-toggle="modal" data-target="#show">عرض</a>
                             <a id="/teacher/edit" class="btn btn-primary post" role="button" data-toggle="modal" data-target="#myModal">تعديل</a>
 
-                            <a id ="teacher/delete"class="btn btn-danger post" role="button" data-target="#deleteC" data-toggle="modal">حذف</a>
+                            <a id ="teacher/delete" class="btn btn-danger post" role="button" data-target="#deleteC" data-toggle="modal">حذف</a>
 
 
                             <input type="hidden" name="id" value="{{$employee->id}}" id="employeeid">

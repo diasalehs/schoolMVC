@@ -2,19 +2,22 @@
 
 body {
   text-align: center;
-  margin-top: 13%;
+  margin-top: 10%;
   padding-top: 40px;
   padding-bottom: 40px;
   color: #777;
   font-family: 'Noto Kufi Arabic', serif;
   height: 100%;
 background-attachment: fixed;
-  background:  url("../../te.png");
+  background:  url("../../brushed.png");
   background-repeat: repeat;
 
 
 }
-
+h2.form-signin-heading {
+  color: #777;
+  margin-bottom: 10px;
+}
 .form-signin {
   max-width: 330px;
   padding: 15px;

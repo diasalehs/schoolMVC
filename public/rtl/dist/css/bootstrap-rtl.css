@@ -1129,10 +1129,7 @@ th {
     float: right;
   }
 }
-.navbar-collapse {
-  padding-right: 15px;
-  padding-left: 15px;
-}
+
 .navbar-brand {
   float: right;
 }
