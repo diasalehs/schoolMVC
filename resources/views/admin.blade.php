@@ -46,8 +46,26 @@
                 ],
             });
         }
+        function showDiv(elem){
+            if(elem.value == 1) {
 
+                document.getElementById('hd').style.display = "inline-block";
+                document.getElementById('dpw').style.display = "inline-block";
+                document.getElementById('chc').style.display = "inline-block";
+                document.getElementById('chco').style.display = "inline-block";
+                document.getElementById('chn').style.display = "inline-block";
+            }else {
+                document.getElementById('hd').style.display = "none";
+                document.getElementById('dpw').style.display = "none";
+                document.getElementById('chc').style.display = "none";
+                document.getElementById('chco').style.display = "none";
+                document.getElementById('chn').style.display = "none";
+            }
+        }
     </script>
+
+
+
     <script>tinymce.init({ selector:'textarea' });</script>
     <!-- Bootstrap core CSS -->
 
