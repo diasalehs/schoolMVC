@@ -1,14 +1,20 @@
--- phpMyAdmin SQL Dump
+Ôªø-- phpMyAdmin SQL Dump
 -- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2016 at 01:23 PM
+-- Generation Time: May 03, 2016 at 11:06 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
-
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `school`
@@ -57,7 +63,7 @@ CREATE TABLE `attendances` (
 CREATE TABLE `classes` (
   `id` int(11) NOT NULL,
   `level_id` int(11) NOT NULL,
-  `section` set('√','»','Ã‹','œ','Â‹','Ê','“','Õ','ÿ','Ì','ﬂ','·','„','‰','”','⁄') NOT NULL,
+  `section` set('ÿ£','ÿ®','ÿ¨ŸÄ','ÿØ','ŸáŸÄ','Ÿà','ÿ≤','ÿ≠','ÿ∑','Ÿä','ŸÉ','ŸÑ','ŸÖ','ŸÜ','ÿ≥','ÿπ') NOT NULL,
   `capacity` int(11) NOT NULL,
   `size` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -67,10 +73,10 @@ CREATE TABLE `classes` (
 --
 
 INSERT INTO `classes` (`id`, `level_id`, `section`, `capacity`, `size`) VALUES
-(4, 1, '√', 0, 0),
-(6, 1, '»', 30, 15),
-(7, 3, 'Ã‹', 30, 20),
-(8, 3, 'œ', 30, 25);
+(4, 1, 'ÿ£', 0, 0),
+(6, 1, 'ÿ®', 30, 15),
+(7, 3, 'ÿ¨ŸÄ', 30, 20),
+(8, 3, 'ÿØ', 30, 25);
 
 -- --------------------------------------------------------
 
@@ -145,11 +151,11 @@ CREATE TABLE `courses` (
 
 CREATE TABLE `degrees` (
   `employee_id` int(11) NOT NULL,
-  `name` set('«·À«‰ÊÌ… «·⁄«„…','œ»·Ê„','»ﬂ«·Ê—Ì”','œ»·Ê„ ⁄«·Ì','„«Ã” Ì—') NOT NULL,
+  `name` set('ÿßŸÑÿ´ÿßŸÜŸàŸäÿ© ÿßŸÑÿπÿßŸÖÿ©','ÿØÿ®ŸÑŸàŸÖ','ÿ®ŸÉÿßŸÑŸàÿ±Ÿäÿ≥','ÿØÿ®ŸÑŸàŸÖ ÿπÿßŸÑŸä','ŸÖÿßÿ¨ÿ≥ÿ™Ÿäÿ±') NOT NULL,
   `date` date NOT NULL,
   `source` varchar(20) NOT NULL,
   `avg` int(11) NOT NULL,
-  `rating` set('„„ «“','ÃÌœ Ãœ«','ÃÌœ','„ﬁ»Ê·','÷⁄Ì›') NOT NULL,
+  `rating` set('ŸÖŸÖÿ™ÿßÿ≤','ÿ¨ŸäÿØ ÿ¨ÿØÿß','ÿ¨ŸäÿØ','ŸÖŸÇÿ®ŸàŸÑ','ÿ∂ÿπŸäŸÅ') NOT NULL,
   `specialty` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -182,7 +188,6 @@ CREATE TABLE `employees` (
 INSERT INTO `employees` (`id`, `person_id`, `mobile`, `married`, `DoesPartnerWork`, `numberOfChildren`, `childrenInSchool`, `childrenOtherSchools`, `job_type`, `hiring_date`, `job_con`, `experince_abroad`, `experince_local`) VALUES
 (1, 1, 598480111, 'no', 0, 0, 4, 2, 'progammer', '2016-04-04', 'nothin', 1, 5),
 (46, 57, 0, '', 0, 0, 0, 0, 'contract', '0000-00-00', 'teacher', 0, 0),
-(47, 58, 0, '', 0, 0, 0, 0, 'contract', '0000-00-00', 'teacher', 0, 0),
 (48, 59, 0, '', 0, 0, 0, 0, 'contract', '0000-00-00', 'teacher', 0, 0),
 (53, 66, 0, '', 0, 0, 0, 0, 'teacher', '0000-00-00', '', 0, 0),
 (54, 67, 0, '', 0, 0, 0, 0, 'teacher', '0000-00-00', '', 0, 0),
@@ -252,7 +257,11 @@ CREATE TABLE `lectures` (
 --
 
 INSERT INTO `lectures` (`id`, `teacher_id`, `subject_id`, `class_id`, `lecturetime_id`) VALUES
-(1, 1, 1, 4, 1);
+(2, 1, 3, 4, 2),
+(6, 1, 3, 6, 7),
+(3, 35, 3, 4, 4),
+(7, 37, 3, 4, 9),
+(8, 43, 3, 4, 4);
 
 -- --------------------------------------------------------
 
@@ -262,8 +271,8 @@ INSERT INTO `lectures` (`id`, `teacher_id`, `subject_id`, `class_id`, `lectureti
 
 CREATE TABLE `lecturetimes` (
   `id` int(11) NOT NULL,
-  `day` set('«·”» ','«·«Õœ','«·«À‰Ì‰','«·À·«À«¡','«·«—»⁄«¡','«·Œ„Ì”','«·Ã„⁄…') NOT NULL,
-  `time` time NOT NULL
+  `day` set('ÿßŸÑÿ≥ÿ®ÿ™','ÿßŸÑÿßÿ≠ÿØ','ÿßŸÑÿßÿ´ŸÜŸäŸÜ','ÿßŸÑÿ´ŸÑÿßÿ´ÿßÿ°','ÿßŸÑÿßÿ±ÿ®ÿπÿßÿ°','ÿßŸÑÿÆŸÖŸäÿ≥','ÿßŸÑÿ¨ŸÖÿπÿ©') NOT NULL,
+  `time` set('1','2','3','4','5','6','7','8') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -271,7 +280,14 @@ CREATE TABLE `lecturetimes` (
 --
 
 INSERT INTO `lecturetimes` (`id`, `day`, `time`) VALUES
-(1, '«·”» ', '08:00:00');
+(2, 'ÿßŸÑÿ≥ÿ®ÿ™', '1'),
+(4, 'ÿßŸÑÿ≥ÿ®ÿ™', '2'),
+(5, 'ÿßŸÑÿ≥ÿ®ÿ™', '3'),
+(6, 'ÿßŸÑÿ≥ÿ®ÿ™', '4'),
+(7, 'ÿßŸÑÿ≥ÿ®ÿ™', '5'),
+(9, 'ÿßŸÑÿßÿ≠ÿØ', '3'),
+(10, 'ÿßŸÑÿßÿ≠ÿØ', '4'),
+(11, 'ÿßŸÑÿßÿ´ŸÜŸäŸÜ', '7');
 
 -- --------------------------------------------------------
 
@@ -289,8 +305,9 @@ CREATE TABLE `levels` (
 --
 
 INSERT INTO `levels` (`id`, `name`) VALUES
-(1, '«·’› «·ÃœÌœ'),
-(3, '«·’› «·À«·À');
+(1, 'ÿßŸÑÿµŸÅ ÿßŸÑÿ¨ÿØŸäÿØ'),
+(3, 'ÿßŸÑÿµŸÅ ÿßŸÑÿ´ÿßŸÑÿ´'),
+(4, 'ÿßŸÑÿµŸÅ ÿßŸÑÿÆÿßŸÖÿ≥');
 
 -- --------------------------------------------------------
 
@@ -357,13 +374,12 @@ CREATE TABLE `names` (
 INSERT INTO `names` (`person_id`, `first`, `second`, `third`, `last`) VALUES
 (1, 'dia', 'omar', 'sudqi', 'jawabreh'),
 (57, 'mazen', 'mazen', 'mazen', 'mazen'),
-(58, 'admin', 'admin', 'admin', 'adnim'),
 (59, 'admin', 'admin', 'adnim', 'aa'),
-(64, '’œﬁÌ', '', '', ''),
-(65, '’œﬁÌ', '', '', ''),
+(64, 'ÿµÿØŸÇŸä', '', '', ''),
+(65, 'ÿµÿØŸÇŸä', '', '', ''),
 (66, 'sudqi', '', '', ''),
 (67, 'sudqi', '', '', ''),
-(68, '÷Ì«¡', '', '', ''),
+(68, 'ÿ∂Ÿäÿßÿ°', '', '', ''),
 (69, 'laith', '', '', ''),
 (70, 'laith', '', '', ''),
 (71, 'mahdi', '', '', '');
@@ -394,7 +410,6 @@ INSERT INTO `persones` (`id`, `nationality`, `religon`, `placeOfBirth`, `ni`, `i
 (1, 'palestinan', 'muslim', 'nablus', 1234, 'green', 9, 92396650, '0000-00-00'),
 (2, 'pal', 'muslim', 'am', 22, '', 0, 0, '0000-00-00'),
 (57, '', 'Hello', '', 11, 'pal', 0, 0, '0000-00-00'),
-(58, '', 'Hello', '', 11, 'pa', 0, 0, '0000-00-00'),
 (59, '', 'Hello', '', 11, 'pal', 0, 0, '0000-00-00'),
 (64, '', '', '', 123456789, '', 0, 0, '0000-00-00'),
 (65, '', '', '', 123456789, '', 0, 0, '0000-00-00'),
@@ -466,9 +481,9 @@ CREATE TABLE `subjects` (
 --
 
 INSERT INTO `subjects` (`id`, `name`) VALUES
-(1, '—Ì«÷Ì« '),
-(3, '⁄·Ê„'),
-(4, '⁄—»Ì');
+(1, 'ÿ±Ÿäÿßÿ∂Ÿäÿßÿ™'),
+(3, 'ÿπŸÑŸàŸÖ'),
+(4, 'ÿπÿ±ÿ®Ÿä');
 
 -- --------------------------------------------------------
 
@@ -501,7 +516,6 @@ CREATE TABLE `teacheres` (
 INSERT INTO `teacheres` (`id`, `employee_id`) VALUES
 (1, 1),
 (35, 46),
-(36, 47),
 (37, 48),
 (42, 53),
 (43, 54),
@@ -655,7 +669,7 @@ ALTER TABLE `grades`
 --
 ALTER TABLE `lectures`
   ADD PRIMARY KEY (`id`) USING BTREE,
-  ADD UNIQUE KEY `teacher_id_2` (`teacher_id`,`subject_id`,`id`,`lecturetime_id`,`class_id`) USING BTREE,
+  ADD UNIQUE KEY `teacher_id_2` (`teacher_id`,`subject_id`,`lecturetime_id`,`class_id`) USING BTREE,
   ADD KEY `teacher_id` (`teacher_id`),
   ADD KEY `subject_id` (`subject_id`) USING BTREE,
   ADD KEY `lectures_ibfk_1` (`lecturetime_id`),
@@ -786,17 +800,17 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `lectures`
 --
 ALTER TABLE `lectures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `lecturetimes`
 --
 ALTER TABLE `lecturetimes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `levels`
 --
 ALTER TABLE `levels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `marks`
 --
@@ -970,3 +984,7 @@ ALTER TABLE `trained_courses`
 --
 ALTER TABLE `useres`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`person_id`) REFERENCES `persones` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
