@@ -18,7 +18,7 @@ class Classes extends Model
         return $this->belongsToMany('App\Subject','lectures','class_id','subject_id');
     }
     public function lectures(){
-        return $this->hasMany('App\Lecture');
+        return $this->hasMany('App\Lecture','class_id','id');
     }
     public function level(){
         return $this->belongsTo('App\Level');

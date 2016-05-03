@@ -134,6 +134,10 @@ Route::group(['prefix' => '/admin'] ,function() {
             'uses'=>'adminClassController@create',
             'as'=>'classCreate'
         ]);
+        Route::post('/schedule', [
+            'uses'=>'adminClassController@schedule',
+            'as'=>'getSchedule'
+        ]);
 
     });
 

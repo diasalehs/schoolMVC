@@ -28,7 +28,7 @@
 
                               <div class="form-group">
                                   <label for="InputEmail" class="ic ">الصف</label>
-                                  <select name="classId" class="form-control level"  >
+                                  <select name="classId" class="form-control "  >
                                       @foreach($levels as $level)
                                       <option value="{{$level->id}}">{{$level->name}}</option>
                                       @endforeach
@@ -102,6 +102,7 @@
                           <div class="form-group">
                               <label for="InputEmail" class="ic ">الصف</label>
                               <select id="sts" class="form-control level" >
+                                  <option></option>
                                   @foreach($levels as $level)
                                   <option value="{{$level->id}}">{{$level->name}}</option>
                                   @endforeach
@@ -205,7 +206,7 @@
 
 
                       </form>
-                      <table class="table table-bordered text-center cla">
+                      <table id="scheduleTable" class="table table-bordered text-center cla">
                           <thead>
                           <tr class="success">
                               <th  >المادة</th>
@@ -354,6 +355,7 @@
                           <div class="form-group">
                               <label for="InputEmail" class="ic ">الصف</label>
                               <select id="sts" class="form-control level" >
+                                  <option></option>
                                   @foreach($levels as $level)
                                       <option value="{{$level->id}}">{{$level->name}}</option>
                                   @endforeach
@@ -362,21 +364,6 @@
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الشعبة</label>
                               <select id="sts" class="form-control" >
-                                  <option value="أ">أ</option>
-                                  <option value="ب">ب</option>
-                                  <option value="جـ">جـ</option>
-                                  <option value="د">د</option>
-                                  <option value="هـ">هـ</option>
-                                  <option value="و">و</option>
-                                  <option value="ز">ز</option>
-                                  <option value="حـ">حـ</option>
-                                  <option value="ط">ط</option>
-                                  <option value="ي">ي</option>
-                                  <option value="ك">ك</option>
-                                  <option value="ل">ل</option>
-                                  <option value="م">م</option>
-                                  <option value="ن">ن</option>
-                                  <option value="س">س</option>
                               </select>
                           </div>
 
@@ -441,32 +428,16 @@
 
                           <div class="form-group">
                               <label for="InputEmail" class="ic">الصف</label>
-                              <select id="sts" name=class="form-control " >
+                              <select id="sts" name=class="form-control">
+                                  <option ></option>
                                   @foreach($levels as $level)
                                       <option value="{{$level->id}}">{{$level->name}}</option>
                                   @endforeach
                               </select>
                           </div>
                           <div class="form-group">
-                              <label for="InputEmail" class="ic">الشعبة</label>
+                              <label id="class"for="InputEmail" class="ic">الشعبة</label>
                               <select id="sts" class="form-control" >
-                                  <option value="أ">أ</option>
-                                  <option value="ب">ب</option>
-                                  <option value="جـ">جـ</option>
-                                  <option value="د">د</option>
-                                  <option value="هـ">هـ</option>
-                                  <option value="و">و</option>
-                                  <option value="ز">ز</option>
-                                  <option value="حـ">حـ</option>
-                                  <option value="ط">ط</option>
-                                  <option value="ي">ي</option>
-                                  <option value="ك">ك</option>
-                                  <option value="ل">ل</option>
-                                  <option value="م">م</option>
-                                  <option value="ن">ن</option>
-                                  <option value="س">س</option>
-
-
                               </select>
                           </div>
 
@@ -486,7 +457,7 @@
                               <td>
 
                                   <div class="form-group" style="padding: 0; margin: 0; width: 300px;">
-                                      <select id="sts" class="form-control " >
+                                      <select class="form-control teachers" >
                                           @foreach($teachers as $teacher)
                                               <option value="{{$teacher->id}}">{{$teacher->employee->person->name->fullName()}}</option>
                                           @endforeach
@@ -544,12 +515,39 @@
           $.ajaxSetup({
               headers: {'X-CSRF-Token': $('meta[name=_token]').attr('content')}
           });
+             getTableinfo('schedule');
        $('.level').change(getClasses);
+             var teachers = $('.teacher').first().html();
+        $('#class').change()
+            function getTable(){
+                classid=$(this).attr('value');
+                levelid=$(this).closest('form').find('select')[0].attr('value');
+               var result =getTableinfo('schedule');
 
+
+             }
+             function getTableinfo(method){
+//                 $.post('class/'+method,"classid="+$(this).children('option:selected').attr('value')+"&_token="+$('input[name=_token]').val(),function (response) {
+                 $.post('class/'+method,"classid=4&_token="+$('input[name=_token]').val(),function (response) {
+                     var result=JSON.parse(response);
+                     console.log(result);
+                     var rows=$('#scheduleTable').find('tr');
+                     for(var i=0;i<6;i++){
+                         var cloumns=$(row[i]).find('td');
+                         for(var i=0;i<columns.length;i++){
+
+                         }
+                     }
+
+
+                 });
+
+             }
           function getClasses() {
                 var drop =$(this).closest('form').find('select')[1];
               console.log(drop);
-                $(drop).html('');
+                $(drop).find('option').remove();
+              $(drop).hide().show();
                    $.post('class/levels',"id="+$(this).children('option:selected').attr('value')+"&_token="+$('input[name=_token]').val(),function (response) {
                        var classes=JSON.parse(response);
                        for(var i=0;i<classes.length;i++)
