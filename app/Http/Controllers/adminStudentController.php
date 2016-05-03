@@ -134,14 +134,15 @@ class adminStudentController extends Controller{
     public function delete(Request $request){
         if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
-        }        $this->validate($request,['id'=>'integer|required']);
-
-        $id=$request['id'];
+        }
+        $this->validate($request,['id'=>'integer|required']);
+        $id=$request->input('id');
         $student=Student::find($id);
         if($student!=null) {
             $p = $student->person;
             $p->delete();
         }
+//        view('\student');
         return redirect()->route('adminStudent');
 
     }

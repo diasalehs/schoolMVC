@@ -15,7 +15,7 @@
         </div>
         <div id="collapse1" class="panel-collapse collapse colla">
 <div class="row">
-    <form role="form" class="form-inline" action="{{URL('admin/send')}}" method="post">
+    <form role="form" class="form-inline" action="{{URL('admin/messages/send')}}" method="post">
         <input type="hidden" value="{{csrf_token()}}" name="_token">
         <div class="form-group mi">
             <label for="InputName">المرسل اليه</label>
