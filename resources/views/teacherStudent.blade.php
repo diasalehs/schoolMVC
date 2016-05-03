@@ -26,27 +26,14 @@
                 <div class="row ">
                     <form action="{{url('admin/teacher/create')}}"role="form" class="form-inline" method="post">
                         <div class="fp">
+                            <div class="form-group">
+                                <label for="InputName">الاسم</label>
+                                <div class="input-group">
+                                    <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
+                                    <input type="text" class="form-control" name="name" id="InputName"  >
+                                </div>
+                            </div>
 
-                            <div class="form-group">
-                                <label for="InputEmail" class="ic">الصف</label>
-                                <div class="input-group">
-                                    <select id="sts" class="form-control " >
-                                        <option value="full">الاول  </option>
-                                        <option value="family">الاول </option>
-                                        <option value="walk">الثاني </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="InputEmail" class="ic">الشعبة</label>
-                                <div class="input-group">
-                                    <select id="sts" class="form-control " >
-                                        <option value="full"> أ </option>
-                                        <option value="family"> ب</option>
-                                        <option value="walk"> ج</option>
-                                    </select>
-                                </div>
-                            </div>
 
 
 
@@ -64,6 +51,29 @@
         </div>
     </div>
 </div>
+<form action="{{url('admin/teacher/create')}}"role="form" class="form-inline" method="post">
+
+<div class="form-group"style="display: inline-block;">
+    <label for="InputEmail" class="">الصف</label>
+    <div class="input-group">
+        <select id="sts" class="form-control " >
+            <option value="full">الاول  </option>
+            <option value="family">الاول </option>
+            <option value="walk">الثاني </option>
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <label for="InputEmail" class="" style="display: inline-block; ">الشعبة</label>
+    <div class="input-group">
+        <select id="sts" class="form-control " >
+            <option value="full"> أ </option>
+            <option value="family"> ب</option>
+            <option value="walk"> ج</option>
+        </select>
+    </div>
+</div>
+</form>
 
 <table class="table table-bordered text-center">
     <thead>

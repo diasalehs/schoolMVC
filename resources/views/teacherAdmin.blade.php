@@ -100,29 +100,30 @@
                                 </div>
                                 <h3 class="ft">الوضع الاجتماعي والعائلي</h3>
                                 <div class="form-group">
+                                    <label for="InputEmail">متزوج</label>
+                                    <div class="input-group">
+                                        <select  class="form-control" onchange="showDiv(this)">
+                                            <option value="0">لا</option>
+                                            <option value="1">نعم</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group hd " id="hd" style="display: none" >
                                     <label for="InputEmail"> اسم الزوج/ة</label>
                                     <div class="input-group" >
                                         <input type="text" class="form-control" id="InputEmailSecond" name="married"  >
                                     </div>
                                 </div>
 
-                                <div class="form-group mc" >
+                                <div class="form-group mc hd" id="chn" style="display: none">
                                     <label for="InputEmail" > عدد الاطفال</label>
                                     <div class="input-group" style="width: 80px">
                                         <input type="number" class="form-control" id="InputEmailSecond" name="numberOfChildren"  >
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="InputEmail">متزوج</label>
-                                    <div class="input-group">
-                                        <select id="sts" class="form-control" >
-                                            <option value="teacher">لا</option>
-                                            <option value="supervisor">نعم</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group mc">
+
+                                <div class="form-group mc hd" id="dpw" style="display: none">
                                     <label for="InputEmail">هل الزوج او الزوجة يعمل</label>
                                     <div class="input-group">
                                         <select id="sts" class="form-control" name="DoesPartnerWork">
@@ -134,13 +135,13 @@
                                 </div>
 
 
-                                <div class="form-group">
+                                <div class="form-group hd" id="chc" style="display: none">
                                     <label for="InputEmail" style="width: 250px"> عدد الاطفال في نفس المدرسة </label>
                                     <div class="input-group" style="width: 80px">
                                         <input type="number" class="form-control" id="InputEmailSecond" name="childrenInSchool"  >
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group hd" id="chco" style="display: none">
                                     <label for="InputEmail"  style="width: 250px"> عدد الاطفال في المدارس اخرى</label>
                                     <div class="input-group" style="width: 80px">
                                         <input type="number" class="form-control" id="InputEmailSecond" name="childrenOtherSchools"  >
@@ -262,7 +263,7 @@
                             <a id="/teacher/show" class="btn btn-success post" role="button" data-toggle="modal" data-target="#show">عرض</a>
                             <a id="/teacher/edit" class="btn btn-primary post" role="button" data-toggle="modal" data-target="#myModal">تعديل</a>
 
-                            <a id ="teacher/delete"class="btn btn-danger post" role="button" data-target="#deleteC" data-toggle="modal">حذف</a>
+                            <a id ="teacher/delete" class="btn btn-danger post" role="button" data-target="#deleteC" data-toggle="modal">حذف</a>
 
 
                             <input type="hidden" name="id" value="{{$employee->id}}" id="employeeid">
@@ -352,6 +353,17 @@
                                             </div>
                                         </div>
                                         <h3 class="ft">الوضع الاجتماعي والعائلي</h3>
+
+
+                                        <div class="form-group">
+                                            <label for="InputEmail">متزوج</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="InputEmailSecond" name="numberOfChildren" disabled >
+
+
+                                            </div>
+                                        </div>
+
                                         <div class="form-group">
                                             <label for="InputEmail"> اسم الزوج/ة</label>
                                             <div class="input-group" >
@@ -366,14 +378,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="InputEmail">متزوج</label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" id="InputEmailSecond" name="numberOfChildren" disabled >
 
-
-                                            </div>
-                                        </div>
                                         <div class="form-group mc">
                                             <label for="InputEmail">هل الزوج او الزوجة يعمل</label>
                                             <div class="input-group">

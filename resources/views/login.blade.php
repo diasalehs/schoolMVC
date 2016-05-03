@@ -29,7 +29,7 @@
         @endforeach
     @endif
     <form class="form-signin" method="post" action="">
-        <h2 class="form-signin-heading">تسجيل الدخول</h2>
+        <h2 class="form-signin-heading" style="margin-bottom: 10px;color: #777;">تسجيل الدخول</h2>
         <label for="inputEmail" class="sr-only">رقم المستخدم</label>
             <input type="text" id="inputEmail" class="form-control" name="inputName" placeholder="رقم المستخدم"  autofocus>
         <label for="inputPassword" class="sr-only">كلمة السر</label>

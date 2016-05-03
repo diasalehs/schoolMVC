@@ -11,90 +11,125 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
     <!-- The best place for this one is your <HEAD> tag -->
-    <script>UPLOADCARE_PUBLIC_KEY = "demopublickey";</script>
-    <script src="https://ucarecdn.com/widget/2.8.2/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>
-    <title>المعلم</title>
+    <title>المدرسة الاسلامية</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script>
 
 
     </script>
-    <script>tinymce.init({ selector:'textarea' });</script>
     <!-- Bootstrap core CSS -->
 
 
-    <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/bootstrap4.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/main.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{url::asset('rtl/dist/css/bootstrap-rtl.css')}}">
 </head>
 
 <body dir="rtl" >
-<div class="page-container">
 
-    <nav class="navbar navbar-default" style="z-index: 4; position: fixed; top: 0; width: 100%">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{{url('teacher/')}}"> الصفحة الشخصية</a>
-            </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+<div class="navbar-collapse collapse inverse" id="navbar-header">
+    <div class="container-fluid">
+        <div class="about">
+            <h4> موقعنا</h4>
+            <p >	بالقرب من المستشفى العربي التخصصي
+                رفيديا , نابلس</p>
+        </div>
+        <div class="social">
+            <h4>اتصل بنا</h4>
+            <ul class="list-unstyled">
+                <li>الهاتف:٠٩-٢٣٣٠٣١٢</li>
+                <li><a href="#">Like on Facebook</a></li>
+                <li><a href="#">Email me</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="navbar navbar-static-top navbar-light bg-faded">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">
+            &#9776;
+        </button>
+        <a href="#" class="navbar-brand" >المدرسة الإسلامية الاساسية</a>
+        <div class="form-inline pull-xs-left">
+            <a class="btn btn-success-outline"  href="{{route('loginPage')}}">تسجيل الدخول</a>
+        </div>
+    </div>
+</div>
 
-                <ul class="nav navbar-nav navbar-left">
-                    <li><a href="{{route('logout')}}">تسجيل الخروج</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  style="margin-left: 100px;">اقسام الموقع <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{url('teacher/student')}}">الطلاب</a></li>
-                            <li><a href="{{URL('teacher/marks')}}">العلامات</a></li>
-                            <li><a href="{{url('teacher/messages')}}">الرسائل</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+<section class="jumbotron text-xs-center">
     <div class="container">
-        <div class="row row-offcanvas row-offcanvas-left">
+        <h1 class="jumbotron-heading">المدرسة الإسلامية - نابلس</h1>
+        <p class="lead text-muted">ترحب المدرسة الإسلامية الأساسية للذكور بطلابها الأعزاء
+            وتتمنى لهم التقدم والنجاح.</p>
+        <div>
+            <a href="#" class="btn btn-info">Main call to action</a>
+            <a href="#" class="btn btn-secondary">Secondary action</a>
+        </div>
+    </div>
+</section>
 
-            <!-- sidebar -->
-            <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
-                <ul class="nav " >
-                    <li><img class="teacherimg" src={{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}></li>
-                    <li style="text-align: center; margin: 10px 0">{{Auth::user()->person->name->fullName()}}</li>
-                    <li><span><hr></span></li>
-                    <li id="st"><a href="{{URL('teacher/student')}}"> الطلاب</a></li>
-                    </a></li>
-                    <li class="" id="te"><a href="{{url('teacher/marks')}}" >العلامات</a></li>
-
-                    <li id="su"><a href="{{url('teacher/messages')}}" onclick="">الرسائل</a></li>
-                </ul>
-
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 100%; height: 300px;">
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <div class="card">
+                <img src="img/" alt="Guitar">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
+        </div>
+        <div class="carousel-item">
+            <img data-src="..." alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img data-src="..." alt="Third slide">
+        </div>
+    </div>
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="icon-prev" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="icon-next" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<div class="album text-muted">
+    <div class="container">
 
-            <!-- main area -->
-            <div class="col-xs-12 col-sm-10" id="main">
-                @yield('content')
+        <div class="row">
+            <div class="card">
+                <img src="img/guitar.jpg" alt="Guitar">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card">
+                <img src="img/lady-guitar.jpg" alt="A woman playing a guitar">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card">
+                <img src="img/mic.jpg" alt="Microphone">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+        </div>
 
-            </div><!-- /.col-xs-12 main -->
-        </div><!--/.row-->
-    </div><!--/.container-->
-</div><!--/.page-container-->
+    </div>
+</div>
 
+<footer class="text-muted">
+    <div class="container">
+        <p class="pull-xs-right">
+            <a href="#">Back to top</a>
+        </p>
+        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+    </div>
+</footer>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script src="{{URL::asset('js/jquery-1.12.2.min.js')}}"></script>
-<script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
+<script src="{{URL::asset('js/bootstrap4.min.js')}}"></script>
 <script src="{{URL::asset('js/script.js')}}"></script>
-
-</body>
 </html>

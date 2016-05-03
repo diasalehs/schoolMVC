@@ -46,8 +46,26 @@
                 ],
             });
         }
+        function showDiv(elem){
+            if(elem.value == 1) {
 
+                document.getElementById('hd').style.display = "inline-block";
+                document.getElementById('dpw').style.display = "inline-block";
+                document.getElementById('chc').style.display = "inline-block";
+                document.getElementById('chco').style.display = "inline-block";
+                document.getElementById('chn').style.display = "inline-block";
+            }else {
+                document.getElementById('hd').style.display = "none";
+                document.getElementById('dpw').style.display = "none";
+                document.getElementById('chc').style.display = "none";
+                document.getElementById('chco').style.display = "none";
+                document.getElementById('chn').style.display = "none";
+            }
+        }
     </script>
+
+
+
     <script>tinymce.init({ selector:'textarea' });</script>
     <!-- Bootstrap core CSS -->
 
@@ -76,6 +94,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
 
                 <ul class="nav navbar-nav navbar-left">
+                    <li><a href="{{route('main')}}">صفحة المدرسة</a></li>
                     <li><a href="{{route('logout')}}">تسجيل الخروج</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  style="margin-left: 100px;">اقسام الموقع <span class="caret"></span></a>

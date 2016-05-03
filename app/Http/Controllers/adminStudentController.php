@@ -135,10 +135,11 @@ class adminStudentController extends Controller{
         if (!Auth::check() or Auth::user()->type != 'admin') {
             return redirect()->route('loginPage');
         }        $this->validate($request,['id'=>'integer|required']);
-        $id=$request->input('id');
-        $employee=Employee::find($id);
-        if($employee!=null) {
-            $p = $employee->person;
+
+        $id=$request['id'];
+        $student=Student::find($id);
+        if($student!=null) {
+            $p = $student->person;
             $p->delete();
         }
         return redirect()->route('adminStudent');

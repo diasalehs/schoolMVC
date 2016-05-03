@@ -308,13 +308,16 @@
                                  <ul class="dropdown-menu">
 
 
-                                     <li><a id="/teacher/show"  role="button" data-toggle="modal" data-target="#show">عرض</a>
+                                     <li><a id="/student/show"  role="button" data-toggle="modal" data-target="#show">عرض</a>
                                      </li>
-                                     <li><a id="/teacher/edit"  role="button" data-toggle="modal" data-target="#myModal">تعديل</a>
+                                     <li><a id="/student/edit"  role="button" data-toggle="modal" data-target="#myModal">تعديل</a>
                                      </li>
-                                     <li><a id ="teacher/delete" role="button" data-target="#deleteC" data-toggle="modal">حذف</a>
+                                     <li><a id ="student/delete" class="post" role="button" data-target="#deleteC" data-toggle="modal">حذف</a>
                                      </li>
                                  </ul>
+
+                                 <input type="hidden" name="id" value="{{$student->id}}" id="studentid">
+                                 <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
                              </div>
                          </td>
                      </tr>

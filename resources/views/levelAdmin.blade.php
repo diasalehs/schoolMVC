@@ -114,6 +114,27 @@
             </div>
         </div>
         </div>
+    <table class="table table-bordered text-center">
+        <thead>
+        <tr class="success">
+            <th  >رقم الصف</th>
+            <th >اسم الصف</th>
+
+
+        </tr>
+        </thead>
+        <tbody id="test">
+        <?php $var = 0;?>
+        @foreach($levels as $level)
+            <?php $var ++; ?>
+            <tr>
+            <td>{{$var--}}</td>
+            <td >{{$level->name}}</td>
+        </tr>
+            <?php $var = $var +1; ?>
+        @endforeach
+        </tbody>
+    </table>
 
         <script>
             $(document).ready(function(){
@@ -125,7 +146,7 @@
                 });
                 $('.post').click(function () {
                     var action = $(this).attr('id');
-                    form = $(this).closest('form')
+                    form = $(this).closest('form');
                     form.attr('action', action);
                     if($(this).attr('id')=="level/edit")
                         form.submit();

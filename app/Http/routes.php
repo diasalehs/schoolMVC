@@ -253,3 +253,13 @@ Route::group(['prefix' => '/parent'] ,function() {
     ]);
 });
 
+
+//-------------------------------------------------------------------------mainPAGE
+Route::group(['prefix' => '/main'] ,function() {
+
+    Route::get('/', [
+        'uses'=>'mainController@getMain',
+        'as'=>'main'
+    ]);
+
+});
