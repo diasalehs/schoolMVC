@@ -14,15 +14,7 @@
         </div>
         <div id="collapse1" class="panel-collapse collapse colla">
             <div class="container-fluid">
-                @if (count($errors)>0)
-                    @foreach($errors -> all() as $error)
 
-                        <div class="alert alert-danger" role="alert">
-                            <a href="#" class="alert-link"> {{ $error }}}</a>
-                        </div>
-
-                    @endforeach
-                @endif
                 <div class="row ">
                     <form action="{{route('subjectCreate')}}"role="form" class="form-inline" method="post">
                         <input type="hidden" value="{{csrf_token()}}" name="_token">
@@ -58,15 +50,7 @@
         </div>
         <div id="collapse11" class="panel-collapse collapse colla">
             <div class="container-fluid">
-                @if (count($errors)>0)
-                    @foreach($errors -> all() as $error)
 
-                        <div class="alert alert-danger" role="alert">
-                            <a href="#" class="alert-link"> {{ $error }}}</a>
-                        </div>
-
-                    @endforeach
-                @endif
                 <div class="row ">
                     <form action="" role="form" class="form-inline" method="post">
                         <input type="hidden" value="{{csrf_token()}}" name="_token">
@@ -121,12 +105,30 @@
                             </select>
                         </div>
                             <br>
-                        <div class="form-group matCheck" >
-                            @foreach($subjects as $subject)
-                                <input type="checkbox" name="subject " id="checkbox_id"  value="{{$subject->id}}">
-                                <label for="checkbox_id">{{$subject->name}}</label>
-                            @endforeach
+                        <div class="row">
+                            <div class="col-md-4">
+                        <fieldset class="form-group" >
+                            <label for="exampleSelect2">المواد</label>
+                            <select class="select-cities" name="city" multiple="multiple" style="width: 200px;height: 200px; margin-left: 60px">
+                                @foreach($subjects as $subject)
 
+                                <option>{{$subject->name}}</option>
+
+                                @endforeach
+
+                            </select>
+                        </fieldset>
+                            </div>
+                            <div class="col-md-4">
+
+                        <fieldset class="form-group" >
+                            <label for="SelectedSubjects" style="width: 110px;">المواد المختارة</label>
+                        <select  class="chosen-cities" name="chosen-cities-name" multiple="multiple"style="width: 200px;height: 200px" >
+
+                        </select>
+                        </fieldset>
+                        </div>
+                        </div>
                         <div class="">
                             <div class="col-md-8 col-md-offset-2 bm" >
                                 <button class="btn btn-success btn-block" type="submit" >حفظ</button></div>

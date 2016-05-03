@@ -7,6 +7,7 @@
  */
 
 namespace App\Http\Controllers;
+use App\Http\Requests\Request;
 use Illuminate\Support\Facades\Auth;
 
 class teacherController extends Controller{
@@ -37,4 +38,17 @@ class teacherController extends Controller{
         }
         return view('teacherMessages');
     }
+
+    public  function  changePassword(Request $request){
+        if (!Auth::check() or Auth::user()->type != 'teacher') {
+            return redirect()->route('loginPage');
+        }
+
+        if(!Auth::attempt(['id'=>Auth::user()->id,'password'=>$request['oldPass']])){
+            return redirect()->back()->with(['fail'=>'Could not login you']);
+        }
+        Auth::user()->password=$request['newPass'];
+        return redirect()->route('teacherFirst');
+    }
+
 }

@@ -80,7 +80,7 @@
                     <li><a href="{{route('main')}}">صفحة المدرسة</a></li>
                     <li><a href="{{route('logout')}}">تسجيل الخروج</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  style="margin-left: 100px;">اقسام الموقع <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  style="margin-left: 100px;"> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{url('teacher/student')}}">الطلاب</a></li>
                             <li><a href="{{URL('teacher/marks')}}">العلامات</a></li>
@@ -97,7 +97,7 @@
             <!-- sidebar -->
             <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav " >
-                    <li><img class="teacherimg" src={{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}></li>
+                    <li style=""><img class="teacherimg" src={{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}></li>
                     <li style="text-align: center; margin: 10px 0">{{Auth::user()->person->name->fullName()}}</li>
                     <li><span><hr></span></li>
                     <li id="st"><a href="{{URL('teacher/student')}}"> الطلاب</a></li>

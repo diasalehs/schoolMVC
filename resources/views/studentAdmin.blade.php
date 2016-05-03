@@ -13,15 +13,7 @@
       </div>
       <div id="collapse1" class="panel-collapse collapse colla">
           <div class="container-fluid">
-              @if (count($errors)>0)
-                  @foreach($errors -> all() as $error)
 
-                      <div class="alert alert-danger" role="alert">
-                          <a href="#" class="alert-link"> {{ $error }}}</a>
-                      </div>
-
-                  @endforeach
-              @endif
               <div class="row ">
                   <form action="{{route('studentCreate')}}"role="form" class="form-inline" method="post">
                       <div class="fp">
@@ -263,13 +255,7 @@
                         </div>
                     </form>
 
-                    @if (count($errors)>0)
-                        @foreach($errors -> all() as $error)
-                            <div class="alert alert-danger" role="alert">
-                                <a href="#" class="alert-link"> {{ $error }}}</a>
-                            </div>
-                        @endforeach
-                    @endif
+
                 </div>
             </div>
         </div>
@@ -282,6 +268,7 @@
                     <tr class="success">
                         <th  >رقم الطالب</th>
                         <th >اسم الطالب</th>
+                        <th  >رقم المستخدم</th>
                         <th >الصف</th>
                         <th >الشعبة</th>
                         <th>العمليات</th>
@@ -292,36 +279,36 @@
                      @foreach($students as $student)
                          <?php $var ++; ?>
                      <tr>
-                         <td>{{$var--}}</td>
+                         <td>{{$var}}</td>
 
                          <td>{{$student->person->name->fullName()}}</td>
                          @if($student->class != null)
                          <td >{{$student->class->level->name}}</td>
-                         <td >{{$student->class->level->section}}</td>
+                         <td >{{$student->class->section}}</td>
+                         @else
+                             <td >لم يضف</td>
+                             <td >لم يضف</td>
                          @endif
-                         @if($student->class == null)
-                             <td >غير مضاف</td>
-                             <td >غير مضاف</td>
-                         @endif
-                         <td ><div class="dropdown">
+                             <td>{{$student->person->id}}</td>
+
+                         <td ><div class="dropdown
                                  <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
                                  <ul class="dropdown-menu">
 
 
-                                     <li><a id="/student/show"  role="button" data-toggle="modal" data-target="#show">عرض</a>
+                                     <li><a id="/student/show" class="post show" role="button" data-toggle="modal" data-target="#show">عرض</a>
                                      </li>
-                                     <li><a id="/student/edit"  role="button" data-toggle="modal" data-target="#myModal">تعديل</a>
+                                     <li><a id="/student/edit" class="post edit" role="button" data-toggle="modal" data-target="#myModal">تعديل</a>
                                      </li>
-                                     <li><a id ="student/delete" class="post" role="button" data-target="#deleteC" data-toggle="modal">حذف</a>
+                                     <li><a id ="/student/delete" class="post delete" role="button" data-target="#deleteC"  data-toggle="modal">حذف</a>
                                      </li>
                                  </ul>
 
-                                 <input type="hidden" name="id" value="{{$student->id}}" id="studentid">
+                                 <input type="hidden"  name="id" value="{{$student->id}}" id="studentid">
                                  <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
                              </div>
                          </td>
                      </tr>
-                         <?php $var = $var +1; ?>
                     @endforeach
                 </tbody>
             </table>
@@ -783,12 +770,27 @@
             <!-- dialog buttons -->
             <div class="modal-footer">
                 <button type="button" id="deleteCancel" class="btn btn-primary" data-dismiss="modal">لا</button>
-                <button type="button" id="deleteConfirm" class="btn btn-danger" data-dismiss="modal">نعم</button>
+                <button id='yes' type="button" id="deleteConfirm" class="btn btn-danger" data-dismiss="modal">نعم</button>
             </div>
         </div>
     </div>
 </div>
 
+<script>
+    deleteId=0;
+    $('#yes').click(function(){
 
+        $.post('student/delete',"id="+deleteId+"&_token="+$('input[name=_token]').val(),function (response) {
+
+        })
+//        history.go(0);
+//        window.location.reload();
+
+    })
+    $('.delete').click(function(){
+
+        deleteId=$(this).closest('div').find('input').first().attr('value');
+    });
+</script>
 
 @endsection

@@ -20,41 +20,6 @@ class loginController extends Controller implements  \Illuminate\Contracts\Auth\
     use Authenticatable;
 
     public function getLogin(){
-//        $class=Classes::find(4);
-//        $lectures=$class->lectures;
-//        print_r($lectures);
-//        $app=app();
-//        $lectureMap=$app->make  ('stdClass');
-//        foreach ($lectures as $lecture){
-//            echo $lecture->lectureTime->time;
-//            $lectureMap=$this->scheduleTim($lecture,$lectureMap);
-//            print_r($lectureMap->day[0]->lecture[1]);
-//        }
-//        print_r($lectureMap);
-//        foreach ($lectureMap->day as $day){
-//            echo 'lecture: ';
-//            foreach ($day->lecture as $l){
-//                echo $l->teacher->name;
-//               echo '</br>';
-//            }
-//            echo '</br>';
-//        }
-//        for($i=0;$i<6;$i++){
-//            $day=$lectureMap->day[$i];
-//            if(isset($day)) {
-//                for ($i = 1; $i < 9; $i++){
-//                    $lecture=$day->lecture[$i];
-//                    if(isset($lecture)){
-//                        echo $lecture->teacher->name;
-//                    }
-//
-//                }
-//            }
-//        }
-//       $t=Lecture::find(2);
-//        $w=$t->lectureTimes->first();
-//        $temp=$this->scheduleTim($w);
-//        print_r($temp->day[0]->hi[0]);
         if(Auth::check()){
             $user= Auth::user();
             if($user->type=='admin'){
@@ -70,7 +35,7 @@ class loginController extends Controller implements  \Illuminate\Contracts\Auth\
                 return redirect()->route('supervisorFirst');
             }
         }
-//        return view('login');
+        return view('login');
     }
 
     public function postLogin(Request $request){

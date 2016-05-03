@@ -4,26 +4,65 @@
 @section('content')
 
     <div class="jumbotron" id="adminJumbo">
-        <h1>مرحبا بك!</h1>
+        <h1>مرحبا بك</h1>
         <p>{{Auth::user()->person->name->fullName()}}</p>
     </div>
 
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#collapse1" class="">  <span class="glyphicon glyphicon-pencil"></span> تغيير كلمة السر </a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse colla">
+                <div class="container-fluid">
+
+                    <div class="row ">
+
+
+                        <form action="{{route('teacherChangePassword')}}" role="form" class="form-inline" method="post">
+                            <div class="form-group">
+                                <label for="InputEmail">كلمة السر القديمة</label>
+                                <div class="input-group" >
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="oldPass"  >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="InputEmail">كلمة السر الجديدة</label>
+                                <div class="input-group" >
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="newPass"  >
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="col-md-8 col-md-offset-2 bm" >
+                                    <button class="btn btn-success btn-block" type="submit" >حفظ</button></div>
+                                <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
         <div class="container-fluid" style="margin-bottom: 150px">
             <div class="row ">
                 <form  class="form-inline" method="post">
                     <div class="fp">
-                        <h3 class="ft"> بيانات الموظف الشخصية</h3>
+                        <h3 class="ft"> البيانات الشخصية</h3>
 
                         <div class="form-group">
                             <label for="InputEmail" class="ic">جوال</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="mobile"  value="{{Auth::user()->person->mobile}}" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="mobile"  value="{{Auth::user()->person->phone}}" disabled >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail" class="ic">الهاتف</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="InputEmailSecond" name="phone" value="{{Auth::user()->person->employee->phone}}" disabled >
+                                <input type="text" class="form-control" id="InputEmailSecond" name="phone" value="{{Auth::user()->person->employee->mobile}}" disabled >
                             </div>
                         </div>
 
@@ -33,6 +72,7 @@
                                 <input type="text" class="form-control" id="InputEmailSecond" name="nationality" value="{{Auth::user()->person->nationality}}" disabled  >
                             </div>
                         </div>
+                        <span>{{Auth::user()->person->nationality}}</span>
                         <div class="form-group">
                             <label for="InputEmail" class="ic"> مكان الولادة</label>
                             <div class="input-group">
@@ -122,14 +162,14 @@
                             <div class="form-group">
                                 <label for="InputEmail">المسمى الوظيفي</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="InputEmailSecond" name="childrenOtherSchools" disabled >
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="childrenOtherSchools" value="{{Auth::user()->person->employee->job_type}}" disabled >
 
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="InputEmail">التصنيف الوظيفي</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="InputEmailSecond" name="childrenOtherSchools" disabled >
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="childrenOtherSchools" value="{{Auth::user()->person->employee->job_con}}" disabled >
 
                                 </div>
                             </div>
@@ -137,13 +177,13 @@
                             <div class="form-group">
                                 <label for="InputEmail"> سنوات الخبرةالداخلية</label>
                                 <div class="input-group" >
-                                    <input type="text" class="form-control" id="InputEmailSecond" name="experince_local"  disabled>
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="experince_local" value="{{Auth::user()->person->employee->experince_abroad}}" disabled>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="InputEmail"> سنوات الخبرة الخارجية</label>
                                 <div class="input-group" >
-                                    <input type="text" class="form-control" id="InputEmailSecond" name="experince_abroad" disabled >
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="experince_abroad" value="{{Auth::user()->person->employee->experince_local}}" disabled >
                                 </div>
                             </div>
 

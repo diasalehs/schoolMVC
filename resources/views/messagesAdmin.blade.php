@@ -15,7 +15,7 @@
         </div>
         <div id="collapse1" class="panel-collapse collapse colla">
 <div class="row">
-    <form role="form" class="form-inline" action="{{URL('admin/send')}}" method="post">
+    <form role="form" class="form-inline" action="{{URL('admin/messages/send')}}" method="post">
         <input type="hidden" value="{{csrf_token()}}" name="_token">
         <div class="form-group mi">
             <label for="InputName">المرسل اليه</label>
@@ -41,6 +41,7 @@
 
             <div class="input-group mi" >
                 <input class="btn btn-success btn-block" type="submit"value= "ارسال">
+                <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
             </div>
         </div>
     </form>
@@ -70,12 +71,11 @@
         <th >عمليات</th>
 
     </tr>
-    </thead>
-    <tbody id="test">
+
     @foreach($received as $message)
-    <tr>
-        <td>ضياء صالح سعودي</td>
-        <td >اول</td>
+    <tr class="success">
+        <th  >{{$message->id}}</th>
+        <th >{{$message->title}}</th>
         <td ><div class="dropdown">
                 <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
                 <ul class="dropdown-menu">
@@ -86,9 +86,8 @@
             </div>
         </td>
     </tr>
-@endforeach
+        @endforeach
 
-    </tbody>
 </table>
 
             </div>
@@ -117,20 +116,21 @@
                     </tr>
                     </thead>
                     <tbody id="test">
-                    <tr>
-                        <td>ضياء صالح سعودي</td>
-                        <td >اول</td>
-                        <td ><div class="dropdown">
-                                <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:void(0);">رد</a></li>
-                                    <li><a href="{{url('admin/messages/show')}}">عرض</a></li>
-                                    <li><a href="javascript:void(0);">حذف</a></li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-
+                    @foreach($sent as $message)
+                        <tr class="success">
+                            <th  >{{$message->id}}</th>
+                            <th >{{$message->title}}</th>
+                            <td ><div class="dropdown">
+                                    <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:void(0);">رد</a></li>
+                                        <li><a href="{{url('admin/messages/show')}}">عرض</a></li>
+                                        <li><a href="javascript:void(0);">حذف</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
 
                     </tbody>
                 </table>

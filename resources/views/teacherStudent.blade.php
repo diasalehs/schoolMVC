@@ -14,15 +14,7 @@
         </div>
         <div id="collapse2" class="panel-collapse collapse">
             <div class="container-fluid">
-                @if (count($errors)>0)
-                @foreach($errors -> all() as $error)
 
-                <div class="alert alert-danger" role="alert">
-                    <a href="#" class="alert-link"> {{ $error }}}</a>
-                </div>
-
-                @endforeach
-                @endif
                 <div class="row ">
                     <form action="{{url('admin/teacher/create')}}"role="form" class="form-inline" method="post">
                         <div class="fp">

@@ -193,8 +193,10 @@
                                         <input type="hidden" role="uploadcare-uploader" name="my_file" style="display: inline-block"/>
                                     </div>
                                 </div>
-                                <input type="file" name="pic" accept="image/*">
-
+                                <label class="file">
+                                    <input type="image" id="img">
+                                    <span class="file-custom"></span>
+                                </label>
                             </div>
                             <div class="">
                                 <div class="col-md-8 col-md-offset-2 bm" >
@@ -235,13 +237,7 @@
                             </div>
                         </form>
 
-                        @if (count($errors)>0)
-                            @foreach($errors -> all() as $error)
-                                <div class="alert alert-danger" role="alert">
-                                    <a href="#" class="alert-link"> {{ $error }}}</a>
-                                </div>
-                            @endforeach
-                        @endif
+
                     </div>
                 </div>
             </div>
@@ -251,13 +247,15 @@
 
     <div class="row glyphicon-align-right">
         {{--             @if(isset($teacheres))--}}
+
         @foreach($employees as $t=>$employee)
-            <div class="  col-xm-6 col-md-3">
-                <div class="panel panel-default " style="padding: 5px; text-align: center">
-                    <img class="timg" style="width: 90%" src="{{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}" alt="...">
+            <div class="  col-sm-6 col-md-3">
+                <div class="panel panel-default " style=" text-align: center ; height: 340px">
+                    <img class="timg " style="width: 100% "  src="{{URL::asset('career-shift-how-to-become-a-substitute-teacher.jpg')}}" alt="...">
+
                     <div class="caption">
                         <h3>{{$employee->person->name->fullName()}}</h3>
-                        <p>{{$employee->person->religon}}</p>
+                        <p>رقم : {{ $employee->person->id}}</p>
                         <p>
                         <form  method="post" action="">
                             <a id="/teacher/show" class="btn btn-success post" role="button" data-toggle="modal" data-target="#show">عرض</a>
