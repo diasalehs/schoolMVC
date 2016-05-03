@@ -236,6 +236,11 @@ Route::group(['middleware' => ['web']],function(){
                 'uses'=>'studentController@getMarks',
                 'as'=>'studentMarks'
             ]);
+
+            Route::post('/change', [
+                'uses'=>'studentController@changePassword',
+                'as'=>'studentChangePassword'
+            ]);
         });
 
 
@@ -255,6 +260,11 @@ Route::group(['middleware' => ['web']],function(){
                     'uses'=>'supervisorController@getMessages',
                     'as'=>'supervisorMessages'
                 ]);
+
+                Route::post('/change', [
+                    'uses'=>'supervisorController@changePassword',
+                    'as'=>'supervisorChangePassword'
+                ]);
             });
 
 
@@ -268,12 +278,17 @@ Route::group(['middleware' => ['web']],function(){
                 'as'=>'parentMarks'
             ]);
             Route::get('/marks', [
-                'uses'=>'supervisorController@getParentMarks',
+                'uses'=>'parentController@getParentMarks',
                 'as'=>'parentMarks'
             ]);
             Route::get('/messages', [
-                'uses'=>'supervisorController@getParentMessages',
+                'uses'=>'parentController@getParentMessages',
                 'as'=>'parentMessages'
+            ]);
+
+            Route::post('/change', [
+                'uses'=>'parentController@changePassword',
+                'as'=>'parentChangePassword'
             ]);
         });
 

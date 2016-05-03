@@ -8,16 +8,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Lecture;
-use App\Subject;
-use Illuminate\Auth\Authenticatable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Usere;
-use App\Teacher;
-use App\Classes;
-class loginController extends Controller implements  \Illuminate\Contracts\Auth\Authenticatable{
-    use Authenticatable;
+
+
+class loginController extends Controller {
+
 
     public function getLogin(){
         if(Auth::check()){
