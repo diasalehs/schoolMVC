@@ -1,4 +1,4 @@
-ï»¿-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.5.1
 -- http://www.phpmyadmin.net
 --
@@ -7,7 +7,7 @@
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+
 SET time_zone = "+00:00";
 
 --
@@ -57,7 +57,7 @@ CREATE TABLE `attendances` (
 CREATE TABLE `classes` (
   `id` int(11) NOT NULL,
   `level_id` int(11) NOT NULL,
-  `section` set('Ø£','Ø¨','Ø¬Ù€','Ø¯','Ù‡Ù€','Ùˆ','Ø²','Ø­','Ø·','ÙŠ','Ùƒ','Ù„','Ù…','Ù†','Ø³','Ø¹') NOT NULL,
+  `section` set('Ã','È','ÌÜ','Ï','åÜ','æ','Ò','Í','Ø','í','ß','á','ã','ä','Ó','Ú') NOT NULL,
   `capacity` int(11) NOT NULL,
   `size` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -67,10 +67,10 @@ CREATE TABLE `classes` (
 --
 
 INSERT INTO `classes` (`id`, `level_id`, `section`, `capacity`, `size`) VALUES
-(4, 1, 'Ø£', 0, 0),
-(6, 1, 'Ø¨', 30, 15),
-(7, 3, 'Ø¬Ù€', 30, 20),
-(8, 3, 'Ø¯', 30, 25);
+(4, 1, 'Ã', 0, 0),
+(6, 1, 'È', 30, 15),
+(7, 3, 'ÌÜ', 30, 20),
+(8, 3, 'Ï', 30, 25);
 
 -- --------------------------------------------------------
 
@@ -145,11 +145,11 @@ CREATE TABLE `courses` (
 
 CREATE TABLE `degrees` (
   `employee_id` int(11) NOT NULL,
-  `name` set('Ø§Ù„Ø«Ø§Ù†ÙˆÙŠØ© Ø§Ù„Ø¹Ø§Ù…Ø©','Ø¯Ø¨Ù„ÙˆÙ…','Ø¨ÙƒØ§Ù„ÙˆØ±ÙŠØ³','Ø¯Ø¨Ù„ÙˆÙ… Ø¹Ø§Ù„ÙŠ','Ù…Ø§Ø¬Ø³ØªÙŠØ±') NOT NULL,
+  `name` set('ÇáËÇäæíÉ ÇáÚÇãÉ','ÏÈáæã','ÈßÇáæÑíÓ','ÏÈáæã ÚÇáí','ãÇÌÓÊíÑ') NOT NULL,
   `date` date NOT NULL,
   `source` varchar(20) NOT NULL,
   `avg` int(11) NOT NULL,
-  `rating` set('Ù…Ù…ØªØ§Ø²','Ø¬ÙŠØ¯ Ø¬Ø¯Ø§','Ø¬ÙŠØ¯','Ù…Ù‚Ø¨ÙˆÙ„','Ø¶Ø¹ÙŠÙ') NOT NULL,
+  `rating` set('ããÊÇÒ','ÌíÏ ÌÏÇ','ÌíÏ','ãŞÈæá','ÖÚíİ') NOT NULL,
   `specialty` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -262,7 +262,7 @@ INSERT INTO `lectures` (`id`, `teacher_id`, `subject_id`, `class_id`, `lectureti
 
 CREATE TABLE `lecturetimes` (
   `id` int(11) NOT NULL,
-  `day` set('Ø§Ù„Ø³Ø¨Øª','Ø§Ù„Ø§Ø­Ø¯','Ø§Ù„Ø§Ø«Ù†ÙŠÙ†','Ø§Ù„Ø«Ù„Ø§Ø«Ø§Ø¡','Ø§Ù„Ø§Ø±Ø¨Ø¹Ø§Ø¡','Ø§Ù„Ø®Ù…ÙŠØ³','Ø§Ù„Ø¬Ù…Ø¹Ø©') NOT NULL,
+  `day` set('ÇáÓÈÊ','ÇáÇÍÏ','ÇáÇËäíä','ÇáËáÇËÇÁ','ÇáÇÑÈÚÇÁ','ÇáÎãíÓ','ÇáÌãÚÉ') NOT NULL,
   `time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -271,7 +271,7 @@ CREATE TABLE `lecturetimes` (
 --
 
 INSERT INTO `lecturetimes` (`id`, `day`, `time`) VALUES
-(1, 'Ø§Ù„Ø³Ø¨Øª', '08:00:00');
+(1, 'ÇáÓÈÊ', '08:00:00');
 
 -- --------------------------------------------------------
 
@@ -289,8 +289,8 @@ CREATE TABLE `levels` (
 --
 
 INSERT INTO `levels` (`id`, `name`) VALUES
-(1, 'Ø§Ù„ØµÙ Ø§Ù„Ø¬Ø¯ÙŠØ¯'),
-(3, 'Ø§Ù„ØµÙ Ø§Ù„Ø«Ø§Ù„Ø«');
+(1, 'ÇáÕİ ÇáÌÏíÏ'),
+(3, 'ÇáÕİ ÇáËÇáË');
 
 -- --------------------------------------------------------
 
@@ -359,11 +359,11 @@ INSERT INTO `names` (`person_id`, `first`, `second`, `third`, `last`) VALUES
 (57, 'mazen', 'mazen', 'mazen', 'mazen'),
 (58, 'admin', 'admin', 'admin', 'adnim'),
 (59, 'admin', 'admin', 'adnim', 'aa'),
-(64, 'ØµØ¯Ù‚ÙŠ', '', '', ''),
-(65, 'ØµØ¯Ù‚ÙŠ', '', '', ''),
+(64, 'ÕÏŞí', '', '', ''),
+(65, 'ÕÏŞí', '', '', ''),
 (66, 'sudqi', '', '', ''),
 (67, 'sudqi', '', '', ''),
-(68, 'Ø¶ÙŠØ§Ø¡', '', '', ''),
+(68, 'ÖíÇÁ', '', '', ''),
 (69, 'laith', '', '', ''),
 (70, 'laith', '', '', ''),
 (71, 'mahdi', '', '', '');
@@ -466,9 +466,9 @@ CREATE TABLE `subjects` (
 --
 
 INSERT INTO `subjects` (`id`, `name`) VALUES
-(1, 'Ø±ÙŠØ§Ø¶ÙŠØ§Øª'),
-(3, 'Ø¹Ù„ÙˆÙ…'),
-(4, 'Ø¹Ø±Ø¨ÙŠ');
+(1, 'ÑíÇÖíÇÊ'),
+(3, 'Úáæã'),
+(4, 'ÚÑÈí');
 
 -- --------------------------------------------------------
 
