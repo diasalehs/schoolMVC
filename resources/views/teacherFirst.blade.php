@@ -8,11 +8,49 @@
         <p>{{Auth::user()->person->name->fullName()}}</p>
     </div>
 
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#collapse1" class="">  <span class="glyphicon glyphicon-pencil"></span> تغيير كلمة السر </a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse colla">
+                <div class="container-fluid">
+
+                    <div class="row ">
+
+
+                        <form action="" role="form" class="form-inline" method="post">
+                            <div class="form-group">
+                                <label for="InputEmail">كلمة السر القديمة</label>
+                                <div class="input-group" >
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="oldPass"  >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="InputEmail">كلمة السر الجديدة</label>
+                                <div class="input-group" >
+                                    <input type="text" class="form-control" id="InputEmailSecond" name="newPass"  >
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="col-md-8 col-md-offset-2 bm" >
+                                    <button class="btn btn-success btn-block" type="submit" >حفظ</button></div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
         <div class="container-fluid" style="margin-bottom: 150px">
             <div class="row ">
                 <form  class="form-inline" method="post">
                     <div class="fp">
-                        <h3 class="ft"> بيانات الموظف الشخصية</h3>
+                        <h3 class="ft"> البيانات الشخصية</h3>
 
                         <div class="form-group">
                             <label for="InputEmail" class="ic">جوال</label>
@@ -33,6 +71,7 @@
                                 <input type="text" class="form-control" id="InputEmailSecond" name="nationality" value="{{Auth::user()->person->nationality}}" disabled  >
                             </div>
                         </div>
+                        <span>{{Auth::user()->person->nationality}}</span>
                         <div class="form-group">
                             <label for="InputEmail" class="ic"> مكان الولادة</label>
                             <div class="input-group">

@@ -196,6 +196,7 @@ Route::group(['prefix' => '/admin'] ,function() {
             'uses'=>'teacherController@getTeacherMessages',
             'as'=>'teacherMessages'
         ]);
+     
     });
 
 //-------------------------------------------------------------------------studentPAGE

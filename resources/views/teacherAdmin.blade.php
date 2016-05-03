@@ -193,8 +193,10 @@
                                         <input type="hidden" role="uploadcare-uploader" name="my_file" style="display: inline-block"/>
                                     </div>
                                 </div>
-                                <input type="file" name="pic" accept="image/*">
-
+                                <label class="file">
+                                    <input type="image" id="img">
+                                    <span class="file-custom"></span>
+                                </label>
                             </div>
                             <div class="">
                                 <div class="col-md-8 col-md-offset-2 bm" >
