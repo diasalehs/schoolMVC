@@ -21,17 +21,17 @@
                     <div class="row ">
 
 
-                        <form action="{{route('teacherChangePassword')}}" role="form" class="form-inline" method="post">
+                        <form action="{{url('/teacher/change')}}" role="form" class="form-inline" method="post">
                             <div class="form-group">
                                 <label for="InputEmail">كلمة السر القديمة</label>
                                 <div class="input-group" >
-                                    <input type="text" class="form-control" id="InputEmailSecond" name="oldPass"  >
+                                    <input type="password" class="form-control" id="InputEmailSecond" name="oldPass"  >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="InputEmail">كلمة السر الجديدة</label>
                                 <div class="input-group" >
-                                    <input type="text" class="form-control" id="InputEmailSecond" name="newPass"  >
+                                    <input type="password" class="form-control" id="InputEmailSecond" name="newPass"  >
                                 </div>
                             </div>
                             <div class="">

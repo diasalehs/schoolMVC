@@ -282,14 +282,14 @@
                          <td>{{$var}}</td>
 
                          <td>{{$student->person->name->fullName()}}</td>
-                         @if($student->class != null)
+                         <td>{{$student->person->id}}</td>
+                     @if($student->class != null)
                          <td >{{$student->class->level->name}}</td>
                          <td >{{$student->class->section}}</td>
                          @else
                              <td >لم يضف</td>
                              <td >لم يضف</td>
                          @endif
-                             <td>{{$student->person->id}}</td>
 
                          <td ><div class="dropdown
                                  <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>

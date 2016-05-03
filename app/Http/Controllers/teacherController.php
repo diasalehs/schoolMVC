@@ -7,8 +7,9 @@
  */
 
 namespace App\Http\Controllers;
-use App\Http\Requests\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+
 
 class teacherController extends Controller{
     public function getTeacherFirst(){
@@ -47,7 +48,8 @@ class teacherController extends Controller{
         if(!Auth::attempt(['id'=>Auth::user()->id,'password'=>$request['oldPass']])){
             return redirect()->back()->with(['fail'=>'Could not login you']);
         }
-        Auth::user()->password=$request['newPass'];
+        Auth::user()->password=bcrypt($request['newPass']);
+        Auth::user()->save();
         return redirect()->route('teacherFirst');
     }
 
