@@ -20,34 +20,22 @@ use App\Classes;
 class loginController extends Controller implements  \Illuminate\Contracts\Auth\Authenticatable{
     use Authenticatable;
     public function getLogin(){
-        $class=Classes::find(4);
-//        echo $class->subjects->first()->id;
-        $subject=Subject::find(1);
-//        echo $subject->teachers->first()->pivot->lecturetime_id;
-        $teacher=Teacher::find(1);
-        echo $teacher->classes->first()->id;
-//        $lecture=Lecture::all()->first();
-//        echo $lecture->teacher->id;
-//        print_r($teacher->lectures);
-//        foreach($teacher->lectures as $lecture){
-//            echo $lecture->lecturetime_id;
-//        }
-//        if(Auth::check()){
-//            $user= Auth::user();
-//            if($user->type=='admin'){
-//                return redirect()->route('adminFirst');
-//            }
-//            if($user->type=='teacher') {
-//                return redirect()->route('teacherFirst');
-//            }
-//            if($user->type=='student'){
-//                return redirect()->route('studentFirst');
-//            }
-//            if($user->type=='supervisor'){
-//                return redirect()->route('supervisorFirst');
-//            }
-//        }
-//        return view('login');
+        if(Auth::check()){
+            $user= Auth::user();
+            if($user->type=='admin'){
+                return redirect()->route('adminFirst');
+            }
+            if($user->type=='teacher') {
+                return redirect()->route('teacherFirst');
+            }
+            if($user->type=='student'){
+                return redirect()->route('studentFirst');
+            }
+            if($user->type=='supervisor'){
+                return redirect()->route('supervisorFirst');
+            }
+        }
+        return view('login');
     }
 
     public function postLogin(Request $request){
