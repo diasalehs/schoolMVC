@@ -294,15 +294,15 @@
                                  <ul class="dropdown-menu">
 
 
-                                     <li><a id="/student/show"  role="button" data-toggle="modal" data-target="#show">عرض</a>
+                                     <li><a id="/student/show" class="post show" role="button" data-toggle="modal" data-target="#show">عرض</a>
                                      </li>
-                                     <li><a id="/student/edit"  role="button" data-toggle="modal" data-target="#myModal">تعديل</a>
+                                     <li><a id="/student/edit" class="post edit" role="button" data-toggle="modal" data-target="#myModal">تعديل</a>
                                      </li>
-                                     <li><a id ="student/delete" class="post" role="button" data-target="#deleteC" data-toggle="modal">حذف</a>
+                                     <li><a id ="/student/delete" class="post delete" role="button" data-target="#deleteC"  data-toggle="modal">حذف</a>
                                      </li>
                                  </ul>
 
-                                 <input type="hidden" name="id" value="{{$student->id}}" id="studentid">
+                                 <input type="hidden"  name="id" value="{{$student->id}}" id="studentid">
                                  <input type="hidden" class="form-control" id="InputEmailSecond" name="_token" value="{{csrf_token()}}"  >
                              </div>
                          </td>
@@ -769,12 +769,27 @@
             <!-- dialog buttons -->
             <div class="modal-footer">
                 <button type="button" id="deleteCancel" class="btn btn-primary" data-dismiss="modal">لا</button>
-                <button type="button" id="deleteConfirm" class="btn btn-danger" data-dismiss="modal">نعم</button>
+                <button id='yes' type="button" id="deleteConfirm" class="btn btn-danger" data-dismiss="modal">نعم</button>
             </div>
         </div>
     </div>
 </div>
 
+<script>
+    deleteId=0;
+    $('#yes').click(function(){
 
+        $.post('student/delete',"id="+deleteId+"&_token="+$('input[name=_token]').val(),function (response) {
+
+        })
+//        history.go(0);
+//        window.location.reload();
+
+    })
+    $('.delete').click(function(){
+
+        deleteId=$(this).closest('div').find('input').first().attr('value');
+    });
+</script>
 
 @endsection

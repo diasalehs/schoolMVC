@@ -17,8 +17,8 @@ use App\Usere;
 use App\Teacher;
 use App\Classes;
 
-class loginController extends Controller implements  \Illuminate\Contracts\Auth\Authenticatable{
-    use Authenticatable;
+class loginController extends Controller {
+
     public function getLogin(){
         if(Auth::check()){
             $user= Auth::user();
@@ -39,10 +39,9 @@ class loginController extends Controller implements  \Illuminate\Contracts\Auth\
     }
 
     public function postLogin(Request $request){
-        $this->validate($request,[
-            'inputName' => 'required', 'inputPassword' => 'required'
-        ]);
 
+        $this->validate($request,['inputName' => 'required',
+            'inputPassword' => 'required',]);
         if(!Auth::attempt(['id'=>$request['inputName'],'password'=>$request['inputPassword']])){
           return redirect()->back()->with(['fail'=>'Could not login you']);
         }
