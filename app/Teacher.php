@@ -14,16 +14,16 @@ class Teacher extends Model
         return $this->belongsTo('App\Employee');
 
     }
-    public function klasses(){
-        return $this->belongsToMany('App\Classes','classes_teacher','teacher_id','class_id');
+    public function lectures(){
+        return $this->hasMany('App\Lecture');
     }
-    public function courses(){
-        return $this->belongsToMany('App\Course');
+    public function classes(){
+        return $this->belongsToMany('App\Classes','lectures','teacher_id','class_id');
+    }
+    public function subjects(){
+        return $this->belongsToMany('App\Subject','lectures')->withPivot('lecturetime_id');
     }
     public function teacherarrival(){
         return $this->belongsToMany('App\Teacherarrival');
     }
-//    public function name(){
-//        return $this->hasManyThrough('App\Name','App\Employee');
-//    }
 }

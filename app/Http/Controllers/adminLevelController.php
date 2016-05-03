@@ -28,12 +28,12 @@ class adminLevelController extends Controller{
         }
 
         $name = $request['levelName'];
-        if($name == 'الأول'or $name == 'الثاني'
-        or  $name == 'الثالث'or $name == 'الرابع'
-        or $name == 'الخامس'or $name == 'السادس'
-        or $name == 'السابع'or $name == 'الثامن'
-        or $name == 'التاسع'or $name == 'العاشر'){
-        Level::create(["name"=>$name]);}
+//        if($name == 'الأول'or $name == 'الثاني'
+//        or  $name == 'الثالث'or $name == 'الرابع'
+//        or $name == 'الخامس'or $name == 'السادس'
+//        or $name == 'السابع'or $name == 'الثامن'
+//        or $name == 'التاسع'or $name == 'العاشر'){
+        Level::create(["name"=>$name]);
 
         return redirect()->route('adminLevel');
     }
