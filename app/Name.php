@@ -19,4 +19,8 @@ class Name extends Model
     {
         return $this->first." ".$this->second." ".$this->third." ".$this->last;
     }
+    public function formalName(){
+
+        return $this->first." ".$this->last;
+    }
 }
