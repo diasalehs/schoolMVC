@@ -16,6 +16,7 @@ body {
 .navbar-collapse{
     margin: 0px;
 }
+
 .navbar-collapse .text-muted {
   color: #818a91;
 }
@@ -27,28 +28,33 @@ body {
 }
 
 .jumbotron {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  margin-bottom: 0;
   background-color: #fff;
     border-radius: 0px;
   background-image:linear-gradient(rgba(0, 0, 0,.6),rgba(0, 0, 0, .6)), url('../../school-buildinh-photo.jpg') ;
   background-repeat: no-repeat;
   background-position:  center;
   background-size: cover;
+    padding-top: 200px;
 }
+.navbar-fixed-top {
+ padding: 18px 50px;
 
+}
 .jumbotron-heading {
   font-weight: 300;
-    padding: 20px;
+    margin-top: 20px;
 }
 
 .jumbotron .container {
   max-width: 40rem;
   background: rgba(0,0,0,0.5);
-  padding: 2rem;
   color: white;
     border-radius: 10px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-top: 30px;
 }
 
 .jumbotron p {
@@ -80,8 +86,8 @@ body {
 }
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
     background-image: url('../../satinweave.png');
 
 }
