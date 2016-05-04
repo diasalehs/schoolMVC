@@ -276,6 +276,7 @@
                 </thead>
                 <tbody id="test">
                 <?php $var = 0;?>
+                @if($students!=null)
                      @foreach($students as $student)
                          <?php $var ++; ?>
                      <tr>
@@ -310,6 +311,7 @@
                          </td>
                      </tr>
                     @endforeach
+                    @endif;
                 </tbody>
             </table>
 
@@ -783,10 +785,7 @@
         $.post('student/delete',"id="+deleteId+"&_token="+$('input[name=_token]').val(),function (response) {
 
         })
-//        history.go(0);
-//        window.location.reload();
-
-    })
+        window.location.reload(true);
     $('.delete').click(function(){
 
         deleteId=$(this).closest('div').find('input').first().attr('value');

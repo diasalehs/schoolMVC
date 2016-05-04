@@ -11,6 +11,7 @@ use App\Subject;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Request;
 use App\Level;
+use App\Classes;
 
 class adminSubjectController extends Controller{
     public function getSubject(){
@@ -59,5 +60,40 @@ class adminSubjectController extends Controller{
             $subject->delete();
         }
         return redirect()->route('adminSubject');
+    }
+    public function getSubjects(Request $request){
+        if (!Auth::check() or Auth::user()->type != 'admin') {
+            return redirect()->route('loginPage');
+        }        $this->validate($request,['classid'=>'integer|required']);
+
+        $levelid=$request['classid'];
+        $level=Level::find($levelid);
+        if($level!=null) {
+            $subjects = $level->subjects;
+            if ($subjects != null && sizeof($subjects)>0) {
+                return response()->json($subjects->toJson());
+            }
+        }
+
+    }
+    public function addToLevel(Request $request){
+//        if (!Auth::check() or Auth::user()->type != 'admin') {
+//            return redirect()->route('loginPage');
+//        }        $this->validate($request,['levelId'=>'integer|required','subjectsId'=>'required']);
+//
+       $sentSubjects=json_decode($request['subjectsId']);
+//        print_r( $sentSubjects);
+        $levelId=$request['levelId'];
+        $level=Level::find($levelId);
+        $subjects=array();
+//        $subjects[0]=1;
+
+        for($i=0;$i<sizeof($sentSubjects);$i++){
+           $subjects[$i]= Subject::find($sentSubjects[$i])->id;
+        }
+        print_r($sentSubjects);
+         $level->subjects()->sync($subjects);
+        return route('adminSubject');
+
     }
 }

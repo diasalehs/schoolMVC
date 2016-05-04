@@ -16,7 +16,7 @@
             <div class="container-fluid">
 
                 <div class="row ">
-                    <form action="{{url('admin/teacher/create')}}"role="form" class="form-inline" method="post">
+                    <form action="{{url('/teacher/searchStudent')}}"role="form" class="form-inline" method="post">
                         <div class="fp">
                             <div class="form-group">
                                 <label for="InputName">الاسم</label>
@@ -48,20 +48,20 @@
 <div class="form-group"style="display: inline-block;">
     <label for="InputEmail" class="">الصف</label>
     <div class="input-group">
-        <select id="sts" class="form-control " >
-            <option value="full">الاول  </option>
-            <option value="family">الاول </option>
-            <option value="walk">الثاني </option>
+        <select id="level" class="form-control " >
+            <option value=""></option>
+        @if($levels!=null)
+        @foreach($levels as $level)
+            <option value="{{$level->id}}">{{$level->name}}</option>
+            @endforeach
+            @endif;
         </select>
     </div>
 </div>
 <div class="form-group">
     <label for="InputEmail" class="" style="display: inline-block; ">الشعبة</label>
     <div class="input-group">
-        <select id="sts" class="form-control " >
-            <option value="full"> أ </option>
-            <option value="family"> ب</option>
-            <option value="walk"> ج</option>
+        <select id="class" class="form-control " >
         </select>
     </div>
 </div>
@@ -77,22 +77,29 @@
     </tr>
     </thead>
     <tbody id="test">
+    @if($students!=null)
+    @foreach($students as $student)
     <tr>
-        <td>١</td>
+        <td>{{$student->id}}</td>
 
-        <td >اول</td>
-
-
-
-
-
+        <td >{{$student->person->name->fullName()}}</td>
     </tr>
-    <tr>
-        <td>١</td>
-        <td>ضياء صالح سعودي</td>
-
-    </tr>
-
+    @endforeach;
+        @endif;
     </tbody>
 </table>
+    <script>
+        drop=$('#class');
+        $('#level').change(function(){
+            $(drop).find('option').remove();
+
+        $.post('student/getClasses',"levelId="+$(this).children('option:selected').attr('value')+"&_token="+$('input[name=_token]').val(),function (response) {
+            var classes=JSON.parse(response);
+            for(var i=0;i<classes.length;i++)
+            {
+                $(drop).append($("<option></option>") .attr("value", classes[i].id).text(classes[i].section));
+            }
+        })
+        })
+    </script>
 @endsection

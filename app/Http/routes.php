@@ -104,6 +104,14 @@ Route::group(['middleware' => ['web']],function(){
                     'uses' => 'adminSubjectController@delete',
                     'as' => 'subjectDelete'
                 ]);
+                Route::post('/getSubjects', [
+                    'uses' => 'adminSubjectController@getSubjects',
+                    'as' => 'getSubjects'
+                ]);
+                Route::post('/addToLevel', [
+                    'uses' => 'adminSubjectController@addToLevel',
+                    'as' => 'addToLevel'
+                ]);
             });
 
             //----------------------------------------------------------------levels
@@ -218,6 +226,14 @@ Route::group(['middleware' => ['web']],function(){
             Route::post('/change', [
                 'uses'=>'teacherController@changePassword',
                 'as'=>'teacherChangePassword'
+            ]);
+            Route::post('/searchStudent', [
+                'uses'=>'teacherController@searchStudent',
+                'as'=>'searchStudent'
+            ]);
+            Route::post('student/getClasses', [
+                'uses'=>'teacherController@getClasses',
+                'as'=>'getClasses'
             ]);
         });
 

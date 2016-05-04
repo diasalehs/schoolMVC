@@ -427,8 +427,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -446,8 +446,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -465,8 +465,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -484,8 +484,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -503,8 +503,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -522,8 +522,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -541,8 +541,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -560,8 +560,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -579,8 +579,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -601,8 +601,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -620,8 +620,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -639,8 +639,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -658,8 +658,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                     @foreach($subjects as $subject)
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -677,8 +677,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -696,8 +696,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -715,8 +715,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -734,8 +734,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -753,8 +753,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -776,8 +776,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -795,8 +795,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -814,8 +814,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -833,8 +833,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -852,8 +852,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -871,8 +871,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -890,8 +890,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -909,8 +909,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -928,8 +928,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -950,8 +950,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -969,8 +969,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -988,8 +988,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1007,8 +1007,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1026,8 +1026,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1045,8 +1045,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1064,8 +1064,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1083,8 +1083,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1102,8 +1102,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1124,8 +1124,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1143,8 +1143,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1162,8 +1162,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1181,8 +1181,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1200,8 +1200,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1219,8 +1219,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1238,8 +1238,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1257,8 +1257,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1276,8 +1276,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1298,8 +1298,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1317,8 +1317,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1336,8 +1336,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1355,8 +1355,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1374,8 +1374,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1393,8 +1393,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1412,8 +1412,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1431,8 +1431,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>
@@ -1450,8 +1450,8 @@
                               </div>
                               <div class="form-group" >
                                   <select id="sts" class="form-control " >
-                                      @foreach($teachers as $teacher)
-                                          <option value="{{$teacher->id}}">{{$teacher->employee->person->name->formalName()}}</option>
+                                      @foreach($subjects as $subject)                                           <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                          <option value="{{$subject->id}}">{{$subject->name}}</option>
                                       @endforeach
                                   </select>
                               </div>

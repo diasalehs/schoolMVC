@@ -31,8 +31,9 @@ class adminClassController extends Controller{
             array_push($found, $class->section);
         }
         $results = array_unique($found);
+        $subjects=Subject::all();
         return view('classAdmin', ['levels' => $levels,'classes' => $classes,
-            'teachers'=>$teachers,'students'=>$students,'results'=>$results]);
+            'teachers'=>$teachers,'students'=>$students,'results'=>$results,'subjects'=>$subjects]);
     }
 
     public function  Create(Request $request){
