@@ -291,7 +291,7 @@
                              <td >لم يضف</td>
                          @endif
 
-                         <td ><div class="dropdown
+                         <td ><div class="dropdown">
                                  <button class="btn btn-primary" data-toggle="dropdown">عمليات <span class="caret"></span></button>
                                  <ul class="dropdown-menu">
 
