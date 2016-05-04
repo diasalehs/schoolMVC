@@ -20,6 +20,9 @@ class Subject extends Model
     public function lectures(){
         return $this->hasMany('App\lectures');
     }
-    
+    public function grades(){
+        return $this->hasMany('App\Grade');
+    }
+
     
 }

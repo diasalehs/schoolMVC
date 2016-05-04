@@ -141,8 +141,8 @@ class adminStudentController extends Controller{
             $p = $student->person;
             $p->delete();
         }
-        $students = Student::all();
-        return redirect()->route('adminStudent')->with('students', $students);
+//        $students = Student::all();
+//        return redirect()->route('adminStudent')->with('students', $students);
 
     }
 }

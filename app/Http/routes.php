@@ -227,6 +227,14 @@ Route::group(['middleware' => ['web']],function(){
                 'uses'=>'teacherController@changePassword',
                 'as'=>'teacherChangePassword'
             ]);
+            Route::post('/searchStudent', [
+                'uses'=>'teacherController@searchStudent',
+                'as'=>'searchStudent'
+            ]);
+            Route::post('student/getClasses', [
+                'uses'=>'teacherController@getClasses',
+                'as'=>'getClasses'
+            ]);
         });
 
 //-------------------------------------------------------------------------studentPAGE
