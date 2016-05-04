@@ -64,13 +64,6 @@
                 document.getElementById('chn').style.display = "none";
             }
         }
-        $('.select-cities').click(function () {
-            $('.select-cities option:selected').appendTo('.chosen-cities');
-        });
-
-        $('.chosen-cities').click(function () {
-            $('.chosen-cities option:selected').appendTo('.select-cities');
-        });
     </script>
 
 

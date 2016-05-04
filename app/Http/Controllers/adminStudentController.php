@@ -145,5 +145,4 @@ class adminStudentController extends Controller{
         return redirect()->route('adminStudent')->with('students', $students);
 
     }
-
 }

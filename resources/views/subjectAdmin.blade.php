@@ -57,6 +57,7 @@
                         <div class="form-group">
                             <label for="InputEmail" class="ic">المادة</label>
                             <select id="sts" class="form-control " name="subjectId" >
+                                <option >  </option>
                                 @foreach($subjects as $subject)
                                     <option value="{{$subject->id}}">{{$subject->name}}</option>
                                 @endforeach
@@ -94,11 +95,12 @@
         <div id="collapse111" class="panel-collapse collapse colla">
             <div class="container-fluid">
                 <div class="row ">
-                    <form action="{{url('admin/class/create')}}"role="form" class="form-inline" method="post">
+                    <form action="{{url('admin/subject/addToLevel')}}"role="form" class="form-inline" method="post">
 
                         <div class="form-group">
-                            <label for="InputEmail" class="ic">الصف</label>
-                            <select id="sts" class="form-control " >
+                            <label for="InputEmail" class="ic ">الصف</label>
+                            <select id="class" name="levelId" id="sts" class="form-control " >
+                                <option value="-1"></option>
                                 @foreach($levels as $level)
                                     <option value="{{$level->id}}">{{$level->name}}</option>
                                 @endforeach
@@ -109,10 +111,10 @@
                             <div class="col-md-4">
                         <fieldset class="form-group" >
                             <label for="exampleSelect2">المواد</label>
-                            <select class="select-cities" name="city" multiple="multiple" style="width: 200px;height: 200px; margin-left: 60px">
+                            <select id="noSelected" class="select-cities" name="city" multiple="multiple" style="width: 200px;height: 200px; margin-left: 60px">
                                 @foreach($subjects as $subject)
 
-                                <option>{{$subject->name}}</option>
+                                <option value="{{$subject->id}}">{{$subject->name}}</option>
 
                                 @endforeach
 
@@ -123,9 +125,10 @@
 
                         <fieldset class="form-group" >
                             <label for="SelectedSubjects" style="width: 110px;">المواد المختارة</label>
-                        <select  class="chosen-cities" name="chosen-cities-name" multiple="multiple"style="width: 200px;height: 200px" >
-
+                        <select  name="levelid" id="alreadySelected" class="chosen-cities" name="chosen-cities-name" multiple="multiple"style="width: 200px;height: 200px" >
                         </select>
+                            <input id="sentSubjects" type="hidden" value="" name="subjectsId">
+                            <input type="hidden" value="{{csrf_token()}}" name="_token">
                         </fieldset>
                         </div>
                         </div>
@@ -163,14 +166,76 @@
 </div>
 <script>
     $(document).ready(function(){
-        form=null;
+        addSubjects=[];
+        $('.select-cities').click(function () {
+             option=$('.select-cities option:selected');
+            $(option).appendTo('.chosen-cities');
+            console.log($(option).attr('value'));
+            addSubjects.push($(option).attr('value'));
+            $("#sentSubjects").attr('value',JSON.stringify(addSubjects));
 
+        });
+
+        $('.chosen-cities').click(function () {
+            var option=$('.chosen-cities option:selected');
+            $(option).appendTo('.select-cities');
+            addSubjects.pop($(option).attr('value'));
+            $("#sentSubjects").attr('value',JSON.stringify(addSubjects));
+        });
+        form=null;
+        $('#class').change(function() {
+
+            $.post('subject/getSubjects', "classid=" + $(this).children('option:selected').attr('value') + "&_token=" + $('input[name=_token]').val(), function (response) {
+                console.log('response is nulll');
+                var options=$('.chosen-cities').find('option') ;
+                for(var i=0;i<options.length;i++) {
+
+//                        console.log(options[i]);
+                    $(options[i]).appendTo('.select-cities');
+                    addSubjects.pop($(options[i]).attr('value'));
+                    $("#sentSubjects").attr('value', JSON.stringify(addSubjects));
+                    console.log(addSubjects);
+                }
+                if(response!="") {
+                    console.log('response is not nulll');
+                    classes = JSON.parse(response);
+                    for (var i = 0; i < classes.length; i++) {
+                       var option= $('.select-cities').find('option[value="' + classes[i].id + '"]');
+                        $(option).appendTo('.chosen-cities');
+                        addSubjects.push($(option).attr('value'));
+                        $("#sentSubjects").attr('value',JSON.stringify(addSubjects));
+//                    $('#alreadySelected').append($("<option></option>").attr("value", classes[i].id).text(classes[i].section));
+                    }
+
+                    if (classes == null ) {
+                        var option= $('.chosen-cities').find('option[value="' + classes[i].id + '"]');
+                        $(option).appendTo('.select-cities');
+                        addSubjects.pop($(option).attr('value'));
+                        $("#sentSubjects").attr('value',JSON.stringify(addSubjects));
+                    }
+////                    else {
+//                        $('.chosen-cities').find('option') .appendTo('.select-cities');
+//                    }
+                }
+                else{
+                    console.log('response is nulll');
+                    var options=$('.chosen-cities').find('option') ;
+                    for(var i=0;i<options.length;i++){
+
+//                        console.log(options[i]);
+                        $(options[i]).appendTo('.select-cities');
+                        addSubjects.pop($(options[i]).attr('value'));
+                        $("#sentSubjects").attr('value',JSON.stringify(addSubjects));
+                        console.log(addSubjects);
+                    }
+                }
+            })
+        });
         deleteConfirm=false;
         $('#deleteConfirm').click(function () {
             form.submit();
         });
         $('.post').click(function () {
-            alert("hi");
             var action = $(this).attr('id');
             form = $(this).closest('form')
             form.attr('action', action);

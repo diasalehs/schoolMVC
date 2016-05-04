@@ -104,6 +104,14 @@ Route::group(['middleware' => ['web']],function(){
                     'uses' => 'adminSubjectController@delete',
                     'as' => 'subjectDelete'
                 ]);
+                Route::post('/getSubjects', [
+                    'uses' => 'adminSubjectController@getSubjects',
+                    'as' => 'getSubjects'
+                ]);
+                Route::post('/addToLevel', [
+                    'uses' => 'adminSubjectController@addToLevel',
+                    'as' => 'addToLevel'
+                ]);
             });
 
             //----------------------------------------------------------------levels
